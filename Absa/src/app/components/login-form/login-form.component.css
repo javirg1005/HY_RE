@@ -5,20 +5,16 @@ body {
     position: absolute;
     width: 1920px;
     height: 1080px;
-    /*left: -29px;
-    top: -71px;*/
-    
     background: url("\src\media\Fondo_dibujo.png");
-    
     font-family: "Lato";
 }
 
 .contenedor {    
     position: absolute;
     width: 605px;
-    height: 666px;
-    left: 558px;
-    top: 109px;
+    height: 500px;
+    left: 458px;
+    top: 75px;
     
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -35,18 +31,19 @@ h1 {
 
 h6 {
     color: blue;
+    text-decoration: underline;
 }
 
 .textfield {
     position: relative;
-    /*width: 577px;
-    height: 87px;
-    left: 672px;
-    top: 409px;*/
+    width: 80%;
+    height: 60%;
+    margin-left: 50px;
     
     background: radial-gradient(93.93% 4131.77% at 6.07% 13.79%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 100%);
     backdrop-filter: blur(30px);
     border-radius: 30px;
+    padding: 10px;
 }
 
 .input_div {   
@@ -54,22 +51,26 @@ h6 {
     backdrop-filter: blur(30px);    
     border-radius: 30px;
     text-align: center;
+    width: 75%;
+    height: 75%;
+    margin-left: 50px;
+    margin-top: 10px;
 }
 
 button {    
     background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-    
+    position: relative;
+    left: 200px;
+    width: 100px;
+    height: 40px;    
     
     font-family: Lato;
     font-style: normal;
     font-weight: 900;
-    font-size: 30px;
-    line-height: 42px;
+    font-size: 20px;
+    line-height: 32px;
     text-align: center;    
     color: white;
-
-    position: relative;
-    left: 350px;
 }
