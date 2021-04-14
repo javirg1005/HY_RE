@@ -11,6 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { MainpageComponent } from './components/mainpage/mainpage.component';
 
 
 const rutas: Routes = [
@@ -41,7 +42,8 @@ const rutas: Routes = [
     AppComponent,
     LoginFormComponent,
     SignupFormComponent,
-    MainPageComponent
+    MainPageComponent,
+    MainpageComponent
   ],
   imports: [
     BrowserModule,
