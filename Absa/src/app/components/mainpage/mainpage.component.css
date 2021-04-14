@@ -1,0 +1,119 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('\src\media\Fondo_dibujo.png') no-repeat center fixed;
+    background-size: cover;
+    background-color: #1d1b1b;
+    height: 100vh;
+    font-family: "Lato";
+}
+
+h1 {
+    font-family: 'Lobster Two', cursive;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+h3 {
+    color: #81553F;
+    margin-left: 50px;
+    align-self: center;
+    margin-top: 3%;
+}
+
+h4 {
+    color: #81553F;
+    margin-left: 50px;
+    align-self: center;
+    margin-top: 10%;
+}
+  
+.contenedor {    
+    position: absolute;
+    width: 1000px;
+    height: 540px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 106px;
+
+    margin-top: 10px;
+}
+
+.subcontenedor_precio {    
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    left: 17%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 106px;
+
+    padding-left: 1px;
+}
+
+.subcontenedor_vecinos {    
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    left: 49%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 106px;
+}
+
+.subcontenedor_internet {    
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    left: 82%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 106px;
+}
+
+button {    
+    background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    border: 0;
+    position: relative;
+    left: 43%;
+    width: 120px;
+    height: 50px;    
+    
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 27px;
+    line-height: 32px;
+    text-align: center;    
+    color: white;
+
+    margin-top: 428px;
+}

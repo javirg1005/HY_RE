@@ -2,7 +2,7 @@
 
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
+/*import { Observable } from "rxjs/Observable";
 import { CookieService } from "ngx-cookie-service";
 
 @Injectable({
@@ -23,4 +23,4 @@ export class UsersService {
     getToken() {
         return this.cookies.get("token");
     }
-}
+}*/ 

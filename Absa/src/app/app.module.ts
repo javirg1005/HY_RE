@@ -10,7 +10,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
+/*import { CookieService } from 'ngx-cookie-service';*/
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 
 
@@ -51,8 +51,8 @@ const rutas: Routes = [
       enableTracing: true, //para un mejor debug
     }),
     FormsModule,
-    HttpClientModule,
-    CookieService
+    HttpClientModule
+/*    ,CookieService*/
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from "../../users/users.service";
+/*import { UsersService } from "../../users/users.service";*/
 
 @Component({
   selector: 'app-signup-form',
@@ -15,10 +15,12 @@ export class SignupFormComponent implements OnInit {
   vemail: string;
   vpassword: string;
   
-  constructor(public userService: UsersService) { }
-
+  constructor(){}
   ngOnInit(): void {
   }
+ /* constructor(public userService: UsersService) { }
+
+  
 
   register(){
     const user = { name: this.name, email: this.email, password: this.password, username: this.username, vemail: this.vemail, vpassword: this.vpassword };
@@ -26,5 +28,5 @@ export class SignupFormComponent implements OnInit {
       console.log(data);
     });
   }
-
+*/
 }
