@@ -8,6 +8,10 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
+
 
 const rutas: Routes = [
   {
@@ -43,8 +47,10 @@ const rutas: Routes = [
     BrowserModule,
     RouterModule.forRoot(rutas, {
       enableTracing: true, //para un mejor debug
-
-    })
+    }),
+    FormsModule,
+    HttpClientModule,
+    CookieService
   ],
   providers: [],
   bootstrap: [AppComponent]

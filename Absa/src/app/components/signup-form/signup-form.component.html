@@ -18,17 +18,17 @@
           <div class="input_div"> 
               <form>
                 <div class="input_div">
-                  <input class="input_field" type="text" value="" name="nombre" title="Enter name" placeholder="Introduce tu nombre"/>
-                  <input class="input_field" type="text" value="" name="email" title="Enter email" placeholder="Introduce tu email"/>
-                  <input class="input_field" type="text" value="" name="Password" title="Enter Password" placeholder="Introduce tu contraseña"/>
+                  <input class="input_field" [(ngModel)]="name" type="text" value="" name="nombre" title="Enter name" placeholder="Introduce tu nombre"/>
+                  <input class="input_field" [(ngModel)]="email" type="email" value="" name="email" title="Enter email" placeholder="Introduce tu email"/>
+                  <input class="input_field" [(ngModel)]="password" type="password" value="" name="Password" title="Enter Password" placeholder="Introduce tu contraseña"/>
                 </div>
                 <div class="input_div">
-                  <input class="input_field" type="text" value="" name="username" title="Enter Username" placeholder="Introduce tu usuario"/>
-                  <input class="input_field" type="text" value="" name="Vemail" title="Enter Vemail" placeholder="Verifica tu email"/>             
-                  <input class="input_field" type="text" value="" name="VPassword" title="Enter VPassword" placeholder="Verifica tu contraseña"/>
+                  <input class="input_field" [(ngModel)]="username" type="text" value="" name="username" title="Enter Username" placeholder="Introduce tu usuario"/>
+                  <input class="input_field" [(ngModel)]="vemail" type="email" value="" name="Vemail" title="Enter Vemail" placeholder="Verifica tu email"/>             
+                  <input class="input_field" [(ngModel)]="vpassword" type="password" value="" name="VPassword" title="Enter VPassword" placeholder="Verifica tu contraseña"/>
                 </div>
                 <div class="input_div">
-                <button class="BSignUp"> Sign Up </button>
+                <button class="BSignUp" type="submit" (click)="register()"> Sign Up </button>
                 </div>
               </form>
               
