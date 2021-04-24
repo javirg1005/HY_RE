@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": false
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Absa": {
+    "angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Absa",
+            "outputPath": "dist/angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,25 +54,34 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "outputPath": "../../../public/assets/angular",
+              "deployUrl": "/assets/angular/"
+            },
+            "dev": {
+              "outputPath": "dist/assets/angular",
+              "baseHref": "/assets/angular/"
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Absa:build"
+            "browserTarget": "angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Absa:build:production"
+              "browserTarget": "angular:build:production"
+            },
+            "dev": {
+              "browserTarget": "angular:build:dev"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Absa:build"
+            "browserTarget": "angular:build"
           }
         },
         "test": {
@@ -112,16 +118,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Absa:serve"
+            "devServerTarget": "angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Absa:serve:production"
+              "devServerTarget": "angular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Absa"
+  "defaultProject": "angular"
 }

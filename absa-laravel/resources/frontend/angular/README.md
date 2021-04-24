@@ -1,6 +1,6 @@
-# Absa
+# Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
 
 ## Development server
 
