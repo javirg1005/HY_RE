@@ -1,28 +1,25 @@
 import re
-# Expresiones regex para extraer datos
+# Expresiones regex para extraer datos de Infojobs
 
-# 1. Infojobs
-
-# Leemos el fichero json con los resultados del GET Offer
+# Leemos el fichero con los resultados del GET Offer
 f = open("resultado_infojobs_primero.txt", "r", encoding="utf-8")
-data = f.readline()
+data = f.read()
 lineas = f.readlines()
-print(data)
-print("----------------------------------------")
-print(lineas)
 
-"""
 # Aplicamos la regex
-regexTitle = 'title":\s"([\w]*[\s]*\.*)*'
-title = re.search('title":\s"([\w]*[\s]*\.*)*', data).group[0]
-print("-------------------------------------------------")"""
-print(title)
 
-for i in
+#regexTitle = 'title":\s"([\w\s\.]*)'
+#regexProvincia = 'province":\s{\s*"id":\s\d+,\s+"value":\s"(\w+\s*)"'
+#regexURL = '(https:\/\/www.infojobs.net\/[\w+\s*]*\/[\w+\s*\-*\.*]*\/[\w+\s*\-*]*)'
+#regexSalario = 'salaryMin":\s{\s*"id":\s\w*,\s*"value":\s"(\d*\.\d*)'
 
-# Ejemplo de regex
-# regex =  = 'Address:\s(\w{2}:\w{2}:\w{2}:\w{2}:\w{2}:\w{2})\\n'
-# resultadoRegex = re.search(regexAddress, str_cell).group(1)
+titulo = re.findall(r'title":\s"([\w\s\.]*)', data)
+provincia = re.findall(r'province":\s{\s*"id":\s\d+,\s+"value":\s"(\w+\s*)"', data)
+url = re.findall(r'(https:\/\/www.infojobs.net\/[\w+\s*]*\/[\w+\s*\-*\.*]*\/[\w+\s*\-*]*)', data)
+salario = re.findall(r'salaryMin":\s{\s*"id":\s\w*,\s*"value":\s"(\d*\.\d*)*', data)
+
+for i in salario:
+    print(i)
 
 
 # Cerramos el fichero
