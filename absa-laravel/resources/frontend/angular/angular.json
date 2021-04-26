@@ -36,6 +36,8 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "outputPath": "../../../public/assets/angular",
+              "deployUrl": "/assets/angular/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -54,9 +56,7 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ],
-              "outputPath": "../../../public/assets/angular",
-              "deployUrl": "/assets/angular/"
+              ]
             },
             "dev": {
               "outputPath": "dist/assets/angular",
