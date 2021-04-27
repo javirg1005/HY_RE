@@ -4,6 +4,36 @@
     box-sizing: border-box;
 }
 
+
+.navbar {
+    display: flex;
+    padding: 10px 30px;
+    align-items: center;
+    height: 10vh;
+    font-family: 'Lato';
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    width: 100vh;
+}
+
+.nav-item {
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    transition: all 0.9s;
+}
+
+.nav-item a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.8vh;
+}
+
 body {
     background: url('\src\media\Fondo_dibujo.png') no-repeat center fixed;
     background-size: cover;

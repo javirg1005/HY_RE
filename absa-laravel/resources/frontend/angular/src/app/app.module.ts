@@ -19,7 +19,7 @@ const rutas: Routes = [
     path: '', pathMatch:'full', redirectTo:  'Mainpage'
   },
   {
-    path: 'MainPage', component: MainPageComponent,
+    path: 'MainPage', component: MainpageComponent,
     children: [   
       {
         path: 'SignupForm', component: SignupFormComponent
