@@ -37,7 +37,17 @@ h1 {
 h6 {
     color: #81553F;
     text-decoration: underline;
+    margin-right: 80px;
+}
+
+.opciones {
+    color: #81553F;
+    text-decoration: underline;
+    display: flex;
+    align-content: space-between;
     margin-right: -150px;
+    margin-left: 170px;
+    text-align: center;
 }
 
 .input_div {   
