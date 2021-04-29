@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-/*import { UsersService } from "../../users/users.service";*/
+import { UsersService } from "../../users/users.service";
 
 @Component({
   selector: 'app-login-form',
@@ -13,8 +13,7 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  constructor() {}
-  /*
+  
   constructor(public userService: UsersService) { }
 
   
@@ -24,5 +23,5 @@ export class LoginFormComponent implements OnInit {
     this.userService.login(user).subscribe( data => {
       console.log(data);
     });
-  }*/
+  }
 }

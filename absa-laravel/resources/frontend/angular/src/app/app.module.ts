@@ -10,7 +10,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-/*import { CookieService } from 'ngx-cookie-service';*/
+import { CookieService } from 'ngx-cookie-service';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 
 
@@ -19,7 +19,7 @@ const rutas: Routes = [
     path: '', pathMatch:'full', redirectTo:  'MainPage'
   },
   {
-    path: 'MainPage', component: MainpageComponent,
+    path: 'MainPage', component: MainPageComponent,
     children: [   
       {
         path: 'SignupForm', component: SignupFormComponent
