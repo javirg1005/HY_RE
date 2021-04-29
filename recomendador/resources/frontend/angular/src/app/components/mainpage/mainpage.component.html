@@ -1,0 +1,54 @@
+<html> 
+    <body>
+        <nav class="navbar sticky">
+            <div class="menu-btn">
+                <div class="menu-btn-burger"></div>
+            </div>
+            <ul class="nav-links">
+                <div class="spacer"></div>
+                <li class="nav-item"><a href="LoginForm">Login</a></li>
+                <li class="nav-item"><a href="SignupForm">Sign Up</a></li>
+            </ul>
+          </nav>
+        <!-- Título de la Página Principal -->
+        <h1> <span style="color: #F2E06E">¡</span>Encuentra tu zona<span style="color: #F2E06E">!</span> </h1>
+
+        <!-- Contenedor con los campos de búsqueda -->
+        <div class="contenedor">
+            <h3> Encuentra tu inmueble ideal para irte a vivir a la España rural con este sencillo buscador: </h3>
+            
+            <div class="subcontenedor_precio"> 
+                <img class="icono_precio" src="assets/Euro.png">
+                <h4> ¿Cuánto es lo máximo que <br> quieres pagar? </h4>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
+            </div>
+
+            <div class="subcontenedor_vecinos"> 
+                <img class="icono_casa" src="assets/Casa.png">
+                <h4> ¿Cuántos vecinos le gustaría tener? </h4>
+                <br>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
+            </div>
+            <div class="subcontenedor_internet"> 
+                <img class="icono_internet" src="assets/Internet.png">
+                <h4> ¿Qué calidad de Internet necesitas? </h4>
+                <br>
+                <div class="slidecontainer">
+                    <span class="baja"> Baja </span> 
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <span class="alta"> Alta </span>
+                </div>
+            </div>
+            <button> Buscar </button>
+        </div> 
+
+    </body> 
+</html>
