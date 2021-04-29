@@ -5,10 +5,12 @@
 }
 
 
+
 .navbar {
+    justify-content: right;
     display: flex;
     padding: 10px 30px;
-    align-items: center;
+    align-items: right;
     height: 10vh;
     font-family: 'Lato';
     z-index: 1000;
@@ -16,7 +18,8 @@
 
 .nav-links {
     display: flex;
-    align-items: center;
+    margin-left: 80%;
+    align-items: right;
     justify-content: space-around;
     list-style: none;
     width: 100vh;

@@ -16,7 +16,7 @@ import { MainpageComponent } from './components/mainpage/mainpage.component';
 
 const rutas: Routes = [
   {
-    path: '', pathMatch:'full', redirectTo:  'Mainpage'
+    path: '', pathMatch:'full', redirectTo:  'MainPage'
   },
   {
     path: 'MainPage', component: MainpageComponent,
