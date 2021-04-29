@@ -28,11 +28,7 @@ for i in range(len(salario)):
         aux.append(aus)
         print(aux[i])
 
-oferta = {'titulo': titulo, 'provincia': provincia, 'url': url, 'salario:'salario }
-
-print(oferta)
-
-print(oferta[i])
+#oferta = {'titulo': titulo, 'provincia': provincia, 'url': url, 'salario:'salario }
 
 # Cerramos el fichero
 f.close()
