@@ -6,20 +6,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
-import { MainPageComponent } from './components/main-page/main-page.component';
+//import { MainPageComponent } from './components/main-page/main-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
+//import { CookieService } from 'ngx-cookie-service';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 
 
 const rutas: Routes = [
   {
-    path: '', pathMatch:'full', redirectTo:  'MainPage'
+    path: '', pathMatch:'full', redirectTo:  'Mainpage'
   },
   {
-    path: 'MainPage', component: MainPageComponent,
+    path: 'Mainpage', component: MainpageComponent,
     children: [   
       {
         path: 'SignupForm', component: SignupFormComponent
@@ -42,7 +42,7 @@ const rutas: Routes = [
     AppComponent,
     LoginFormComponent,
     SignupFormComponent,
-    MainPageComponent,
+    //MainPageComponent,
     MainpageComponent
   ],
   imports: [
