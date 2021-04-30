@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 //Rutas para moverse entre ventanas
 
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
-//import { MainPageComponent } from './components/main-page/main-page.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +20,7 @@ const rutas: Routes = [
     path: '', pathMatch:'full', redirectTo:  'Mainpage'
   },
   {
-    path: 'Mainpage', component: MainpageComponent,
+    path: 'Mainpage', component: MainPageComponent,
     children: [   
       {
         path: 'SignupForm', component: SignupFormComponent
@@ -42,7 +43,7 @@ const rutas: Routes = [
     AppComponent,
     LoginFormComponent,
     SignupFormComponent,
-    //MainPageComponent,
+    MainPageComponent,
     MainpageComponent
   ],
   imports: [
@@ -51,7 +52,7 @@ const rutas: Routes = [
       enableTracing: true, //para un mejor debug
     }),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
 /*    ,CookieService*/
   ],
   providers: [],
