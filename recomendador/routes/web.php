@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
+
 Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
-Route::any('/{any}',[AngularController::class, 'index'] )->where('any','^(?!api).*$');
+/*Route::any('/{any}',[AngularController::class, 'index'] )->where('any','^(?!api).*$');
 /*
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
