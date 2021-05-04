@@ -1,16 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-
-
 .navbar {
-    justify-content: right;
     display: flex;
     padding: 10px 30px;
     align-items: right;
+    justify-content: space-between;
     height: 10vh;
     font-family: 'Lato';
     z-index: 1000;
@@ -18,23 +19,43 @@
 
 .nav-links {
     display: flex;
-    margin-left: 80%;
-    align-items: right;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-around;
     list-style: none;
-    width: 100vh;
+    width: 30%;
+    color: white;
+}
+
+.nav-forms {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    width: 20%;
+    color: white;
 }
 
 .nav-item {
     text-align: center;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
     transition: all 0.9s;
 }
 
 .nav-item a {
     color: #FFF;
     text-decoration: none;
-    font-size: 1.8vh;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-icon {
+    width: 50px;
+    margin-right: 5px;
 }
 
 body {
@@ -50,13 +71,21 @@ h1 {
     color: white;
     text-align: center;
     font-size: 50px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    font-family: 'Lobster Two', cursive;
+    color: white;
+    text-align: center;
+    font-size: 50px;
 }
 
 h3 {
     color: #81553F;
     margin-left: 50px;
     align-self: center;
-    margin-top: 3%;
+    margin-top: 40px;
 }
 
 h4 {
@@ -68,8 +97,8 @@ h4 {
   
 .contenedor {    
     position: absolute;
-    width: 1000px;
-    height: 540px;
+    width: 1050px;
+    height: 570px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -85,93 +114,56 @@ h4 {
 
 /* Falta lo de gridbox */
 
-.subcontenedor_precio {    
-    position: absolute;
-    width: 300px;
-    height: 370px;
-    left: 17%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    
-    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-sizing: border-box;
-    backdrop-filter: blur(30px);
-    border-radius: 106px;
-
-    padding-left: 1px;
+.subcontenedor_prime {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
 }
 
-.subcontenedor_vecinos {    
-    position: absolute;
+.subcontenedor {    
     width: 300px;
     height: 370px;
-    left: 49%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
     border-radius: 106px;
-}
 
-.subcontenedor_internet {    
-    position: absolute;
-    width: 300px;
-    height: 370px;
-    left: 82%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    
-    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-sizing: border-box;
-    backdrop-filter: blur(30px);
-    border-radius: 106px;
 }
 
 button {    
     background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
+    border-radius: 20px;
     border: 0;
     position: relative;
-    left: 38%;
-    width: 220px;
-    height: 50px;    
-    
+    display: block;
+    width: 270px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
     font-family: Lato;
-    font-style: normal;
     font-weight: 900;
     font-size: 27px;
     line-height: 32px;
     text-align: center;    
     color: white;
-
-    margin-top: 428px;
 }
 
 button:active {
   transform: translateY(4px);
 }
 
-.icono_precio {
+.icono {
     position: relative;
-    margin-left: 38%;
-    margin-top: 30px;
-}
-
-.icono_casa {
-    position: relative;
-    margin-left: 33%;
-    margin-top: 30px;
-}
-
-.icono_internet {
-    position: relative;
-    margin-left: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 30px;
 }
 
@@ -179,10 +171,10 @@ button:active {
 .slidecontainer {
     width: 100%; /* Width of the outside container */
     margin-top: 30px;
-  }
-  
-  /* The slider itself */
-  .slider {
+}
+
+/* The slider itself */
+.slider {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     width: 50%; /* Full-width */
@@ -196,15 +188,15 @@ button:active {
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 100px;
-  }
-  
-  /* Mouse-over effects */
-  .slider:hover {
+}
+
+/* Mouse-over effects */
+.slider:hover {
     opacity: 1; /* Fully shown on mouse-over */
-  }
-  
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-  .slider::-webkit-slider-thumb {
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
@@ -212,18 +204,18 @@ button:active {
     background: #D43414; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 100px;
-  }
-  
-  .slider::-moz-range-thumb {
+}
+
+.slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
     background: #D43414; /* Green background */
     cursor: pointer; /* Cursor on hover */
-  }
+}
 
 .numero_inicio {
     margin-left: 50px;
-    color: #D43414;
+    color: #D63610;
 }
 
 .numero_fin{
