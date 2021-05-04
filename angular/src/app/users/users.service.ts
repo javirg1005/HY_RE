@@ -17,16 +17,15 @@ export class UsersService {
     }*/
 
     login(datos){
-        return this.httpClient.post('http://127.0.0.1:8000/api/login',datos);
-      }
+        return this.httpClient.post('http://127.0.0.1:8000/api/login',datos); //funcion de llamada de login && DEBE RETORNAR UN TOKEN
+    }
 
-    /*register(user: Any): Observable<any> {
-        return this.http.post("RUTA API KAWAII", user);
+    logout(datos){
+        return this.httpClient.post('http://127.0.0.1:8000/api/logout',datos); //funcion de log out && retira acceso a favs
     }
-    setToken(token: String) {
-        this.cookies.set("token", token);
+
+    register(user){
+        return this.httpClient.post("http://127.0.0.1:8000/api/register", user);  //funcion de llamada de registro
     }
-    getToken() {
-        return this.cookies.get("token");
-    }*/
+
 } 
