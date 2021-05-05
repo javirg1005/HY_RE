@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-/*import { UsersService } from "../../users/users.service";*/
+import { JwtService } from '../../shared/jwt.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup-form',
@@ -7,26 +9,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup-form.component.css']
 })
 export class SignupFormComponent implements OnInit {
+
+  signupForm: FormGroup;
+  err = null;
+
+
+  constructor(
+      public fb: FormBuilder,
+      public router: Router,
+      public jwtService: JwtService
+    ) {
+      this.signupForm = this.fb.group({
+        name: [''],
+        username: [''],
+        email: [''],
+        vmail: [''],
+        password: [''],
+        vpassword: ['']
+      })
+    }
   
-  name: string;
-  email: string;
-  password: string;
-  username: string;
-  vemail: string;
-  vpassword: string;
-  
-  constructor(){}
+
   ngOnInit(): void {
   }
- /* constructor(public userService: UsersService) { }
 
-  
-
-  register(){
-    const user = { name: this.name, email: this.email, password: this.password, username: this.username, vemail: this.vemail, vpassword: this.vpassword };
-    this.userService.register(user).subscribe(data => {
-      console.log(data);
-    });
+  onSubmit(){
+    this.jwtService.signup(this.signupForm.value).subscribe(
+      res => {
+        console.log(res)
+      },
+      error => {
+        this.err = error.error;
+      },
+      () => {
+        this.signupForm.reset()
+        this.router.navigate(['signin']);
+      }
+    )
   }
-*/
 }

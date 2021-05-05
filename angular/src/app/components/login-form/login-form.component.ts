@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from "../../users/users.service";
-import { HttpClient } from "@angular/common/http";
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from "@angular/forms";
+
+import { JwtService } from './../../shared/jwt.service';
+import { TokenAuthService } from '../../shared/token-auth.service';
+import { AuthenticationStateService } from '../../shared/authentication-state.service';
 
 @Component({
   selector: 'app-login-form',
@@ -9,16 +13,41 @@ import { HttpClient } from "@angular/common/http";
 })
 export class LoginFormComponent implements OnInit {
 
-  usuario: string;
-  password: string;
+  loginForm: FormGroup;
+  err = null;
+
 
   ngOnInit(): void {
   }
   
-  constructor(private httpClient:HttpClient, userService: UsersService) { }
+  constructor( public router: Router,
+    public fb: FormBuilder,
+    public jwtService: JwtService,
+    private tokenAuthService: TokenAuthService,
+    private authenticationStateService: AuthenticationStateService,
+  ) {
+    this.loginForm = this.fb.group({
+      username: [],
+      password: []
+    }) }
   
 
-  login(datos){
-    return this.httpClient.post('http://127.0.0.1:8000/api/users', datos);
+    onSubmit() {
+      this.jwtService.login(this.loginForm.value).subscribe(
+        res => {
+          this.tokenStorage(res);
+        },
+        error => {
+          this.err = error.error;
+        },() => {
+          this.authenticationStateService.setAuthState(true);
+          this.loginForm.reset()
+          this.router.navigate(['user-profile']);
+        }
+      );
+  }
+
+  tokenStorage(jwt){
+    this.tokenAuthService.setTokenStorage(jwt.access_token);
   }
 }
