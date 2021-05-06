@@ -18,7 +18,10 @@ export class JwtService {
   constructor(private http:HttpClient) { }
 
   signup(user: User): Observable<any> {
-    return this.http.post('http://127.0.0.1:8000/api/auth/register', user)
+    
+    var coso = this.http.post('http://127.0.0.1:8000/api/auth/register', user);
+    console.log(coso);
+    return coso;
   }
 
   login(user: User): Observable<any> {

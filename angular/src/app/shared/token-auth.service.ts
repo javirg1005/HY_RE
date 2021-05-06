@@ -36,8 +36,8 @@ export class TokenAuthService {
  }
 
   payload(token) {
-    //const jwtPayload = token.split('.')[1];
-    return JSON.parse(atob(jwt_decode(token)));
+    const jwtPayload = token.split('.')[1];
+    return JSON.parse(atob(jwtPayload));
   }
 
   // User state
