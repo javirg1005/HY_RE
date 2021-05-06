@@ -14,7 +14,7 @@ import { AuthenticationStateService } from '../../shared/authentication-state.se
 export class LoginFormComponent implements OnInit {
 
   loginForm: FormGroup;
-  err = null;
+  errors = null;
 
 
   ngOnInit(): void {
@@ -38,11 +38,11 @@ export class LoginFormComponent implements OnInit {
           this.tokenStorage(res);
         },
         error => {
-          this.err = error.error;
+          this.errors = error.error;
         },() => {
           this.authenticationStateService.setAuthState(true);
           this.loginForm.reset()
-          this.router.navigate(['user-profile']);
+          this.router.navigate(['']);
         }
       );
   }

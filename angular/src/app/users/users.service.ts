@@ -12,10 +12,6 @@ export class UsersService {
     httpClient: any; /* A ver si funciona */ 
     constructor(private http: HttpClient/*, private cookies: CookieService*/) {}
 
-    /*login(user: Any): Observable<any> {
-        return this.http.post("RUTA API KAWAII", user);
-    }*/
-
     login(datos){
         return this.httpClient.post('http://127.0.0.1:8000/api/login',datos); //funcion de llamada de login && DEBE RETORNAR UN TOKEN
     }

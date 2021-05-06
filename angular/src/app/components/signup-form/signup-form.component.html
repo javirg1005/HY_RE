@@ -17,6 +17,18 @@
       <br>
           <div class="input_div"> 
               <form [formGroup]='signupForm' (ngSubmit)='onSubmit()'> <!-- Añadir errores, ya estan programados -->
+                <div *ngIf="errors?.name" class="alert alert-danger mt-3">
+                  {{ errors?.name }}
+                </div>
+                <div *ngIf="errors?.email" class="alert alert-danger mt-3">
+                  {{ errors?.email }}
+                </div>
+                <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+                    {{ errors?.password }}
+                </div>
+                <div *ngIf="errors?.username" class="alert alert-danger mt-3">
+                  {{ errors?.username }}
+                </div>
                 <div class="input_div">
                   <input class="input_field" formControlName="name" type="text" value="" name="nombre" title="Enter name" placeholder="Introduce tu nombre"/>
                   <input class="input_field" formControlName="email" type="email" value="" name="email" title="Enter email" placeholder="Introduce tu email"/>
@@ -24,8 +36,8 @@
                 </div>
                 <div class="input_div">
                   <input class="input_field" formControlName="username" type="text" value="" name="username" title="Enter Username" placeholder="Introduce tu usuario"/>
-                  <input class="input_field" formControlName="vemail" type="email" value="" name="Vemail" title="Enter Vemail" placeholder="Verifica tu email"/>             
-                  <input class="input_field" formControlName="vpassword" type="password" value="" name="VPassword" title="Enter VPassword" placeholder="Verifica tu contraseña"/>
+                  <input class="input_field" type="email" value="" name="Vemail" title="Enter Vemail" placeholder="Verifica tu email"/>             
+                  <input class="input_field" type="password" value="" name="VPassword" title="Enter VPassword" placeholder="Verifica tu contraseña"/>
                 </div>
                 <div class="input_div">
                   <button class="BSignUp" type="submit"> Sign Up </button>

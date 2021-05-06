@@ -15,15 +15,24 @@
         <h1 class="title"> Absa </h1>
         <div class="input_div"> 
             <form [formGroup]='loginForm' (ngSubmit)='onSubmit()'>
-                <input class="input_field"  type="text" formControlName="usuario" value="" name="usuario" title="Enter username" placeholder="Introduce tu nombre de usuario" required="required"/>
+                <div *ngIf="errors?.username" class="alert alert-danger mt-3">
+                    {{ errors?.username }}
+                  </div>
+                  <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+                    {{ errors?.password }}
+                  </div>
+                  <div *ngIf="errors?.error" class="alert alert-danger mt-3">
+                    {{ errors?.error }}
+                  </div>
+                <input class="input_field"  type="text" formControlName="username" value="" name="usuario" title="Enter username" placeholder="Introduce tu nombre de usuario" required="required"/>
                 <input class="input_field"  type="password" formControlName="password" value=""  name="contraseña" title="Enter password" placeholder="Introduce tu contraseña" required="required"/>
+                <div class="opciones">  
+                    <a href="SignupForm"><h6> Regístrate </h6></a>
+                    <h6> ¿Has olvidado tu contraseña?</h6>
+                </div>
+                <button type="submit"> Log In </button>     
             </form>
-            <div class="opciones">  
-                <a href="SignupForm"><h6> Regístrate </h6></a>
-                <h6> ¿Has olvidado tu contraseña?</h6>
-            </div>
         </div>
-        <button type="submit"> Log In </button>     
     </div>
 </body>
 </html>

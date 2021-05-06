@@ -3,6 +3,18 @@
 <!-- <app-login-form></app-login-form> --> 
 <!-- <app-signup-form></app-signup-form> -->
 <!-- <app-mainpage> </app-mainpage> -->
-
-<router-outlet></router-outlet>
+    <body>
+        <nav class="navbar sticky">
+            <ul class="nav-links">
+                <li class="nav-item"><p class="logo">Absa</p></li>
+                <li class="nav-item"><a href=""><img class="nav-icon" src="../assets/Casita.png">Inmuebles</a></li>
+                <li class="nav-item"><a href=""><img class="nav-icon" src="../assets/Empleos.png">Empleos</a></li>
+            </ul>
+            <ul class="nav-forms">
+                <li class="nav-item"><a href="LoginForm">Login</a></li>
+                <li class="nav-item"><a href="SignupForm">Sign Up</a></li>
+            </ul>
+        </nav>
+        <router-outlet></router-outlet>
+    </body>
 </html>

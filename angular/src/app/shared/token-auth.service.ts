@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import jwt_decode from "jwt-decode";
 
 @Injectable({
   providedIn: 'root'
@@ -35,8 +36,8 @@ export class TokenAuthService {
  }
 
   payload(token) {
-    const jwtPayload = token.split('.')[1];
-    return JSON.parse(atob(jwtPayload));
+    //const jwtPayload = token.split('.')[1];
+    return JSON.parse(atob(jwt_decode(token)));
   }
 
   // User state

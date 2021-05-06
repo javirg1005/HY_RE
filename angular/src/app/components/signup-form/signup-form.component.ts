@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class SignupFormComponent implements OnInit {
 
   signupForm: FormGroup;
-  err = null;
+  errors = null;
 
 
   constructor(
@@ -23,9 +23,7 @@ export class SignupFormComponent implements OnInit {
         name: [''],
         username: [''],
         email: [''],
-        vmail: [''],
-        password: [''],
-        vpassword: ['']
+        password: ['']
       })
     }
   
@@ -33,17 +31,18 @@ export class SignupFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  onSubmit() {
+    console.log(this.signupForm.value);
     this.jwtService.signup(this.signupForm.value).subscribe(
       res => {
         console.log(res)
       },
       error => {
-        this.err = error.error;
+        this.errors = error.error;
       },
       () => {
         this.signupForm.reset()
-        this.router.navigate(['signin']);
+        this.router.navigate(['LoginForm']);
       }
     )
   }

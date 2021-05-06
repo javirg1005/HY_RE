@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap%27');
+
 * {
     margin: 0px;
     padding: 0px;
@@ -77,6 +79,7 @@ h6 {
     border: 0px;
     background: radial-gradient(93.93% 4131.77% at 6.07% 13.79%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 100%);
     font-size: 16.5px;
+    font-weight: 700;
     border-radius: 17px;
     margin-right: auto;
     margin-left: auto;
