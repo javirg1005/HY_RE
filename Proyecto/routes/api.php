@@ -32,4 +32,12 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('user','App\Http\Controllers\UserController@getAuthenticatedUser');
 });
 
-/* Sacar IDs de usuarios */
+/* Ruta para operaciones de la tabla Empleos */
+Route::get("/empleos", "App\Http\Controllers\EmpleoController@index");
+Route::get("/empleos/{id}", "App\Http\Controllers\EmpleoController@show");
+
+/* Ruta para operaciones de Inmuebles */
+Route::resource("/inmuebles", "App\Http\Controllers\InmuebleController");
+
+/* Ruta para operaciones de Actividades */
+Route::resource("/actividades", "App\Http\Controllers\ActividadesController");
