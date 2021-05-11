@@ -1,0 +1,83 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../../../assets/Fondo_dibujo.png");
+}
+
+.contenedor {    
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
+    width: 160vh;
+    height: 75vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 106px;
+
+    margin-top: 10px;
+}
+
+/* Panel izquierdo, con los filtros de búsqueda*/
+.filtros {    
+    width: 320px;
+    height: 70vh;
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 106px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
+    left: 15%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    margin-top: 10px;
+
+    color: #D43414;
+    font-family: "Montserrat";
+}
+
+.ofertas{
+    color: black;
+    font-family: "Montserrat";
+
+    width: 790px;
+    height: 70vh;
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 106px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    margin-top: 10px;    
+}
+
+.elemento{
+    font-size: 10px;
+}
+
+h1 {
+    font-size: 15px;
+    margin-top: 50px;
+    align-self: center;
+}
+
