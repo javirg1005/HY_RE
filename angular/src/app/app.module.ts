@@ -36,6 +36,9 @@ const rutas: Routes = [
   },
   {
     path: 'Info', component: InfoComponent
+  },
+  {
+    path: 'Ofertas', component: OfertasComponent
   }
 ]
 
