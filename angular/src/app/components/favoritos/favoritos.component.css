@@ -25,8 +25,9 @@ h1 {
     position: absolute;
     display: flex;
     flex-direction: column;
-    
-    width: 160vh;
+    align-content: center;
+
+    width: 161vh;
     height: 75vh;
     left: 50%;
     top: 50%;
@@ -54,5 +55,9 @@ h1 {
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
-    border-radius: 106px;
+    border-radius: 50px;
+    margin: 5px;
+    
+    display: flex;
+    flex-direction: column;
 }
