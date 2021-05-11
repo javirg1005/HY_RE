@@ -88,11 +88,17 @@ body {
     margin-top: 5px;
 }
 
+.order {
+    display: flex;
+    margin-top: 30px;
+}
+
 .ordenar {
     align-self: left;
     margin-left: 100px;
-    margin-top: 5px;
+    margin-top: -15px;
 }
+
 
 .ofertas{
     color: black;
@@ -113,10 +119,6 @@ body {
     top: 50%;
     transform: translate(-50%, -50%); 
     margin-top: 10px;    
-}
-
-.elemento{
-    font-size: 10px;
 }
 
 h1 {
@@ -188,4 +190,27 @@ h2 {
     margin-right: 6px;
     color: #D63610;
     font-size: 20px;
+}
+
+.subcontenedor {
+    display: flex;
+}
+
+.elemento{
+    width: 250px;
+    height: 80px;
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    
+    margin-left: 20px;
+    margin-right: 10px;
+    text-align: center;
+    display: flex;
 }
