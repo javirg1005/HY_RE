@@ -28,6 +28,9 @@ const rutas: Routes = [
   },
   {
     path: 'LoginForm', component: LoginFormComponent
+  },
+  {
+    path: 'Favoritos', component: FavoritosComponent
   }
 ]
 
