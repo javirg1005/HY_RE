@@ -13,6 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 //import { CookieService } from 'ngx-cookie-service';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { AuthHeaderInterceptor } from './shared/auth-header.interceptor';
+import { FavoritosComponent } from './components/favoritos/favoritos.component';
 
 
 const rutas: Routes = [
@@ -36,7 +37,8 @@ const rutas: Routes = [
     LoginFormComponent,
     SignupFormComponent,
     //MainPageComponent,
-    MainpageComponent
+    MainpageComponent,
+    FavoritosComponent
   ],
   imports: [
     BrowserModule,
