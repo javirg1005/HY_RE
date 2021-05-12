@@ -61,7 +61,6 @@ const rutas: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-/*    ,CookieService*/
   ],
   providers: [
     {

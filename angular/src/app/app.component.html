@@ -13,7 +13,7 @@
             </ul>
             <ul class="nav-forms">
                 <li class="nav-item" *ngIf="!isLoggedin"><a href="LoginForm">Login</a></li>
-                <li class="nav-item"><a href="SignupForm">Sign Up</a></li>
+                <li class="nav-item" *ngIf="!isLoggedin"><a href="SignupForm">Sign Up</a></li>
                 <li class="nav-item" *ngIf="isLoggedin"><button class="btn btn-dark" (click)="logOut()">Sign-out</button></li>
             </ul>
         </nav>

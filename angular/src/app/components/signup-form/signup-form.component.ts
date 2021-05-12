@@ -28,11 +28,9 @@ export class SignupFormComponent implements OnInit {
     }
   
 
-  ngOnInit(): void {
-  }
+  ngOnInit() {}
 
   onSubmit() {
-    console.log(this.signupForm.value);
     this.jwtService.signup(this.signupForm.value).subscribe(
       res => {
         console.log(res)
