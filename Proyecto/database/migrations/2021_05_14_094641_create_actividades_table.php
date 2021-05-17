@@ -4,27 +4,30 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmpleosTable extends Migration
+class CreateActividadesTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('empleos', function (Blueprint $table) {
-
+        Schema::create('actividades', function (Blueprint $table) {
             $table->id();
             $table->text('Titulo');
-            $table->text('Provincia');
-            $table->text('Ciudad');
-            $table->text('TipoContrato');
-            $table->string('Salario',25);
-            $table->text('Descripcion');
             $table->text('URL');
             $table->timestamps();
-
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('empleos');
+        Schema::dropIfExists('actividades');
     }
 }

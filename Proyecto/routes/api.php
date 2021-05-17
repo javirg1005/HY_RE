@@ -41,3 +41,6 @@ Route::resource("/inmuebles", "App\Http\Controllers\InmuebleController");
 
 /* Ruta para operaciones de Actividades */
 Route::resource("/actividades", "App\Http\Controllers\ActividadesController");
+
+/* Ruta para operaciones de Noticia */
+Route::resource("/noticias", "App\Http\Controllers\NoticiaController");
