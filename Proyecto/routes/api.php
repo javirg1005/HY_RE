@@ -37,10 +37,16 @@ Route::get("/empleos", "App\Http\Controllers\EmpleoController@index");
 Route::get("/empleos/{id}", "App\Http\Controllers\EmpleoController@show");
 
 /* Ruta para operaciones de Inmuebles */
-Route::resource("/inmuebles", "App\Http\Controllers\InmuebleController");
+Route::get("/inmuebles", "App\Http\Controllers\InmuebleController@index");
+
+Route::get("/inmuebles/{id}", "App\Http\Controllers\InmuebleController@getInmueble");
+Route::get("/inmuebles/hab/{habitaciones}", "App\Http\Controllers\InmuebleController@getInmuebleProvincia");
+Route::get("/inmuebles/addFav", "App\Http\Controllers\InmuebleController@addInmuebleFav");
 
 /* Ruta para operaciones de Actividades */
-Route::resource("/actividades", "App\Http\Controllers\ActividadesController");
+Route::get("/actividades", "App\Http\Controllers\ActividadController@index");
+Route::get("/actividades/{id}", "App\Http\Controllers\ActividadController@getActividad");
 
 /* Ruta para operaciones de Noticia */
-Route::resource("/noticias", "App\Http\Controllers\NoticiaController");
+Route::get("/noticias", "App\Http\Controllers\NoticiaController@index");
+Route::get("/noticias/{id}", "App\Http\Controllers\NoticiaController@getNoticia");

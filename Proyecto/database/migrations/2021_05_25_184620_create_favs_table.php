@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateActividadesTable extends Migration
+class CreateFavsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateActividadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('actividades', function (Blueprint $table) {
+        Schema::create('favs', function (Blueprint $table) {
             $table->id();
-            $table->text('Titulo');
-            $table->text('URL');
+            $table->unsignedBigInteger('Id_usu');
+            $table->unsignedBigInteger('Id_inmueble');
             $table->timestamps();
+            $table->foreign('Id_usu')->references('id')->on('users');
+            $table->foreign('Id_inmueble')->references('id')->on('inmuebles');
         });
     }
 
@@ -28,6 +30,6 @@ class CreateActividadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actividades');
+        Schema::dropIfExists('favs');
     }
 }

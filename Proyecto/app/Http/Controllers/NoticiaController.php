@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inmueble;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
-class InmuebleController extends Controller
+class NoticiaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,36 +15,15 @@ class InmuebleController extends Controller
      */
     public function index()
     {
-        $resp = Inmueble::all();
+        $resp = Noticia::all();
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
-    public function getInmueble($id) {
-        $resp = Inmueble::where("id", $id)->get();
+    public function getNoticia($id) {
+        $resp = Noticia::where("id", $id)->get();
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
-    public function getInmuebleProvincia($hab) {
-        $resp = Inmueble::where("habitaciones", $hab)->get();
-        return response()->json($resp,JsonResponse::HTTP_OK);
-    }
-    /*
-    #Este hay que meterlo en un form que es el input del boton fav
-    public function addInmuebleFav($id, $idUsu, Request $request) {
-        $this->validate($request, [
-        'ID_User' => 'required',
-        'id' => 'required',
-        'ID_House' => 'required'
-        ]);
-        $fav = new Fav([
-            'ID_User' => $request->get('ID_User'),
-            'id' => $request->get('id'),
-            'ID_House' => $request->get('ID_House')
-        ]);
-        $fav->save();
-        return redirect()->route('/inmuebles/addFav')->with('success','Data Added');
-    }
-    */
     /**
      * Show the form for creating a new resource.
      *
@@ -69,10 +48,10 @@ class InmuebleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Inmueble  $inmueble
+     * @param  \App\Models\Noticia  $noticia
      * @return \Illuminate\Http\Response
      */
-    public function show(Inmueble $inmueble)
+    public function show(Noticia $noticia)
     {
         //
     }
@@ -80,10 +59,10 @@ class InmuebleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Inmueble  $inmueble
+     * @param  \App\Models\Noticia  $noticia
      * @return \Illuminate\Http\Response
      */
-    public function edit(Inmueble $inmueble)
+    public function edit(Noticia $noticia)
     {
         //
     }
@@ -92,10 +71,10 @@ class InmuebleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Inmueble  $inmueble
+     * @param  \App\Models\Noticia  $noticia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Inmueble $inmueble)
+    public function update(Request $request, Noticia $noticia)
     {
         //
     }
@@ -103,10 +82,10 @@ class InmuebleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Inmueble  $inmueble
+     * @param  \App\Models\Noticia  $noticia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Inmueble $inmueble)
+    public function destroy(Noticia $noticia)
     {
         //
     }

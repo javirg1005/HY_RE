@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Actividad;
+use App\Models\Fav;
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
 
-class ActividadController extends Controller
+class FavController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,13 +14,7 @@ class ActividadController extends Controller
      */
     public function index()
     {
-        $resp = Actividad::all();
-        return response()->json($resp,JsonResponse::HTTP_OK);
-    }
-
-    public function getActividad($id) {
-        $resp = Actividad::where("id", $id)->get();
-        return response()->json($resp,JsonResponse::HTTP_OK);
+        //
     }
 
     /**
@@ -48,10 +41,10 @@ class ActividadController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Actividad  $actividad
+     * @param  \App\Models\Fav  $fav
      * @return \Illuminate\Http\Response
      */
-    public function show(Actividad $actividad)
+    public function show(Fav $fav)
     {
         //
     }
@@ -59,10 +52,10 @@ class ActividadController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Actividad  $actividad
+     * @param  \App\Models\Fav  $fav
      * @return \Illuminate\Http\Response
      */
-    public function edit(Actividad $actividad)
+    public function edit(Fav $fav)
     {
         //
     }
@@ -71,10 +64,10 @@ class ActividadController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Actividad  $actividad
+     * @param  \App\Models\Fav  $fav
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Actividad $actividad)
+    public function update(Request $request, Fav $fav)
     {
         //
     }
@@ -82,10 +75,10 @@ class ActividadController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Actividad  $actividad
+     * @param  \App\Models\Fav  $fav
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Actividad $actividad)
+    public function destroy(Fav $fav)
     {
         //
     }
