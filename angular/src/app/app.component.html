@@ -1,15 +1,11 @@
 <html>
-<!-- <app-main-page></app-main-page> -->
-<!-- <app-login-form></app-login-form> --> 
-<!-- <app-signup-form></app-signup-form> -->
-<!-- <app-mainpage> </app-mainpage> -->
     <body>
         <nav class="navbar sticky">
             <ul class="nav-links">
                 <li class="nav-item"><a class="logo" href="Mainpage">Absa</a></li>
                 <li class="nav-item"><a href="Ofertas"><img class="nav-icon" src="../assets/Casita.png">Inmuebles</a></li>
                 <li class="nav-item"><a href="Ofertas_Trabajo"><img class="nav-icon" src="../assets/Empleos.png">Empleos</a></li>
-                <li class="nav-item"><a href="Favoritos"><img class="nav-icon">Favoritos</a></li>
+                <li class="nav-item" *ngIf="isLoggedin"><a href="Favoritos"><img class="nav-icon">Favoritos</a></li>
             </ul>
             <ul class="nav-forms">
                 <li class="nav-item" *ngIf="!isLoggedin"><a href="LoginForm">Login</a></li>
@@ -17,7 +13,6 @@
                 <li class="nav-item" *ngIf="isLoggedin"><button class="btn btn-dark" (click)="logOut()">Sign-out</button></li>
             </ul>
         </nav>
-        
         <router-outlet></router-outlet>
     </body>
 </html>

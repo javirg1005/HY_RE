@@ -6,7 +6,7 @@
         <!-- Font -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
-        <title> PC2 y PC3 </title>
+        <title> Perfil - Favoritos </title>
       </head>
     <body>
         <!-- Contenedor con los campos de búsqueda -->
@@ -15,6 +15,23 @@
               <h1> Mis favoritos </h1>
             </div>
             <div class='contenedorPrime'>
+                <div *ngFor="let x of data" class="subcontenedor"> 
+                    <!-- Foto -->
+                    <a href="Info">
+                        <div>
+                            <img src="angular\src\assets\info-photo.png" alt="foto de casa">
+                        </div>
+                        <div>
+                            <p>Titulo: {{ x.Titulo }}</p>
+                            <p>Nº habitaciones: {{ x.Habitaciones }} Metros cuadrados: {{ x.Metros }}</p>
+                            <p>Precio: {{ x.Precio }}</p>
+                        </div>
+                        
+                    </a>
+                </div>
+                
+                
+                <!--    
                 <div class='subcontenedor'>  
                     <div class='imagen'>
                         
@@ -87,6 +104,7 @@
                         Contenido
                     </div>
                 </div>
+            -->
             </div>
         </div> 
     </body> 

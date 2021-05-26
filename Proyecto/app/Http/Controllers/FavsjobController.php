@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Favsjob;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class FavsjobController extends Controller
 {
@@ -14,7 +15,14 @@ class FavsjobController extends Controller
      */
     public function index()
     {
-        //
+        $resp = Favsjob::all();
+        return response()->json($resp,JsonResponse::HTTP_OK);
+    }
+ 
+    public function getFavsByUsuId($userId)
+    {
+        $resp = Favsjob::where("Id_usu", $userId)->get();
+        return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
     /**

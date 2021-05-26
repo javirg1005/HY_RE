@@ -50,3 +50,11 @@ Route::get("/actividades/{id}", "App\Http\Controllers\ActividadController@getAct
 /* Ruta para operaciones de Noticia */
 Route::get("/noticias", "App\Http\Controllers\NoticiaController@index");
 Route::get("/noticias/{id}", "App\Http\Controllers\NoticiaController@getNoticia");
+
+/* Ruta para operaciones de Inmuebles Favoritos */
+Route::get("/favs", "App\Http\Controllers\FavController@index");
+Route::get("/favs/{userId}", "App\Http\Controllers\FavController@getFavsByUsuId");
+
+/* Ruta para operaciones de Empleos Favoritos */
+Route::get("/favsjob", "App\Http\Controllers\FavsjobController@index");
+Route::get("/favsjob/{userId}", "App\Http\Controllers\FavsjobController@getFavsByUsuId");
