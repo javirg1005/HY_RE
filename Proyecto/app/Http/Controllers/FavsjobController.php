@@ -21,7 +21,11 @@ class FavsjobController extends Controller
  
     public function getFavsByUsuId($userId)
     {
-        $resp = Favsjob::where("Id_usu", $userId)->get();
+        $resp = DB::table('favsjob')
+                    ->join('users', 'favsjob.Id_usu', 'users.id')
+                    ->join('empleos', 'favsjob.Id_job', 'empleos.id')
+                    ->select('users.id', 'empleos.*')
+                    ->where("favsjob.Id_usu", $userId)->get();
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 

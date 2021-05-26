@@ -150,3 +150,9 @@ h4 {
 .componente-txt {
     margin-bottom: 20px;
 }
+
+.btn_favs {
+    background-color: transparent;
+    border: transparent;
+    width: 20px;
+}

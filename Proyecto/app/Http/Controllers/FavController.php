@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fav;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
@@ -21,7 +22,11 @@ class FavController extends Controller
 
     public function getFavsByUsuId($userId)
     {
-        $resp = Fav::where("Id_usu", $userId)->get();
+        $resp = DB::table('favs')
+                    ->join('users', 'favs.Id_usu', 'users.id')
+                    ->join('inmuebles', 'favs.Id_inmueble', 'inmuebles.id')
+                    ->select('users.id', 'inmuebles.*')
+                    ->where("favs.Id_usu", $userId)->get();
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
