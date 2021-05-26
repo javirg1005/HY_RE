@@ -9,17 +9,19 @@ import { HttpClient } from "@angular/common/http";
 export class OfertasComponent implements OnInit {
 
   title = 'image-gallery';
-  private data:any = []
+  public data: any = []
 
-  constructor() { 
-    private http: HttpClient;
-  }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getData();
+  }
+   
+  getData() {
     const url = 'http://127.0.0.1:8000/api/inmuebles';
     this.http.get(url).subscribe((res) => {
       this.data = res
       console.log(this.data)
+    })
   }
-
 }

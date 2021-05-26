@@ -46,11 +46,19 @@
                 </div>
 
                 <div class="subcontenedor"> 
-                    <div class="elemento"> 
+                    <div *ngFor="let x of data" class="elemento"> 
                         <!-- Foto -->
-                        <br>
-                        <a href="Info"><h4> Texto de prueba  </h4></a>
-                        <h4> Ubicación </h4>
+                        <a href="Info">
+                            <div>
+                                <img src="angular\src\assets\info-photo.png" alt="foto de casa">
+                            </div>
+                            <div>
+                                <p>Titulo: {{ x.Titulo }}</p>
+                                <p>Nº habitaciones: {{ x.Habitaciones }} Metros cuadrados: {{ x.Metros }}</p>
+                                <p>Precio: {{ x.Precio }}</p>
+                            </div>
+                            
+                        </a>
                     </div>
                 </div>
 

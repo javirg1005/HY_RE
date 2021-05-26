@@ -36,7 +36,7 @@
             </div>
             
             <div class="ofertas"> 
-                <h3 class="sugerencia"> Le sugerimos los siguientes lugares: </h3>
+                <h3 class="sugerencia"> Le sugerimos los siguientes trabajos: </h3>
                 <br>
                 <div class="order" > 
                     <h3 class="ordenar"> Ordenar por: </h3>
@@ -46,12 +46,16 @@
                 </div>
 
                 <div class="subcontenedor"> 
-                    <div class="elemento"> 
-                        <!-- Foto -->
-                        <br>
-                        <a href="Info"><h4> Texto de prueba  </h4></a>
-                        <h4> Ubicación </h4>
-                    </div>
+                    
+                        <div *ngFor="let x of data" class="elemento"> 
+                            <!-- Foto -->
+                            <a href="Info">
+                                <p>ID: {{ x.Titulo }}</p>
+                                <p>Provincia: {{ x.Provincia }}</p>
+                                <p>Salario: {{ x.Salario }}</p>
+                            </a>    
+                        </div>
+                    
                 </div>
 
             </div>

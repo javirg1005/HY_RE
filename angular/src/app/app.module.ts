@@ -46,7 +46,7 @@ const rutas: Routes = [
     path: 'Ofertas_Trabajo', component: OfertastrabajoComponent
   },
   {
-    path: 'Combobox', component: ComboboxComponent
+    path: 'combobox', component: ComboboxComponent
   }
 ]
 
