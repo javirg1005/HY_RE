@@ -28,7 +28,6 @@
                 <div class="subcontenedor"> 
                     <img class="icono" src="assets/Casa.png">
                     <h4> ¿Cuántos vecinos le gustaría tener? </h4>
-                    <br>
                     <div class="slidecontainer">
                         <span class="numero_inicio"> 0</span> 
                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
@@ -39,11 +38,10 @@
                     <img class="icono" src="assets/Internet.png">
                     <h4> ¿Qué provincia te gusta más? </h4>
                     <br>
-                    <div class="slidecontainer">
-                        <span class="baja"> Baja </span> 
-                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                        <span class="alta"> Alta </span>
-                    </div>
+                    <br>
+                    <br>
+                    <app-combo-box></app-combo-box>
+                    
                 </div>
             </div>
             <button href="Ofertas"> Buscar </button>

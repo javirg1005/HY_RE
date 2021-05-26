@@ -1,18 +1,18 @@
 .combobox {
     margin: auto;
-
-    /* Mis márgenes para la prueba*/
-    /*margin-left: 20px;
-    margin-top: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;*/
 }
+
 .combobox-input {
-    width: 330px;
+    width: 200px;
     border: none;
     padding: 10px;
     font-size: 18px;
     border-bottom: 2px solid rgb(165, 112, 112);
+    margin-left: 55px;
+    margin-top: -20px;
+    background-color: transparent;
+    color: #81553F;
+    text-align: center;
 }
 .combobox-input:focus {
     outline-style: none;
@@ -29,7 +29,7 @@
 }
 .selected {
     color: cornsilk;
-    background-color: rgb(165, 112, 112);
+    background-color: /*rgb(165, 112, 112)*/#81553F;
 }
 list-item {
     display: block;
@@ -37,7 +37,7 @@ list-item {
     padding: 10px;
 }
 list-item:hover {
-    background-color: grey;
+    background-color: /*grey*/#81553F;
     color: white;
 }
 .error-text {
