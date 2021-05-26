@@ -17,6 +17,7 @@ import { FavoritosComponent } from './components/favoritos/favoritos.component';
 import { OfertasComponent } from './components/ofertas/ofertas.component';
 import { InfoComponent } from './components/info/info.component';
 import { ComboboxComponent } from './components/combobox/combobox.component';
+import { OfertastrabajoComponent } from './components/ofertastrabajo/ofertastrabajo.component';
 
 
 const rutas: Routes = [
@@ -40,6 +41,9 @@ const rutas: Routes = [
   },
   {
     path: 'Ofertas', component: OfertasComponent
+  },
+  {
+    path: 'Ofertas_Trabajo', component: OfertastrabajoComponent
   }
 ]
 
@@ -53,7 +57,8 @@ const rutas: Routes = [
     FavoritosComponent,
     OfertasComponent,
     InfoComponent,
-    ComboboxComponent
+    ComboboxComponent,
+    OfertastrabajoComponent
   ],
   imports: [
     BrowserModule,

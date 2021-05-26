@@ -1,0 +1,212 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../../../assets/Fondo_dibujo.png");
+}
+
+.contenedor {    
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+
+    width: 150vh;
+    height: 75vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 60px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Panel izquierdo, con los filtros de búsqueda*/
+.filtros {    
+    width: 320px;
+    height: 70vh;
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 90px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+
+    color: #D43414;
+    font-family: "Montserrat";
+}
+
+.combobox {
+    width: 200px;
+    height: 30px;
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    
+    border-radius: 90px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, -50%); 
+}
+
+.flecha {
+    width:10px;
+    height:10px;
+    position: absolute;
+    margin-left: 170px;
+    margin-top: 7px;
+}
+
+.icono {
+    width:25px;
+    height:25px;
+    margin-top: 0px;  
+    color: white;  
+}
+
+.sugerencia {
+    align-self: center;
+    margin-left: 60px;
+    margin-top: 5px;
+}
+
+.order {
+    display: flex;
+    margin-top: 30px;
+}
+
+.ordenar {
+    align-self: left;
+    margin-left: 100px;
+    margin-top: -15px;
+}
+
+
+.ofertas{
+    color: black;
+    font-family: "Montserrat";
+
+    width: 110vh;
+    height: 70vh;
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 90px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+     
+    margin-top: 10px;    
+}
+
+h1 {
+    font-size: 15px;
+    margin-top: 40px;
+    align-self: center;
+}
+
+h2 {
+    color: white;
+    font-size: 15px;
+    margin-top: 30px;
+    align-self: center;
+}
+
+
+/* -------------- Barra del precio -------------- */
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+    margin-top: 2px;
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 50%; /* Full-width */
+    height: 3px; /* Specified height */
+    background: #D43414; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    margin-top: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 100px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #D43414; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 100px;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #D43414; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.numero_inicio {
+    margin-left: 50px;
+    color: #D63610;
+}
+
+.numero_fin{
+    margin-right: 6px;
+    color: #D63610;
+    font-size: 20px;
+}
+
+.subcontenedor {
+    display: flex;
+}
+
+.elemento{
+    width: 250px;
+    height: 80px;
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    
+    margin-left: 20px;
+    margin-right: 10px;
+    text-align: center;
+    display: flex;
+}
