@@ -16,6 +16,7 @@ import { AuthHeaderInterceptor } from './shared/auth-header.interceptor';
 import { FavoritosComponent } from './components/favoritos/favoritos.component';
 import { OfertasComponent } from './components/ofertas/ofertas.component';
 import { InfoComponent } from './components/info/info.component';
+import { ComboboxComponent } from './components/combobox/combobox.component';
 
 
 const rutas: Routes = [
@@ -51,7 +52,8 @@ const rutas: Routes = [
     MainpageComponent,
     FavoritosComponent,
     OfertasComponent,
-    InfoComponent
+    InfoComponent,
+    ComboboxComponent
   ],
   imports: [
     BrowserModule,
