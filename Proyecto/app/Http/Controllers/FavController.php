@@ -25,7 +25,7 @@ class FavController extends Controller
         $resp = DB::table('favs')
                     ->join('users', 'favs.Id_usu', 'users.id')
                     ->join('inmuebles', 'favs.Id_inmueble', 'inmuebles.id')
-                    ->select('users.id', 'inmuebles.*')
+                    ->select('users.id as userId', 'inmuebles.*')
                     ->where("favs.Id_usu", $userId)->get();
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
