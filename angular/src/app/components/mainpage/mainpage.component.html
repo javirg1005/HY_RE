@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <script src="https://kit.fontawesome.com/d2c91c8654.js" crossorigin="anonymous"></script>
-        <!-- Font -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
-        <title> PC2 y PC3 </title>
-      </head>
-    <body>
-        <!-- Título de la Página Principal -->
-        <h1> <span style="color: #F2E06E">¡</span>Encuentra tu zona<span style="color: #F2E06E">!</span> </h1>
-
-        <!-- Contenedor con los campos de búsqueda -->
-        <div class="contenedor">
-            <h3> Encuentra tu inmueble ideal para irte a vivir a la España rural con este sencillo buscador: </h3>   
-            <div class='subcontenedor_prime'>            
-                <div class="subcontenedor"> 
-                    <img class="icono" src="assets/Euro.png">
-                    <h4> ¿Cuánto es lo máximo que <br> quieres pagar? </h4>
-                    <div class="slidecontainer">
-                        <span class="numero_inicio"> 0</span> 
-                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                        <span class="numero_fin"> ∞ </span>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/d2c91c8654.js" crossorigin="anonymous"></script>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
+    <title> PC2 y PC3 </title>
+</head>
+<body>
+    <!-- Título de la Página Principal -->
+    <h1> <span style="color: #F2E06E">¡</span>Encuentra tu zona<span style="color: #F2E06E">!</span> </h1>
+    
+    <!-- Contenedor con los campos de búsqueda -->
+    <div class="contenedor">
+        <h3> Encuentra tu inmueble ideal para irte a vivir a la España rural con este sencillo buscador: </h3>   
+        <div class='subcontenedor_prime'>            
+            <div class="subcontenedor"> 
+                <img class="icono" src="assets/Euro.png">
+                <h4> ¿Cuánto es lo máximo que <br> quieres pagar? </h4>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <span class="numero_fin"> ∞ </span>
                 </div>
-                <div class="subcontenedor"> 
-                    <img class="icono" src="assets/Casa.png">
-                    <h4> ¿Cuántos vecinos le gustaría tener? </h4>
-                    <div class="slidecontainer">
-                        <span class="numero_inicio"> 0</span> 
-                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                        <span class="numero_fin"> ∞ </span>
-                    </div>
+            </div>
+            <div class="subcontenedor"> 
+                <img class="icono" src="assets/Casa.png">
+                <h4> ¿Cuántos vecinos le gustaría tener? </h4>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <span class="numero_fin"> ∞ </span>
                 </div>
-                <div class="subcontenedor"> 
-                    <img class="icono" src="assets/Internet.png">
-                    <h4> ¿Qué provincia te gusta más? </h4>
+            </div>
+            <div class="subcontenedor"> 
+                <img class="icono_provincia" src="assets/provincia.png">
+                <div class="provincia"> <h4> ¿Qué provincia te gusta más? </h4>
                     <br>
                     <br>
                     <br>
                     <app-combo-box></app-combo-box>
-                    
                 </div>
+                
             </div>
-            <button href="Ofertas"> Buscar </button>
-        </div> 
-    </body> 
+        </div>
+        <button href="Ofertas"> Buscar </button>
+    </div> 
+</body> 
 </html>

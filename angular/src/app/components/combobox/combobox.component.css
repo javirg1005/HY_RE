@@ -7,13 +7,17 @@
     border: none;
     padding: 10px;
     font-size: 18px;
-    border-bottom: 2px solid rgb(165, 112, 112);
+    border-bottom: 2px solid /*rgb(165, 112, 112)*/#D43414;
     margin-left: 55px;
     margin-top: -20px;
     background-color: transparent;
-    color: #81553F;
+    color: #D43414;
     text-align: center;
 }
+.combobox-input::placeholder {
+    color: #D43414;
+}
+
 .combobox-input:focus {
     outline-style: none;
 }
@@ -29,7 +33,7 @@
 }
 .selected {
     color: cornsilk;
-    background-color: /*rgb(165, 112, 112)*/#81553F;
+    background-color: #D43414;
 }
 list-item {
     display: block;
@@ -37,7 +41,7 @@ list-item {
     padding: 10px;
 }
 list-item:hover {
-    background-color: /*grey*/#81553F;
+    background-color: #D43414;
     color: white;
 }
 .error-text {
