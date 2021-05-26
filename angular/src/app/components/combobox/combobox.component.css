@@ -1,5 +1,11 @@
 .combobox {
     margin: auto;
+
+    /* Mis márgenes para la prueba*/
+    /*margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;*/
 }
 .combobox-input {
     width: 330px;

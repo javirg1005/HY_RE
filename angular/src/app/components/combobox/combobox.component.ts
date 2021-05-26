@@ -5,7 +5,11 @@ templateUrl: './combobox.component.html',
 styleUrls: ['./combobox.component.css']
 })
 export class ComboboxComponent implements OnInit {
-    @Input() list: string[];
+    @Input() list: string[] = ["Albacete", "Alicante", "Almería", "Álava", "Asturias", "Ávila", "Badajoz", "Baleares (Islas)", 
+    "Barcelona", "Vizcaya", "Burgos", "Cáceres", "Cádiz", "Cantabria", "Castellón", "Ceuta", "Ciudad Real", "Córdoba", "A Coruña",
+    "Cuenca", "Gipuzkoa", "Girona", "Granada", "Guadalajara", "Huelva", "Huesca", "Jaén", "León", "Lleida", "Lugo", "Madrid", "Málaga",
+    "Melilla", "Murcia", "Navarra", "Ourense", "Palencia", "Las Palmas", "Pontevedra", "La Rioja", "Salamanca", "Santa Cruz de Tenerife", 
+    "Segovia", "Sevilla", "Soria", "Tarragona", "Teruel", "Toledo", "Valencia", "Valladolid", "Zamora", "Zaragoza"];
     // two way binding for input text
     inputItem = '';
     // enable or disable visiblility of dropdown
