@@ -201,15 +201,15 @@ h2 {
 a {
     text-decoration: none;
     color: black;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .elemento{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 475px;
+    width: 500px;
     height: 100px;
     margin-bottom: 20px;
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
@@ -223,4 +223,13 @@ a {
     margin-left: 20px;
     margin-right: 10px;
     padding: 10px;
+}
+
+.imagen {
+    width: 25%;
+    float: left;
+}
+
+.datos {
+    margin-left: 10px;
 }

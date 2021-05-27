@@ -15,7 +15,7 @@
     <div class="contenedor"> 
       <h1> ¡Regístrate! </h1>
       <br>
-          <div class="input_div"> 
+          <div class="column"> 
               <form [formGroup]='signupForm' (ngSubmit)='onSubmit()'> <!-- Añadir errores, ya estan programados -->
                 <div *ngIf="errors?.name" class="alert alert-danger mt-3">
                   {{ errors?.name }}
@@ -30,14 +30,34 @@
                   {{ errors?.username }}
                 </div>
                 <div class="input_div">
-                  <input class="input_field" formControlName="name" type="text" value="" name="nombre" title="Enter name" placeholder="Introduce tu nombre"/>
-                  <input class="input_field" formControlName="email" type="email" value="" name="email" title="Enter email" placeholder="Introduce tu email"/>
-                  <input class="input_field" formControlName="password" type="password" value="" name="Password" title="Enter Password" placeholder="Introduce tu contraseña"/>
+                  <div class="column">
+                    <label for="nombre">Introduzca su nombre</label>
+                    <input class="input_field" formControlName="name" type="text" value="" name="nombre" title="Enter name" placeholder="Nombre"/>
+                  </div>
+                  <div class="column">
+                    <label for="username">Introduzca su usuario</label>
+                    <input class="input_field" formControlName="username" type="text" value="" name="username" title="Enter Username" placeholder="Usuario"/>
+                  </div>
                 </div>
                 <div class="input_div">
-                  <input class="input_field" formControlName="username" type="text" value="" name="username" title="Enter Username" placeholder="Introduce tu usuario"/>
-                  <input class="input_field" type="email" value="" name="Vemail" title="Enter Vemail" placeholder="Verifica tu email"/>             
-                  <input class="input_field" type="password" value="" name="VPassword" title="Enter VPassword" placeholder="Verifica tu contraseña"/>
+                  <div class="column">
+                    <label for="password">Introduzca su contraseña</label>
+                    <input class="input_field" formControlName="password" type="password" value="" name="Password" title="Enter Password" placeholder="Contraseña"/>
+                  </div>
+                  <div class="column">
+                    <label for="VPassword">Confirme su contraseña</label>
+                    <input class="input_field" type="password" value="" name="VPassword" title="Enter VPassword" placeholder="Confirmar contraseña"/>
+                  </div>
+                </div>
+                <div class="input_div">
+                  <div class='column'>
+                    <label for="email">Introduzca su email</label>
+                    <input class="input_field" formControlName="email" type="email" value="" name="email" title="Enter email" placeholder="Email"/>
+                  </div>
+                  <div class='column'>
+                    <label for="Vemail">Confirme su email</label>
+                    <input class="input_field" type="email" value="" name="Vemail" title="Enter Vemail" placeholder="Confirmar email"/>   
+                  </div>          
                 </div>
                 <div class="input_div">
                   <button class="BSignUp" type="submit"> Sign Up </button>
