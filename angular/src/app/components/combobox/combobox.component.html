@@ -7,9 +7,9 @@
     <i *ngIf="showError" class="error-text">Valor inválido.</i>
     <div class="combobox-options" *ngIf="!listHidden">
         <list-item *ngFor="let item of filteredList;let i = index"
-        [ngClass]="{'selected': i===selectedIndex}"
-        (click)="selectItem(i)">
-        {{item}}
-    </list-item>
-</div>
+            [ngClass]="{'selected': i===selectedIndex}"
+            (click)="selectItem(i)">
+            {{item}}
+        </list-item>
+    </div>
 </div>

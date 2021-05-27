@@ -8,6 +8,7 @@ body {
     background-image: url("../../../assets/Fondo_dibujo.png");
 }
 
+/* Panel central */
 .contenedor {    
     position: absolute;
     display: flex;
@@ -49,31 +50,6 @@ body {
     font-family: "Montserrat";
 }
 
-.combobox {
-    width: 200px;
-    height: 30px;
-    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-sizing: border-box;
-    
-    border-radius: 90px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%, -50%); 
-}
-
-.flecha {
-    width:10px;
-    height:10px;
-    position: absolute;
-    margin-left: 170px;
-    margin-top: 7px;
-}
-
 .icono {
     width:25px;
     height:25px;
@@ -84,12 +60,14 @@ body {
 .sugerencia {
     align-self: center;
     margin-left: 60px;
-    margin-top: 5px;
+    margin-top: 30px;
 }
 
+/* Div y texto de ordenar por*/
 .order {
     display: flex;
-    margin-top: 30px;
+    margin-top: 20px;
+    align-items: right;
 }
 
 .ordenar {
@@ -98,7 +76,7 @@ body {
     margin-top: -15px;
 }
 
-
+/* Panel derecho con las ofertas, títulos y demás */
 .ofertas{
     color: black;
     font-family: "Montserrat";
@@ -128,6 +106,12 @@ h2 {
     font-size: 15px;
     margin-top: 30px;
     align-self: center;
+}
+
+h4 {
+    font-size: 12px;
+    margin-top: 30px;
+    align-self: right;
 }
 
 
@@ -188,6 +172,8 @@ h2 {
     font-size: 20px;
 }
 
+
+/* Recuadro con los cuadrados de las ofertas*/
 .subcontenedor {
     display: flex;
     flex-direction: row;
@@ -204,6 +190,7 @@ a {
     font-size: 12px;
 }
 
+/* Cada recuadro individual con las ofertas*/
 .elemento{
     display: flex;
     flex-direction: column;
