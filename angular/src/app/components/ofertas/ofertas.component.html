@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="subcontenedor"> 
-                    <div *ngFor="let x of data" class="elemento"> 
+                    <div *ngFor="let x of data | paginate: { itemsPerPage: 16, currentPage: page}" class="elemento"> 
                         <!-- Foto -->
                         <a href="Info">
                             <div>
@@ -64,10 +64,8 @@
                         </a>
                     </div>
                 </div>
-
+                <pagination-controls (pageChange)="handlePageChange($event)"></pagination-controls>
             </div>
-        
         </div> 
     </body>
-
 </html>

@@ -29,7 +29,7 @@ export class AppComponent {
   logOut() {
     this.authenticationStateService.setAuthState(false);
     this.tokenAuthService.destroyToken();
-    this.router.navigate(['MainPage']);
+    this.router.navigate(['']);
   }  
 
 }

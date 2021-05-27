@@ -10,11 +10,16 @@ export class OfertasComponent implements OnInit {
 
   title = 'image-gallery';
   public data: any = []
+  page = 1;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getData();
+  }
+
+  handlePageChange(event) {
+    this.page = event;
   }
    
   getData() {
