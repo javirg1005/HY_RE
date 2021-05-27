@@ -42,8 +42,8 @@ export class LoginFormComponent implements OnInit {
           this.errors = error.error;
         },() => {
           this.authenticationStateService.setAuthState(true);
-          //this.loginForm.reset()
-          //this.router.navigate(['']);
+          this.loginForm.reset()
+          this.router.navigate(['']);
         }
       );
   }
