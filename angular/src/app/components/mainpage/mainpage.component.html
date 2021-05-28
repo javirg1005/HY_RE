@@ -14,38 +14,40 @@
     
     <!-- Contenedor con los campos de búsqueda -->
     <div class="contenedor">
-        <h3> Encuentra tu inmueble ideal para irte a vivir a la España rural con este sencillo buscador: </h3>   
-        <div class='subcontenedor_prime'>            
-            <div class="subcontenedor"> 
-                <img class="icono" src="assets/Euro.png">
-                <h4> ¿Cuánto es lo máximo que <br> quieres pagar? </h4>
-                <div class="slidecontainer">
-                    <span class="numero_inicio"> 0</span> 
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                    <span class="numero_fin"> ∞ </span>
+        <h3> Encuentra tu inmueble ideal para irte a vivir a la España rural con este sencillo buscador: </h3>
+        <form [formGroup]='searchForm'>
+            <div class='subcontenedor_prime'>            
+                <div class="subcontenedor"> 
+                    <img class="icono" src="assets/Euro.png">
+                    <h4> ¿Cuánto es lo máximo que <br> quieres pagar? </h4>
+                    <div class="slidecontainer">
+                        <span class="numero_inicio"> 0</span> 
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <span class="numero_fin"> ∞ </span>
+                    </div>
+                </div>
+                <div class="subcontenedor"> 
+                    <img class="icono" src="assets/Casa.png">
+                    <h4> ¿Cuántos vecinos le gustaría tener? </h4>
+                    <div class="slidecontainer">
+                        <span class="numero_inicio"> 0</span> 
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <span class="numero_fin"> ∞ </span>
+                    </div>
+                </div>
+                <div class="subcontenedor"> 
+                    <img class="icono_provincia" src="assets/provincia.png">
+                    <div class="provincia"> <h4> ¿Qué provincia te gusta más? </h4>
+                        <br>
+                        <br>
+                        <br>
+                        <app-combo-box></app-combo-box>
+                    </div>
+                    
                 </div>
             </div>
-            <div class="subcontenedor"> 
-                <img class="icono" src="assets/Casa.png">
-                <h4> ¿Cuántos vecinos le gustaría tener? </h4>
-                <div class="slidecontainer">
-                    <span class="numero_inicio"> 0</span> 
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                    <span class="numero_fin"> ∞ </span>
-                </div>
-            </div>
-            <div class="subcontenedor"> 
-                <img class="icono_provincia" src="assets/provincia.png">
-                <div class="provincia"> <h4> ¿Qué provincia te gusta más? </h4>
-                    <br>
-                    <br>
-                    <br>
-                    <app-combo-box></app-combo-box>
-                </div>
-                
-            </div>
-        </div>
-        <button href="Ofertas"> Buscar </button>
+            <button href="Ofertas"> Buscar </button>
+        </form>
     </div> 
 </body> 
 </html>

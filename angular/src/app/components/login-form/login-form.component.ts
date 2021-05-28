@@ -32,20 +32,20 @@ export class LoginFormComponent implements OnInit {
     }) }
   
 
-    onSubmit() {
-      this.jwtService.login(this.loginForm.value).subscribe(
-        res => {
-          console.log(res)
-          this.tokenStorage(res);
-        },
-        error => {
-          this.errors = error.error;
-        },() => {
-          this.authenticationStateService.setAuthState(true);
-          this.loginForm.reset()
-          this.router.navigate(['']);
-        }
-      );
+  onSubmit() {
+    this.jwtService.login(this.loginForm.value).subscribe(
+      res => {
+        console.log(res)
+        this.tokenStorage(res);
+      },
+      error => {
+        this.errors = error.error;
+      },() => {
+        this.authenticationStateService.setAuthState(true);
+        this.loginForm.reset()
+        this.router.navigate(['']);
+      }
+    );
   }
 
   tokenStorage(jwt){
