@@ -24,27 +24,16 @@ class InmuebleController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
-    public function getInmuebleProvincia($hab) {
+    public function getInmuebleFiltro(Request $request) {
+
+        $precio = $request->get('precio');
+        $pob = $request->get('poblacion');
+        $prov = $request->get('provincia');
         $resp = Inmueble::where("habitaciones", $hab)->get();
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
-    /*
-    #Este hay que meterlo en un form que es el input del boton fav
-    public function addInmuebleFav($id, $idUsu, Request $request) {
-        $this->validate($request, [
-        'ID_User' => 'required',
-        'id' => 'required',
-        'ID_House' => 'required'
-        ]);
-        $fav = new Fav([
-            'ID_User' => $request->get('ID_User'),
-            'id' => $request->get('id'),
-            'ID_House' => $request->get('ID_House')
-        ]);
-        $fav->save();
-        return redirect()->route('/inmuebles/addFav')->with('success','Data Added');
-    }
-    */
+
+
     /**
      * Show the form for creating a new resource.
      *

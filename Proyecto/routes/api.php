@@ -41,7 +41,8 @@ Route::get("/inmuebles", "App\Http\Controllers\InmuebleController@index");
 
 Route::get("/inmuebles/{id}", "App\Http\Controllers\InmuebleController@getInmueble");
 Route::get("/inmuebles/hab/{habitaciones}", "App\Http\Controllers\InmuebleController@getInmuebleProvincia");
-Route::get("/inmuebles/addFav", "App\Http\Controllers\InmuebleController@addInmuebleFav");
+//Route::get("/inmuebles/addFav/{}", "App\Http\Controllers\InmuebleController@addInmuebleFav");
+Route::get("/inmuebles/filtro-main", "App\Http\Controllers\InmuebleController@filtroMain");
 
 /* Ruta para operaciones de Actividades */
 Route::get("/actividades", "App\Http\Controllers\ActividadController@index");
