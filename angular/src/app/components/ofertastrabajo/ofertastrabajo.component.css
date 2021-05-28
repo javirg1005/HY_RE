@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 * {
     margin: 0px;
     padding: 0px;
@@ -218,4 +220,34 @@ h2 {
     margin-left: 20px;
     margin-right: 10px;
     padding: 10px;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+    overflow: visible;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 0;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    border: 0;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    border: 0;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
 }
