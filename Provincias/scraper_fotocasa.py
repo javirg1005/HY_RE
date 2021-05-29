@@ -19,9 +19,11 @@ page = requests.get(url)
 soup = BeautifulSoup(page.content, 'html.parser')
 #print(soup)
 
+"""
 # Se escribe en un archivo la salida del HTML para poder pasarlo a regex más fácilmente
 file = open("html_general.txt", "w+", encoding="utf-8")
 file.write(str(soup))
+"""
 
 articulos = soup.findAll("article")
 urls = []
@@ -51,12 +53,14 @@ for i in range(0, len(viviendas)):
     soup_casa = BeautifulSoup(vivienda.content, 'html.parser')
     #print(soup_casa)
 
+    """
     # Se escribe en un archivo la salida del HTML de la vivienda para poder pasarlo a regex más fácilmente
     file = open("html_vivienda.txt", "w+", encoding="utf-8")
     file.write(str(soup_casa))
+    """
     
 
-    ## ------------ Scraper por vivienda --------------- ##
+    ## ------------ Información por cada vivienda --------------- ##
 
     # Título
     regexTitulo = '<h1 class="re-DetailHeader-propertyTitle">(.*)<\/h1>'
@@ -65,6 +69,10 @@ for i in range(0, len(viviendas)):
 
     # Descripción
 
+    # Número Metros Cuadrados
+    regexMetros = '<span>(\d{1,7})<\/span> m²'
+    metros = re.search(regexMetros, str(soup_casa))
+    print(metros.group(1), end= " m²\n")
 
     # Precio
     regexPrecio = '<span class="re-DetailHeader-price">(.*) €<\/span>'
@@ -89,8 +97,3 @@ for i in range(0, len(viviendas)):
 
 
     print("**************************************************")
-
-    # Número Metros Cuadrados
-
-
-
