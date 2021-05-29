@@ -9,11 +9,11 @@ from bs4 import BeautifulSoup
 url_base = "https://www.fotocasa.es/es/comprar/viviendas/"
 localidad = "oviedo" ## Localidad a introducir por el usuario
 url = url_base + localidad +"/todas-las-zonas/l?"
-print(url)
+#print(url)
 
 # Hacemos la petición
 page = requests.get(url)
-print(page.status_code)
+#print(page.status_code)
 
 # Imprimimos el contenido de la página
 soup = BeautifulSoup(page.content, 'html.parser')
@@ -45,10 +45,9 @@ for i in range (len(urls)):
 # Una vez tenemos la URL de la vivienda en concreto, la scrapeamos
 for i in range(0, len(viviendas)):
     vivienda = requests.get(viviendas[i])
-    print(vivienda.status_code)
+    #print(vivienda.status_code)
 
     # Imprimimos el contenido de la página
-    #print(vivienda.content)
     soup_casa = BeautifulSoup(vivienda.content, 'html.parser')
     #print(soup_casa)
 
@@ -81,6 +80,15 @@ for i in range(0, len(viviendas)):
     regexBaños = '<span>(.)<\/span> baño'
     baños = re.search(regexBaños, str(soup_casa))
     print(baños.group(1), end=" baño/s\n")
+
+    # Teléfono
+    regexTfno = 'href="tel:(\d{9})">'
+    tefefono = re.search(regexTfno, str(soup_casa))
+    print("Teléfono: ", end="")
+    print(tefefono.group(1))
+
+
+    print("**************************************************")
 
     # Número Metros Cuadrados
 
