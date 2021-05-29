@@ -68,7 +68,7 @@ for i in range(0, len(viviendas)):
 
 
     # Precio
-    regexPrecio = '<span class="re-DetailHeader-price">(.*)€<'
+    regexPrecio = '<span class="re-DetailHeader-price">(.*) €<\/span>'
     precio = re.search(regexPrecio, str(soup_casa))
     print(precio.group(1), end="€\n")
 
