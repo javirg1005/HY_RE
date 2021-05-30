@@ -53,26 +53,46 @@ for i in range(0, len(viviendas)):
     soup_casa = BeautifulSoup(vivienda.content, 'html.parser')
     #print(soup_casa)
 
-    """
     # Se escribe en un archivo la salida del HTML de la vivienda para poder pasarlo a regex más fácilmente
     file = open("html_vivienda.txt", "w+", encoding="utf-8")
     file.write(str(soup_casa))
-    """
+    
     
 
     ## ------------ Información por cada vivienda --------------- ##
 
+    # Inicialización de variables para prevenir errores
+    titulo = "Título no disponible"
+    metros = " metros cuadrados no disponible"
+    habs = "Nº de habitaciones no disponible"
+    baños = "Nº de habitaciones no disponible"
+    tefefono = "Nº de teléfono no disponible"
+
     # Título
     regexTitulo = '<h1 class="re-DetailHeader-propertyTitle">(.*)<\/h1>'
-    titulo = re.search(regexTitulo, str(soup_casa))
-    print(titulo.group(1))
+    if str(soup_casa).find("tit"):
+        titulo = re.search(regexTitulo, str(soup_casa))
+        if titulo != None:
+            titulo = titulo.group(1)
+        else:
+            titulo = "Título no disponible"    
+    else:
+        titulo = "Título no disponible"
+    print(titulo)
 
     # Descripción
 
     # Número Metros Cuadrados
     regexMetros = '<span>(\d{1,7})<\/span> m²'
-    metros = re.search(regexMetros, str(soup_casa))
-    print(metros.group(1), end= " m²\n")
+    if str(soup_casa).find("m²"):
+        metros = re.search(regexMetros, str(soup_casa))
+        if metros != None:
+            metros = metros.group(1)
+        else:
+            print("No se especifica el número de m² en la vivienda")
+    else:
+        metros = "m² no disponible"
+    print(metros, end= " m²\n")
 
     # Precio
     regexPrecio = '<span class="re-DetailHeader-price">(.*) €<\/span>'
@@ -81,19 +101,38 @@ for i in range(0, len(viviendas)):
 
     # Número Habitaciones
     regexHabs = '<span>(.)<\/span> habs'
-    habs = re.search(regexHabs, str(soup_casa))
-    print(habs.group(1),end=" habitaciones\n")
+    if str(soup_casa).find("hab"):
+        habs = re.search(regexHabs, str(soup_casa))
+        if habs != None:
+            habs = habs.group(1)
+        else:
+            print("No se especifica el número de baños en la vivienda")
+    else:
+        habs = "Nº de habitaciones no disponible"
+    print(habs, end=" habitaciones\n")
 
     # Número Baños
     regexBaños = '<span>(.)<\/span> baño'
-    baños = re.search(regexBaños, str(soup_casa))
-    print(baños.group(1), end=" baño/s\n")
+    if str(soup_casa).find("baño"):
+        baños = re.search(regexBaños, str(soup_casa))
+        if baños != None:
+            baños = baños.group(1)
+        else:
+            print("No se especifica el número de baños en la vivienda")
+    else:
+        baños = "No disponible"
+    print(baños, end=" baños\n")
 
     # Teléfono
     regexTfno = 'href="tel:(\d{9})">'
-    tefefono = re.search(regexTfno, str(soup_casa))
-    print("Teléfono: ", end="")
-    print(tefefono.group(1))
-
+    if str(soup_casa).find("href=\"tel"):
+        tefefono = re.search(regexTfno, str(soup_casa))
+        if tefefono != None:
+            tefefono = tefefono.group(1)
+        else:
+            tefefono = "Número no disponible"
+    else:
+        tefefono = "Número no disponible"
+    print(tefefono)
 
     print("**************************************************")
