@@ -49,4 +49,9 @@ export class TokenAuthService {
   destroyToken(){
     localStorage.removeItem('auth_token');
   }
+
+  // Destroy username
+  destroyUsername(){
+    localStorage.removeItem('username');
+  }
 }

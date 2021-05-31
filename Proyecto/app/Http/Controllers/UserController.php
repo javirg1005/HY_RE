@@ -104,6 +104,18 @@ class UserController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
+    public function getUserIdFromUsername($username)
+    {
+        $resp = User::where("username", $username)->first()->id;
+        return $resp;
+    }
+
+    public function getNameFromUsername($username)
+    {
+        $resp = User::where("username", $username)->first()->name;
+        return $resp;
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

@@ -15,13 +15,16 @@ class CreateInmueblesTable extends Migration
     {
         Schema::create('inmuebles', function (Blueprint $table) {
             $table->id();
+            $table->text('Localidad');
             $table->text('Titulo');
-            $table->text('Precio');
             $table->text('Metros');
+            $table->text('Precio');
             $table->text('Habitaciones');
-            $table->text('Descripcion');
+            $table->text('Baños');
             $table->text('Telefono');
-            $table->text('URL');
+            $table->text('Descripcion');
+            $table->text('Url');
+            $table->text('Url_imagen');
             $table->timestamps();
         });
     }

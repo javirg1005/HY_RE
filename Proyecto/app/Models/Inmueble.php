@@ -10,12 +10,14 @@ class Inmueble extends Model
     use HasFactory;
 
     protected $fillable = [
+        'Localidad',
         'Titulo',
-        'Precio',
         'Metros',
+        'Precio',
         'Habitaciones',
-        'Descripcion',
+        'Baños',
         'Telefono',
-        'URL',
+        'Descripcion',
+        'Url',
     ];
 }

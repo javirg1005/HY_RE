@@ -29,4 +29,9 @@ export class OfertasComponent implements OnInit {
       console.log(this.data)
     })
   }
+
+  getIDComponent(casa){
+    localStorage.setItem('id_casa', casa.getAttribute('data-casa-id'));
+  }
+
 }

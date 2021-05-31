@@ -81,7 +81,8 @@ h1 {
     flex-direction: column;
     align-items: left;
     justify-content: left;
-    padding: 15px;
+    padding-top: 15px;
+    margin-left: -25px;
 }
 
 .info-photo {

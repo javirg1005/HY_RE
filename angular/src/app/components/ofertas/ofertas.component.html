@@ -51,7 +51,7 @@
                 <div class="subcontenedor"> 
                     <div *ngFor="let x of data | paginate: { itemsPerPage: 16, currentPage: page}" class="elemento"> 
                         <!-- Foto -->
-                        <a href="Info">
+                        <a #casa href="Info" [attr.data-casa-id]="x.id" (click)="getIDComponent(casa)">
                             <div>
                                 <img class='imagen' src="../../../assets/info-photo.png" alt="foto de casa">
                             </div>

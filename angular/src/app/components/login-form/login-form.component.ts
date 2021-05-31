@@ -37,6 +37,7 @@ export class LoginFormComponent implements OnInit {
       res => {
         console.log(res)
         this.tokenStorage(res);
+        this.usernameStorage(this.loginForm.value.username);
       },
       error => {
         this.errors = error.error;
@@ -50,5 +51,9 @@ export class LoginFormComponent implements OnInit {
 
   tokenStorage(jwt){
     this.tokenAuthService.setTokenStorage(jwt.token);
+  }
+  
+  usernameStorage(user){
+    localStorage.setItem('username', user);
   }
 }

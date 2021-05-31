@@ -1,26 +1,35 @@
 [
     {
-        "Título": "Piso en venta en Calle Obdulia Álvarez, 1, Corredoría - La Carisa - Prado de La Vega",
+        "ID": 0,
+        "Localidad": "oviedo",
+        "Titulo": "Piso en venta en Calle Obdulia Álvarez, 1, Corredoría - La Carisa - Prado de La Vega",
         "Metros": "60",
+        "Precio": "120900",
         "Habitaciones": "2",
         "Baños": "2",
         "Teléfono": "982775591",
         "Url": "https://www.fotocasa.es/es/comprar/vivienda/oviedo/calefaccion-trastero-ascensor-parking/153137297/d"
     },
     {
-        "Título": "Piso en venta en Bermudez de Castro, Teatinos - Los Prados",
-        "Metros": "75",
+        "ID": 1,
+        "Localidad": "oviedo",
+        "Titulo": "Piso en venta en Plaza de la Alameda, Milán - Pumarín",
+        "Metros": "81",
+        "Precio": "165500",
         "Habitaciones": "2",
         "Baños": "1",
-        "Teléfono": "984985764",
-        "Url": "https://www.fotocasa.es/es/comprar/vivienda/oviedo/calefaccion-terraza-trastero-ascensor-amueblado/155990066/d"
+        "Teléfono": "Número no disponible",
+        "Url": "https://www.fotocasa.es/es/comprar/vivienda/oviedo/calefaccion-terraza-trastero-zona-comunitaria-ascensor-parking-no-amueblado/154719806/d"
     },
     {
-        "Título": "Piso en venta en Calle Benjamín Ortiz, Milán - Pumarín",
-        "Metros": "70",
+        "ID": 2,
+        "Localidad": "oviedo",
+        "Titulo": "Piso en venta en Obispo Manuel Fernandez Castro, Teatinos - Los Prados",
+        "Metros": "98",
+        "Precio": "153000",
         "Habitaciones": "3",
-        "Baños": "1",
-        "Teléfono": "Número no disponible",
-        "Url": "https://www.fotocasa.es/es/comprar/vivienda/oviedo/trastero-ascensor-amueblado/153281219/d"
+        "Baños": "2",
+        "Teléfono": "984985764",
+        "Url": "https://www.fotocasa.es/es/comprar/vivienda/oviedo/calefaccion-parking-terraza-trastero-ascensor/158992570/d"
     }
 ]
