@@ -5,11 +5,13 @@ import re
 import requests
 from bs4 import BeautifulSoup
 import json
+
+"""
 import mysql.connector
 
 ## BASE DE DATOS Alternativa
 con = mysql.connector.connect(host="localhost",user='root',passwd='',database='recomendador')
-cur = con.cursor()
+cur = con.cursor()"""
 
 # Conseguimos la URL
 url_base = "https://www.fotocasa.es/es/comprar/viviendas/"
@@ -89,8 +91,17 @@ for i in range(0, len(viviendas)):
 
     # Descripción
 
-    # SACA URL DE LA FOTO TAMBIEN PLS PARA CARGARLA <3
-    url_imagen = ''
+    # Imagen de la vivienda
+    regexImagen = '(https:\/\/static\.inmofactory\.com\/images\/inmofactory\/documents\/\d+\/\d+\/\d+\/\d+\.jpg)\?rule=\w+" type="image\/webp"'
+    if str(soup_casa).find("picture"):
+        imagen = re.search(regexImagen, str(soup_casa))
+        if imagen != None:
+            imagen = imagen.group(1) + "?rule=web_948x542_webp_50"
+        else:
+            print("Imagen no encontrada")
+    else:
+        imagen = "Imagen no disponible"
+    print(imagen, end= " <-- es la URL de la imagen\n")
 
     # Número Metros Cuadrados
     regexMetros = '<span>(\d{1,7})<\/span> m²'
@@ -152,21 +163,23 @@ for i in range(0, len(viviendas)):
     
     data = {'ID': i,'Localidad': localidad,'Titulo': titulo,'Metros': metros,'Precio': precio, 'Habitaciones': habs,'Baños': baños,'Telefono': tefefono,'Descripcion': '','Url': viviendas[i]}
     json_string.append(data)
-    print(data)
-    print("\n")
+    """print(data)
+    print("\n")"""
     print("**************************************************")
 
+    """
     sql = 'insert into inmuebles(Localidad, Titulo, Metros, Precio, Habitaciones, Baños, Telefono, Descripcion, Url, UrlImagen) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
     datos = [localidad, titulo, metros, precio, habs, baños, tefefono, '', viviendas[i], url_imagen]
     cur.execute(sql, datos)
     con.commit()
+    """
 
 # Se crea el JSON
 '''
 with open('Provincias/data.json', 'w', encoding='utf-8') as f:
     json.dump(json_string, f, ensure_ascii=False, indent=4)'''
 
-con.close()
+#con.close()
 
 
 
