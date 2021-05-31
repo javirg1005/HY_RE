@@ -4,6 +4,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
+import json
 
 # Conseguimos la URL
 url_base = "https://www.fotocasa.es/es/comprar/viviendas/"
@@ -27,6 +28,7 @@ file.write(str(soup))
 
 articulos = soup.findAll("article")
 urls = []
+json_string = []
 
 # Aplicamos regex
 for articulo in articulos:
@@ -135,4 +137,13 @@ for i in range(0, len(viviendas)):
         tefefono = "Número no disponible"
     print(tefefono)
 
-    print("**************************************************")
+
+    data = {'Título': titulo,'Metros': metros,'Habitaciones': habs,'Baños': baños,'Teléfono': tefefono,'Url': viviendas[i]}
+    json_string.append(data)
+
+
+print("**************************************************")
+
+# Se crea el JSON
+with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(json_string, f, ensure_ascii=False, indent=4)
