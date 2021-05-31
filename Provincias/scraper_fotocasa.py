@@ -90,6 +90,16 @@ for i in range(0, len(viviendas)):
     print(titulo)
 
     # Descripción
+    regexDescripcion = 'class="fc-DetailDescription">(.*)<\/p><\/div><\/div><div class="sui'
+    if str(soup_casa).find("DetailDescription"):
+        descripcion = re.search(regexDescripcion, str(soup_casa))
+        if descripcion != None:
+            descripcion = descripcion.group(1)
+        else:
+            print("descripcion no encontrada")
+    else:
+        descripcion = "Descripción no disponible"
+    print(descripcion, end= "\n")
 
     # Imagen de la vivienda
     regexImagen = '(https:\/\/static\.inmofactory\.com\/images\/inmofactory\/documents\/\d+\/\d+\/\d+\/\d+\.jpg)\?rule=\w+" type="image\/webp"'
