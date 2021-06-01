@@ -40,7 +40,7 @@ h4 {
 .contenedor {    
     position: absolute;
     width: 125vh;
-    height: 60vh;
+    height: 65vh;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -49,9 +49,9 @@ h4 {
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
-    border-radius: 106px;
+    border-radius: 9vh;
 
-    margin-top: 10px;
+    margin-top: 5vh;
 }
 
 /* Falta lo de gridbox */
@@ -72,7 +72,11 @@ h4 {
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
-    border-radius: 106px;
+    border-radius: 9vh;
+}
+
+p {
+    padding: 5vh;
 }
 
 button {    
@@ -84,7 +88,7 @@ button {
     display: block;
     width: 30vh;
     height: 5.5vh;
-    margin-top: 2vh;
+    margin-top: 1vh;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -128,6 +132,7 @@ button:active {
 .slidecontainer {
     width: 100%; /* Width of the outside container */
     margin-top: 3vh;
+    align-self: center;
 }
 
 /* The slider itself */
@@ -142,8 +147,10 @@ button:active {
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
     margin-top: 45px;
-    margin-left: 20px;
-    margin-right: 20px;
+    
+    margin-left: 0.5vh;
+    margin-right: 0.5vh;
+    
     border-radius: 100px;
 }
 
