@@ -21,7 +21,7 @@ body {
     align-content: center;
     justify-content: space-around;
 
-    width: 150vh;
+    width: 170vh;
     height: 75vh;
     left: 50%;
     top: 50%;
@@ -32,14 +32,15 @@ body {
     box-sizing: border-box;
     backdrop-filter: blur(30px);
     border-radius: 60px;
-    padding: 10px;
+
     margin-top: 10px;
 }
 
 /* Panel izquierdo, con los filtros de búsqueda*/
 .filtros {    
-    width: 320px;
-    height: 70vh;
+    width: 25%;
+    
+    
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
@@ -49,10 +50,12 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    margin-bottom: 10px;
 
 
     color: #D43414;
     font-family: "Montserrat";
+    font-size: calc(0.4em + 0.4vw);
 }
 
 .icono {
@@ -70,9 +73,11 @@ body {
 
 /* Div y texto de ordenar por*/
 .order {
+    width: 100vh;
     display: flex;
-    margin-top: 20px;
-    align-items: right;
+    flex-direction: row;
+    margin: 2vh;
+    justify-items: right;
 }
 
 .ordenar {
@@ -81,13 +86,14 @@ body {
     margin-top: -15px;
 }
 
+
+
 /* Panel derecho con las ofertas, títulos y demás */
 .ofertas{
     color: black;
     font-family: "Montserrat";
 
-    width: 110vh;
-    height: 70vh;
+    width: 73%;
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
@@ -96,9 +102,13 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    
      
     margin-top: 10px;    
+    margin-bottom: 10px;
 }
+
+
 
 h1 {
     font-size: 15px;
@@ -201,7 +211,7 @@ a {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 25vw;
+    width: 47%;
     height: 100px;
     margin-bottom: 20px;
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
@@ -211,15 +221,15 @@ a {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    font-size: 10px;
-    margin-left: 20px;
-    margin-right: 10px;
+    font-size: calc(1em + 3vw);
+    
     padding: 10px;
 }
 
 .imagen {
     width: 25%;
     float: left;
+    padding: 5px;
 }
 
 .datos {
@@ -254,4 +264,8 @@ a {
 
 ::-webkit-scrollbar-thumb {
     background-color: transparent;
+}
+
+.pagination {
+  
 }

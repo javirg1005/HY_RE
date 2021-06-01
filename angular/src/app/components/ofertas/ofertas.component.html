@@ -44,7 +44,7 @@
                 <div class="order" > 
                     <h4 class="ordenar"> Ordenar por: </h4>
                     <div class="combobox_ordenar"> 
-                        <app-combo-box></app-combo-box> 
+                        <!--<app-combo-box></app-combo-box> --> 
                     </div>
                 </div>
 
@@ -63,7 +63,10 @@
                         </a>
                     </div>
                 </div>
-                <pagination-controls (pageChange)="handlePageChange($event)"></pagination-controls>
+                <div class="pagination"> 
+                    <pagination-controls (pageChange)="handlePageChange($event)"></pagination-controls>
+                </div>
+               
             </div>
         </div> 
     </body>
