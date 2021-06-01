@@ -53,7 +53,7 @@
                         <!-- Foto -->
                         <a #casa href="Info" [attr.data-casa-id]="x.id" (click)="getIDComponent(casa)">
                             <div>
-                                <img class='imagen' src="../../../assets/info-photo.png" alt="foto de casa">
+                                <img class='imagen' src="{{ x.Url_imagen }}" alt="foto de casa">
                             </div>
                             <div class='datos'>
                                 <p>Titulo: {{ x.Titulo }}</p>

@@ -43,7 +43,6 @@ Route::get("/inmuebles", "App\Http\Controllers\InmuebleController@index");
 
 Route::get("/inmuebles/{id}", "App\Http\Controllers\InmuebleController@getInmueble");
 Route::get("/inmuebles/hab/{habitaciones}", "App\Http\Controllers\InmuebleController@getInmuebleProvincia");
-//Route::get("/inmuebles/addFav/{}", "App\Http\Controllers\InmuebleController@addInmuebleFav");
 Route::get("/inmuebles/filtro-main", "App\Http\Controllers\InmuebleController@filtroMain");
 
 /* Ruta para operaciones de Actividades */
@@ -57,6 +56,7 @@ Route::get("/noticias/{id}", "App\Http\Controllers\NoticiaController@getNoticia"
 /* Ruta para operaciones de Inmuebles Favoritos */
 Route::get("/favs", "App\Http\Controllers\FavController@index");
 Route::get("/favs/{userId}", "App\Http\Controllers\FavController@getFavsByUsuId");
+Route::post("/favs/addFav","App\Http\Controllers\FavController@addFav");
 
 /* Ruta para operaciones de Empleos Favoritos */
 Route::get("/favsjob", "App\Http\Controllers\FavsjobController@index");

@@ -54,4 +54,9 @@ export class TokenAuthService {
   destroyUsername(){
     localStorage.removeItem('username');
   }
+
+  // Destroy id_usu
+  destroyIdUsu(){
+    localStorage.removeItem('id_usu');
+  }
 }

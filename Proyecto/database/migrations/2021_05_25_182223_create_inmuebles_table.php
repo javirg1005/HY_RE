@@ -20,7 +20,7 @@ class CreateInmueblesTable extends Migration
             $table->text('Metros');
             $table->text('Precio');
             $table->text('Habitaciones');
-            $table->text('Baños');
+            $table->text('Banos');
             $table->text('Telefono');
             $table->text('Descripcion');
             $table->text('Url');

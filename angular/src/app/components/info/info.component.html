@@ -13,16 +13,12 @@
         <div class="contenedor">
             <div class="desc-container">
                 <div class="column">
-                    <img class="info-photo" src="../../../assets/info-photo.png" alt="info-photo">
+                    <img class="info-photo" src="{{ data[0].Url_imagen }}" alt="info-photo">
                     <div class="column-left">
-                        <button class='btn_favs'><img src="../../../assets/heart-solid.png" alt="heart-solid" style="width: 30px"></button>
+                        <button class='btn_favs' (click)='rellenar()'><img src="../../../assets/heart-solid.png" alt="heart-solid" style="width: 30px"></button>
                         <div class="row">
-                            <!--<p><span class="bold">Precio:</span> 500</p> -->
-                            <p><span class="bold">Precio:</span> {{data[0].Precio}} €</p>
-                            <!--<p><span class="bold">Dueño:</span> Juanito</p>
-                            <p><span class="bold">Dueño:</span> x.Dueño</p>-->
-                            <!--<p><span class="bold">Provincia:</span> Teruel</p>-->
-                            <p><span class="bold">Provincia:</span> {{data[0].Localidad}}</p>
+                            <p><span class="bold">Precio: </span> {{data[0].Precio}} €</p>
+                            <p><span class="bold">Localidad: </span> {{data[0].Localidad}}</p>
                         </div>
                     </div>
                 </div>
@@ -42,8 +38,8 @@
                 <h2>{{data[0].Titulo}}</h2>
                 <div class="componente-txt">
                     <h4>Descripción</h4>
-                    <!-- <p> {{ data[0].Descripcion }}</p> -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at dictum felis. Curabitur sit amet dolor at nulla luctus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis sapien lacus, bibendum ac arcu at, porta suscipit mauris. Maecenas orci nisl, euismod sed dui et, eleifend venenatis sem. Sed egestas odio tempus magna hendrerit eleifend.</p>
+                    <p> {{ data[0].Descripcion }}</p>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at dictum felis. Curabitur sit amet dolor at nulla luctus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis sapien lacus, bibendum ac arcu at, porta suscipit mauris. Maecenas orci nisl, euismod sed dui et, eleifend venenatis sem. Sed egestas odio tempus magna hendrerit eleifend.</p>-->
                 </div>
                 <div class="componente-txt">
                     <h4>Características básicas</h4>
@@ -51,7 +47,7 @@
                         <div class="column-txt">
                             <p>{{ data[0].Metros }} m² construidos</p>
                             <p>{{ data[0].Habitaciones }} habitaciones</p>
-                            <p>2 baños</p>
+                            <p>{{ data[0].Banos }} baños</p>
                         </div>
                     </div>
                 </div>

@@ -28,6 +28,7 @@ export class AppComponent {
     this.authenticationStateService.userAuthState.subscribe(res => {
       this.isLoggedin = res;
       if (res == true) {
+        this.getId();
         this.getName();
       }
   });
@@ -37,6 +38,7 @@ export class AppComponent {
     this.authenticationStateService.setAuthState(false);
     this.tokenAuthService.destroyToken();
     this.tokenAuthService.destroyUsername();
+    this.tokenAuthService.destroyIdUsu();
     this.router.navigate(['']);
   }  
 
@@ -45,6 +47,14 @@ export class AppComponent {
     this.http.get(url,{responseType: 'text'}).subscribe((res) => {
       this.data = res
       console.log(this.data);
+    })
+  }
+
+  getId() {
+    const url = 'http://127.0.0.1:8000/api/userId_toUsername/' + localStorage.getItem('username');
+    this.http.get(url,{responseType: 'text'}).subscribe((res) => {
+      this.data = res
+      localStorage.setItem('id_usu', this.data);
     })
   }
 

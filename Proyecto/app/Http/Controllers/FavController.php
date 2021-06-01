@@ -30,6 +30,51 @@ class FavController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
+
+    public function addFav(Request $request, $favorito) {
+        $validator = Validator::make($request->all(), [
+            'Id_usu' => 'required',
+            'Id_inmueble' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
+        $fav = Fav::create([
+            'Id_usu' => $request->get('id_usu'),
+            'Id_inmueble' => $request->get('id_inmueble')
+        ]);
+
+        return response()->json(compact('fav'),201);
+        
+    }
+
+    //Añadir vivienda a la base de datos, tabla viviendas y a favoritos
+    //De sofi 
+
+    public function addVivienda(Request $request, $user_id){
+        $enlace_vivienda = Vivienda::where('link', $request['link']) -> first();
+
+        if($enlace_vivienda){
+            $response['status'] = 0;
+            $response['mensaje'] = "Vivienda ya existe";
+            $response['codigo'] = 409;
+            $usuario = User::find($user_id);
+            $usuario -> viviendas() -> attach($enlace_vivienda -> vivienda_ID);
+            $response['usuario_ID'] = $user_id;
+            $response['vivienda_ID'] = $enlace_vivienda -> vivienda_ID;
+        }else{
+            $vivienda = Vivienda::create($request->json()->all());
+            $usuario = User::find($user_id);
+            $usuario -> viviendas() -> attach($vivienda -> vivienda_ID);
+            $response['usuario_ID'] = $user_id;
+            $response['vivienda_ID'] = $vivienda -> vivienda_ID;
+        }
+
+        return response() -> json($response);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
