@@ -10,12 +10,10 @@ body {
     background-image: url("../../../assets/Fondo_dibujo.png");
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    font-size: 12px;
+.Titulo {
+    font-weight: 700;
 }
-
+/* Panel central */
 .contenedor {    
     position: absolute;
     display: flex;
@@ -23,7 +21,7 @@ a {
     align-content: center;
     justify-content: space-around;
 
-    width: 150vh;
+    width: 170vh;
     height: 75vh;
     left: 50%;
     top: 50%;
@@ -34,14 +32,14 @@ a {
     box-sizing: border-box;
     backdrop-filter: blur(30px);
     border-radius: 60px;
-    padding: 10px;
+
     margin-top: 10px;
 }
 
 /* Panel izquierdo, con los filtros de búsqueda*/
 .filtros {    
-    width: 320px;
-    height: 70vh;
+    width: 23%;
+    
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
@@ -51,35 +49,35 @@ a {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    margin-bottom: 10px;
 
 
     color: #D43414;
     font-family: "Montserrat";
+    font-size: calc(0.4em + 0.4vw);
 }
 
-.combobox {
-    width: 200px;
-    height: 30px;
-    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-sizing: border-box;
-    
-    border-radius: 90px;
+.btn_filtro {
+    background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 0;
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: block;
+    width: 20vh;
+    height: 5.5vh;
+    margin-top: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-family: Lato;
+    font-weight: 900;
+    font-size: calc(0.9em + 0.9vw);
+    line-height: 32px;
+    text-align: center;    
+    color: white;
 
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%, -50%); 
-}
-
-.flecha {
-    width:10px;
-    height:10px;
-    position: absolute;
-    margin-left: 170px;
-    margin-top: 7px;
+    margin-top: 5vh;
 }
 
 .icono {
@@ -90,29 +88,33 @@ a {
 }
 
 .sugerencia {
-    align-self: center;
-    margin-left: 60px;
-    margin-top: 5px;
+    margin-top: 2vh;
+    text-align: center;
 }
 
+/* Div y texto de ordenar por*/
 .order {
+    width: 100%;
     display: flex;
-    margin-top: 30px;
+    flex-direction: row;
+    justify-content: right;
+    margin: 5vh;
 }
 
 .ordenar {
-    align-self: left;
+    align-self: right;
     margin-left: 100px;
     margin-top: -15px;
 }
 
 
+
+/* Panel derecho con las ofertas, títulos y demás */
 .ofertas{
     color: black;
     font-family: "Montserrat";
 
-    width: 110vh;
-    height: 70vh;
+    width: 73%;
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
@@ -121,9 +123,13 @@ a {
     position: relative;
     display: flex;
     flex-direction: column;
+    
      
     margin-top: 10px;    
+    margin-bottom: 10px;
 }
+
+
 
 h1 {
     font-size: 15px;
@@ -136,6 +142,12 @@ h2 {
     font-size: 15px;
     margin-top: 30px;
     align-self: center;
+}
+
+h4 {
+    font-size: 12px;
+    margin-top: 30px;
+    align-self: right;
 }
 
 
@@ -196,6 +208,8 @@ h2 {
     font-size: 20px;
 }
 
+
+/* Recuadro con los cuadrados de las ofertas*/
 .subcontenedor {
     display: flex;
     flex-direction: row;
@@ -203,10 +217,22 @@ h2 {
     justify-content: space-around;
     overflow: overlay;
     height: 72%;
+    margin: 5vh;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+/* Cada recuadro individual con las ofertas*/
 .elemento{
-    width: 475px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 47%;
     height: 100px;
     margin-bottom: 20px;
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
@@ -216,10 +242,19 @@ h2 {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    font-size: 10px;
-    margin-left: 20px;
-    margin-right: 10px;
+    font-size: calc(1em + 3vw);
+    
     padding: 10px;
+}
+
+.imagen {
+    width: 25%;
+    float: left;
+    padding: 5px;
+}
+
+.datos {
+    margin-left: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -250,4 +285,9 @@ h2 {
 
 ::-webkit-scrollbar-thumb {
     background-color: transparent;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
 }

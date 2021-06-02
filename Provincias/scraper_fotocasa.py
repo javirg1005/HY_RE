@@ -6,12 +6,11 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-"""
 import mysql.connector
 
 ## BASE DE DATOS Alternativa
 con = mysql.connector.connect(host="localhost",user='root',passwd='',database='recomendador')
-cur = con.cursor()"""
+cur = con.cursor()
 
 # Conseguimos la URL
 url_base = "https://www.fotocasa.es/es/comprar/viviendas/"
@@ -175,20 +174,14 @@ for i in range(0, len(viviendas)):
     print(tefefono)
 
     
-    data = {'ID': i,'Localidad': localidad,'Titulo': titulo,'Metros': metros,'Precio': precio, 'Habitaciones': habs,'Baños': baños,'Telefono': tefefono,'Descripcion': '','Url': viviendas[i]}
-    json_string.append(data)
-    """print(data)
-    print("\n")"""
+    
+    print("\n")
     print("**************************************************")
-
-    """
-    sql = 'insert into inmuebles(Localidad, Titulo, Metros, Precio, Habitaciones, Baños, Telefono, Descripcion, Url, UrlImagen) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
-    datos = [localidad, titulo, metros, precio, habs, baños, tefefono, '', viviendas[i], url_imagen]
+    
+    sql = 'insert into inmuebles(Localidad, Titulo, Metros, Precio, Habitaciones, Banos, Telefono, Descripcion, Url, Url_imagen) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
+    datos = [localidad, titulo, metros, precio, habs, baños, tefefono, descripcion, viviendas[i], imagen]
     cur.execute(sql, datos)
     con.commit()
-    """
-
-    
 
 # Se crea el JSON
 '''

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { FormBuilder, FormGroup } from "@angular/forms";
+
 
 @Component({
   selector: 'app-ofertas',
@@ -11,8 +13,17 @@ export class OfertasComponent implements OnInit {
   title = 'image-gallery';
   public data: any = []
   page = 1;
+  filtroVForm: FormGroup;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    public fb: FormBuilder,
+    ) {
+    this.filtroVForm = this.fb.group({
+      precio: [],
+      habitaciones: [],
+      metros: []
+    }) }
 
   ngOnInit(): void {
     this.getData();
@@ -32,6 +43,10 @@ export class OfertasComponent implements OnInit {
 
   getIDComponent(casa){
     localStorage.setItem('id_casa', casa.getAttribute('data-casa-id'));
+  }
+
+  onSubmit() {
+    
   }
 
 }

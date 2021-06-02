@@ -24,6 +24,11 @@ class InmuebleController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
+    public function maxPrecio() {
+        $resp = Inmueble::where("username", $username)->first()->id;
+        return $resp;
+    }
+
     public function getInmuebleFiltro(Request $request) {
 
         $precio = $request->get('precio');

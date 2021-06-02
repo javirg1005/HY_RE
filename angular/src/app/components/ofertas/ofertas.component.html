@@ -13,41 +13,35 @@
     
     <body>
         <div class="contenedor">
-            <div class="filtros"> 
-                <h1> Tipo de inmueble </h1>
-                <!-- <div class="combo_tipo"> 
-                    <app-combo-box class="combobox"></app-combo-box> 
-                </div> -->
-                <p> Aquí irá combobox</p> 
+            <form [formGroup]='filtroVForm' class="filtros"> 
+                <h3 class="sugerencia"> Filtro </h3>
                 
                 <h1> Precio </h1>
                 <div class="slidecontainer">
                     <span class="numero_inicio"> 0</span> 
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <input type="range" min="0" max="100" value="0" class="slider" id="precio">
                     <span class="numero_fin"> ∞ </span>
                 </div>
 
-                <h1> Estado </h1>
-                <div class="combobox"> 
-                    <app-combo-box></app-combo-box> 
+                <h1> Habitaciones </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="10" value="0" class="slider" id="">
+                    <span class="numero_fin"> ∞ </span>
                 </div>
 
-                <h1> Equipamiento </h1>
-                <div class="combobox"> 
-                    <app-combo-box></app-combo-box> 
-                </div>                
-            </div>
+                <h1> Metros cuadrados </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="10000" value="0" class="slider" id="">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
+                
+                <button type="submit" class='btn_filtro'> Aplicar </button>
+            </form>
             
             <div class="ofertas"> 
                 <h3 class="sugerencia"> Le sugerimos los siguientes lugares: </h3>
-                <br>
-                <div class="order" > 
-                    <h4 class="ordenar"> Ordenar por: </h4>
-                    <div class="combobox_ordenar"> 
-                        <!--<app-combo-box></app-combo-box> --> 
-                    </div>
-                </div>
-
                 <div class="subcontenedor"> 
                     <div *ngFor="let x of data | paginate: { itemsPerPage: 16, currentPage: page}" class="elemento"> 
                         <!-- Foto -->

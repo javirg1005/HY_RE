@@ -14,39 +14,34 @@
     <body>
         <div class="contenedor">
             <div class="filtros"> 
-                <h1> Tipo de inmueble </h1>
-                <div class="combobox"> <img class="flecha" src="../../../assets/Polygon 2.png"> </div> 
+                <h3 class="sugerencia"> Filtro </h3>
                 
-                <h1> Precio </h1>
+                <h1> Salario </h1>
                 <div class="slidecontainer">
                     <span class="numero_inicio"> 0</span> 
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <input type="range" min="0" max="100" value="0" class="slider" id="salario">
                     <span class="numero_fin"> ∞ </span>
                 </div>
 
-                <h1> Estado </h1>
-                <div class="combobox"> <img class="flecha" src="../../../assets/Polygon 2.png"> </div> 
+                <h1> Habitaciones </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="10" value="0" class="slider" id="habitaciones">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
 
-                <h1> Equipamiento </h1>
-                <div class="combobox"> <img class="flecha" src="../../../assets/Polygon 2.png"> </div> 
+                <h1> Metros cuadrados </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="10000" value="0" class="slider" id="metros">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
                 
-                <!-- <img class="icono" src="../../../assets/Noticias.png"> -->
-                <h2> Noticias </h2>  
-                
-                <!-- <img class="icono" src="../../../assets/Vector.png"> -->
-                <h2> Actividades </h2>
-
+                <button type="submit" class='btn_filtro'> Aplicar </button>
             </div>
             
             <div class="ofertas"> 
                 <h3 class="sugerencia"> Le sugerimos los siguientes trabajos: </h3>
-                <br>
-                <div class="order" > 
-                    <h3 class="ordenar"> Ordenar por: </h3>
-                    <div class="combobox"> 
-                        <img class="flecha" src="../../../assets/Polygon 2.png"> 
-                    </div>
-                </div>
 
                 <div class="subcontenedor"> 
                     
@@ -60,7 +55,7 @@
                         </div>
                     
                 </div>
-                <pagination-controls (pageChange)="handlePageChange($event)"></pagination-controls>
+                <pagination-controls class="pagination" (pageChange)="handlePageChange($event)"></pagination-controls>
             </div>
         
         </div> 
