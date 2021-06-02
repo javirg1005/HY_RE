@@ -17,7 +17,7 @@ cur = con.cursor()"""
 url_base = "https://www.fotocasa.es/es/comprar/viviendas/"
 localidad = "oviedo" ## Localidad a introducir por el usuario
 url = url_base + localidad +"/todas-las-zonas/l?"
-#print(url)
+print(url)
 
 # Hacemos la petición
 page = requests.get(url)
@@ -56,6 +56,9 @@ for i in range (len(urls)):
 # Una vez tenemos la URL de la vivienda en concreto, la scrapeamos
 for i in range(0, len(viviendas)):
     vivienda = requests.get(viviendas[i])
+    print("--------------------------")
+    print(viviendas[i])
+    print("--------------------------")
     #print(vivienda.status_code)
 
     # Imprimimos el contenido de la página
@@ -95,6 +98,7 @@ for i in range(0, len(viviendas)):
         descripcion = re.search(regexDescripcion, str(soup_casa))
         if descripcion != None:
             descripcion = descripcion.group(1)
+            descripcion = re.sub(r'\<.*?\>', '', descripcion)
         else:
             print("descripcion no encontrada")
     else:
@@ -183,6 +187,8 @@ for i in range(0, len(viviendas)):
     cur.execute(sql, datos)
     con.commit()
     """
+
+    
 
 # Se crea el JSON
 '''
