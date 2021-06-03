@@ -25,6 +25,7 @@ class CreateInmueblesTable extends Migration
             $table->text('Descripcion');
             $table->text('Url');
             $table->text('Url_imagen');
+            $table->text('Pago');
             $table->timestamps();
         });
     }

@@ -19,5 +19,7 @@ class Inmueble extends Model
         'Telefono',
         'Descripcion',
         'Url',
+        'Url_imagen',
+        'Pago'
     ];
 }
