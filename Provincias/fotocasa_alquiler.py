@@ -12,13 +12,15 @@ import mysql.connector
 con = mysql.connector.connect(host="localhost",user='root',passwd='',database='recomendador')
 cur = con.cursor()
 '''
+
 json_string = []
 
 for paginas in range(2,100):
         
     # Conseguimos la URL
-    url_base = "https://www.fotocasa.es/es/comprar/viviendas/"
+    url_base = "https://www.fotocasa.es/es/alquilar/viviendas/"
     localidad = "asturias" ## Localidad a introducir por el usuario
+    opcion = "alquilar"  ## Aquiler 
     url = url_base + localidad +"-provincia/todas-las-zonas/l/" + str(paginas)
     print(url)
     
@@ -32,7 +34,7 @@ for paginas in range(2,100):
 
     articulos = soup.findAll("article")
     urls = []
-    
+   
 
     # Aplicamos regex
     for articulo in articulos:
@@ -171,7 +173,7 @@ for paginas in range(2,100):
             tefefono = "Número no disponible"
         print(tefefono)
 
-        data = {'Localidad': localidad,'Titulo': titulo,'Metros': metros,'Precio': precio, 'Habitaciones': habs,'Baños': baños,'Telefono': tefefono,'Descripcion': descripcion,'Url': viviendas[i], 'Imagen': imagen}
+        data = {'ID': i,'Localidad': localidad,'Titulo': titulo,'Metros': metros,'Precio': precio, 'Habitaciones': habs,'Baños': baños,'Telefono': tefefono,'Descripcion': descripcion,'Url': viviendas[i], 'Imagen': imagen}
         json_string.append(data)
         print(data)
         print("\n")
@@ -189,5 +191,5 @@ for paginas in range(2,100):
     '''
 # Se crea el JSON
 
-with open('dataCompra.json', 'w', encoding='utf-8') as f:
+with open('dataAlquiler.json', 'w', encoding='utf-8') as f:
     json.dump(json_string, f, ensure_ascii=False, indent=4)
