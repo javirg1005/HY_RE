@@ -15,6 +15,7 @@ cur = con.cursor()
 
 json_string = []
 
+
 for paginas in range(2,100):
         
     # Conseguimos la URL
