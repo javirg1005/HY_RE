@@ -31,23 +31,9 @@ class FavController extends Controller
     }
 
 
-    public function addFav(Request $request, $favorito) {
-        $validator = Validator::make($request->all(), [
-            'Id_usu' => 'required',
-            'Id_inmueble' => 'required',
-        ]);
-
-        if($validator->fails()){
-            return response()->json($validator->errors()->toJson(), 400);
-        }
-
-        $fav = Fav::create([
-            'Id_usu' => $request->get('id_usu'),
-            'Id_inmueble' => $request->get('id_inmueble')
-        ]);
-
-        return response()->json(compact('fav'),201);
-        
+    public function addFav(Request $request) {
+        $fav = Fav::create($request->all());
+        return response()->json($fav, 201);
     }
 
     //Añadir vivienda a la base de datos, tabla viviendas y a favoritos

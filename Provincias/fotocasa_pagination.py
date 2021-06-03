@@ -182,13 +182,3 @@ for i in range(0, len(viviendas)):
     datos = [localidad, titulo, metros, precio, habs, baños, tefefono, descripcion, viviendas[i], imagen]
     cur.execute(sql, datos)
     con.commit()
-
-# Se crea el JSON
-'''
-with open('Provincias/data.json', 'w', encoding='utf-8') as f:
-    json.dump(json_string, f, ensure_ascii=False, indent=4)'''
-
-#con.close()
-
-
-
