@@ -177,7 +177,15 @@ def scraper(localidad):
       
 # Se crea el JSON
 
-json_string = scraper('asturias') #Tiene que ser en minuscula
+def scrapeo_init():
+    provincias = []
+    json_final = []
+    for provincia in provicias:
+        json = scraper(provincia) #Tiene que ser en minuscula
+        json_final.append(json)
+    return json_final
+
+json_final = scraper_init() #Tiene que ser en minuscula
 
 with open('dataAlquiler.json', 'w', encoding='utf-8') as f:
     json.dump(json_string, f, ensure_ascii=False, indent=4)
