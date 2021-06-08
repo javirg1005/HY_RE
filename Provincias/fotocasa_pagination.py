@@ -185,4 +185,4 @@ def scrapeo_init():
 json_final = scrapeo_init() #Tiene que ser en minuscula
 
 with open('dataCompra.json', 'w', encoding='utf-8') as f:
-    json.dump(json_string, f, ensure_ascii=False, indent=4)
+    json.dump(json_final, f, ensure_ascii=False, indent=4)
