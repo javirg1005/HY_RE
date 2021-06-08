@@ -9,7 +9,7 @@ import json
 def scraper(localidad):
     json_string = []
 
-    for paginas in range(2,200):
+    for paginas in range(2,50):
             
         # Conseguimos la URL
         url_base = "https://www.fotocasa.es/es/comprar/viviendas/"
@@ -174,8 +174,15 @@ def scraper(localidad):
     
 # Se crea el JSON 
 
+def scrapeo_init():
+    provincias = ['araba-alava','albacete','alicante','almeria','asturias','avila','badajoz','barcelona','burgos','caceres','cadiz','cantabria','castellon','ciudad-real','cordoba','a-coruna','cuenca','girona','granada','guadalajara','gipuzkoa','huelva','huesca','illes-baleares','jaen','leon','lleida','lugo','madrid','malaga','murcia','navarra','ourense','palencia','las-palmas','pontevedra','la-rioja','salamanca','segovia','sevilla','soria','tarragona','santa-cruz-de-tenerife','teruel','toledo','valencia','valladolid','bizkaia','zamora','zaragoza']
+    json_final = []
+    for provincia in provincias:
+        json = scraper(provincia) #Tiene que ser en minuscula
+        json_final.append(json)
+    return json_final
 
-json_string = scraper('asturias') #Tiene que ser en minuscula
+json_final = scrapeo_init() #Tiene que ser en minuscula
 
 with open('dataCompra.json', 'w', encoding='utf-8') as f:
     json.dump(json_string, f, ensure_ascii=False, indent=4)
