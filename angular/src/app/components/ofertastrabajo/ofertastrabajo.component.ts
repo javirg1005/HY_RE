@@ -29,4 +29,9 @@ export class OfertastrabajoComponent implements OnInit {
       console.log(this.data)
     })
   }
+
+  getIDComponent(job){
+    localStorage.setItem('id_empleo', job.getAttribute('data-job-id'));
+  }
+
 }

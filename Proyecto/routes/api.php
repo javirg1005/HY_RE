@@ -64,3 +64,4 @@ Route::post("/favs-addFav","App\Http\Controllers\FavController@addFav");
 /* Ruta para operaciones de Empleos Favoritos */
 Route::get("/favsjob", "App\Http\Controllers\FavsjobController@index");
 Route::get("/favsjob/{userId}", "App\Http\Controllers\FavsjobController@getFavsByUsuId");
+Route::post("/favsjob-addFav", "App\Http\Controllers\FavsjobController@addFav");

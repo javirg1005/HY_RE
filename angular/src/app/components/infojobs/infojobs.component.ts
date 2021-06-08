@@ -18,7 +18,7 @@ export class InfojobsComponent implements OnInit {
   }
 
   getData() {
-    const url = 'http://127.0.0.1:8000/api/inmuebles/' + localStorage.getItem('id_casa');
+    const url = 'http://127.0.0.1:8000/api/empleos/' + localStorage.getItem('id_empleo');
     this.http.get(url).subscribe((res) => {
       this.data = res
       console.log(this.data)
@@ -27,24 +27,24 @@ export class InfojobsComponent implements OnInit {
 
   rellenar() {
     let id_usu = localStorage.getItem('id_usu');
-    let id_inmueble = localStorage.getItem('id_casa');
-    let fav = new Fav(id_usu, id_inmueble);
+    let id_inmueble = localStorage.getItem('id_empleo');
+    let fav = new Favjob(id_usu, id_inmueble);
     this.addFav(fav);
   }
 
-  addFav(fav: Fav): Observable <any> {
+  addFav(fav: Favjob): Observable <any> {
     console.log(fav);
-    return this.http.post('http://127.0.0.1:8000/api/favs/addFav', fav);
+    return this.http.post('http://127.0.0.1:8000/api/favsjob-addFav', fav);
   }
 
 }
 
-export class Fav {
+export class Favjob {
   id_usu: string;
-  id_inmueble: string;
+  id_job: string;
 
-  constructor(id_usu: string, id_inmueble: string) {
+  constructor(id_usu: string, id_job: string) {
     this.id_usu = id_usu;
-    this.id_inmueble = id_inmueble;
+    this.id_job = id_job;
   }
 }

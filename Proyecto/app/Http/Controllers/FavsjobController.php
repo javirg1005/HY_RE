@@ -29,6 +29,11 @@ class FavsjobController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
+    public function addFav(Request $request) {
+        $fav = Favsjob::create($request->all());
+        return response()->json($fav, 201);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

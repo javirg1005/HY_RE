@@ -47,7 +47,7 @@
                     
                         <div *ngFor="let x of data | paginate: { itemsPerPage: 16, currentPage: page}" class="elemento"> 
                             <!-- Foto -->
-                            <a href="Info">
+                            <a #job href="Infojob" [attr.data-job-id]="x.id" (click)="getIDComponent(job)">
                                 <p>Titulo: {{ x.Titulo }}</p>
                                 <p>Provincia: {{ x.Provincia }}</p>
                                 <p>Salario: {{ x.Salario }}</p>

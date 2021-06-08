@@ -21,7 +21,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 const rutas: Routes = [
   {
-    path: '', pathMatch:'full', redirectTo:  'Mainpage'
+    path: '', pathMatch:'full', redirectTo: 'Mainpage'
   },
   {
     path: 'Mainpage', component: MainpageComponent
@@ -37,6 +37,9 @@ const rutas: Routes = [
   },
   {
     path: 'Info', component: InfoComponent
+  },
+  {
+    path: 'Infojob', component: InfojobsComponent
   },
   {
     path: 'Ofertas', component: OfertasComponent
