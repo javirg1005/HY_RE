@@ -73,6 +73,9 @@ h4 {
     box-sizing: border-box;
     backdrop-filter: blur(30px);
     border-radius: 9vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 p {
@@ -88,7 +91,7 @@ button {
     display: block;
     width: 30vh;
     height: 5.5vh;
-    margin-top: 1vh;
+    margin-top: 5vh;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -128,28 +131,38 @@ button:active {
 
 }
 
+.tag {
+    margin-top: 3vh;
+    font-size: calc(0.5em + 0.5vw);
+    color: #D43414;
+}
+
 /* -------------- Barra del precio -------------- */
 .slidecontainer {
-    width: 100%; /* Width of the outside container */
-    margin-top: 3vh;
+    width: 90%; /* Width of the outside container */
     align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 /* The slider itself */
 .slider {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 50%; /* Full-width */
+    width: 70%; /* Full-width */
     height: 3px; /* Specified height */
     background: #D43414; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
-    margin-top: 45px;
-    
-    margin-left: 0.5vh;
-    margin-right: 0.5vh;
+    margin-top: 1vh;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     
     border-radius: 100px;
 }
@@ -185,7 +198,7 @@ button:active {
 .numero_fin{
     margin-right: 6px;
     color: #D63610;
-    font-size: 20px;
+    font-size: calc(0.5em + 0.5vw);
 }
 
 .baja {

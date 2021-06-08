@@ -35,7 +35,7 @@ export class InfoComponent implements OnInit {
 
   addFav(fav: Fav): Observable <any> {
     console.log(fav);
-    return this.http.post('http://127.0.0.1:8000/api/favs/addFav', fav);
+    return this.http.post('http://127.0.0.1:8000/api/fav/addFav', fav);
   }
 
 }

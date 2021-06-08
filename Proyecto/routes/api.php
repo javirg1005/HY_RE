@@ -42,11 +42,11 @@ Route::get("/empleos/{id}", "App\Http\Controllers\EmpleoController@show");
 Route::get("/inmuebles", "App\Http\Controllers\InmuebleController@index");
 
 Route::get("/inmuebles/{id}", "App\Http\Controllers\InmuebleController@getInmueble");
-Route::get("/inmuebles/hab/{habitaciones}", "App\Http\Controllers\InmuebleController@getInmuebleProvincia");
-Route::get("/inmuebles/filtro-main", "App\Http\Controllers\InmuebleController@filtroMain");
-Route::get("/inmuebles/maxPrecio", "App\Http\Controllers\InmuebleController@maxPrecio");
-Route::get("/inmuebles/maxHabitaciones", "App\Http\Controllers\InmuebleController@maxHabitaciones");
-Route::get("/inmuebles/maxMetros", "App\Http\Controllers\InmuebleController@maxMetros");
+Route::get("/inmuebles-max-precio", "App\Http\Controllers\InmuebleController@max_precio");
+Route::get("/inmuebles-hab/{habitaciones}", "App\Http\Controllers\InmuebleController@getInmuebleProvincia");
+Route::get("/inmuebles-filtro-main", "App\Http\Controllers\InmuebleController@filtroMain");
+Route::get("/inmuebles-max-habitaciones", "App\Http\Controllers\InmuebleController@max_hab");
+Route::get("/inmuebles-max-metros", "App\Http\Controllers\InmuebleController@max_metros");
 
 /* Ruta para operaciones de Actividades */
 Route::get("/actividades", "App\Http\Controllers\ActividadController@index");
@@ -59,7 +59,7 @@ Route::get("/noticias/{id}", "App\Http\Controllers\NoticiaController@getNoticia"
 /* Ruta para operaciones de Inmuebles Favoritos */
 Route::get("/favs", "App\Http\Controllers\FavController@index");
 Route::get("/favs/{userId}", "App\Http\Controllers\FavController@getFavsByUsuId");
-Route::post("/favs/addFav","App\Http\Controllers\FavController@addFav");
+Route::post("/favs-addFav","App\Http\Controllers\FavController@addFav");
 
 /* Ruta para operaciones de Empleos Favoritos */
 Route::get("/favsjob", "App\Http\Controllers\FavsjobController@index");

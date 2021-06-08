@@ -19,22 +19,34 @@ class InmuebleController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
+    public function max_precio()
+    {
+        $resp = Inmueble::max('Precio');
+        return $resp;
+    }
+
+    public function max_hab()
+    {
+        $resp = Inmueble::max('Habitaciones');
+        return $resp;
+    }
+
+    public function max_metros()
+    {
+        $resp = Inmueble::max('Metros');
+        return $resp;
+    }
+
     public function getInmueble($id) {
         $resp = Inmueble::where("id", $id)->get();
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
-    public function maxPrecio() {
-        $resp = Inmueble::where("username", $username)->first()->id;
-        return $resp;
-    }
-
     public function getInmuebleFiltro(Request $request) {
-
         $precio = $request->get('precio');
         $pob = $request->get('poblacion');
         $prov = $request->get('provincia');
-        $resp = Inmueble::where("habitaciones", $hab)->get();
+        $resp = Inmueble::where("Habitaciones", $hab)->get();
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 

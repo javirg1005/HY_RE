@@ -13,7 +13,7 @@
     
     <body>
         <div class="contenedor">
-            <form [formGroup]='filtroVForm' class="filtros"> 
+            <form [formGroup]='filtroVForm' (ngSubmit)="onSubmit()" class="filtros"> 
                 <h3 class="sugerencia"> Filtro </h3>
                 
                 <h1> Precio </h1>
@@ -27,7 +27,7 @@
                 <div class="slidecontainer">
                     <span class="numero_inicio"> 0</span> 
                     <input type="range" min="0" max="10" value="0" class="slider" id="">
-                    <span class="numero_fin"> ∞ </span>
+                    <span class="numero_fin"> 10 </span>
                 </div>
 
                 <h1> Metros cuadrados </h1>

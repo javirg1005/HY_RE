@@ -178,7 +178,7 @@ def scraper(localidad):
 # Se crea el JSON
 
 def scrapeo_init():
-    provincias = []
+    provincias = ['araba-alava','albacete','alicante','almeria','asturias','avila','badajoz','barcelona','burgos','caceres','cadiz','cantabria','castellon','ciudad-real','cordoba','a-coruna','cuenca','girona','granada','guadalajara','gipuzkoa','huelva','huesca','illes-baleares','jaen','leon','lleida','lugo','madrid','malaga','murcia','navarra','ourense','palencia','las-palmas','pontevedra','la-rioja','salamanca','segovia','sevilla','soria','tarragona','santa-cruz-de-tenerife','teruel','toledo','valencia','valladolid','bizkaia','zamora','zaragoza']
     json_final = []
     for provincia in provicias:
         json = scraper(provincia) #Tiene que ser en minuscula

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { FiltroMain } from '../mainpage/mainpage.component';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class OfertasComponent implements OnInit {
   public data: any = []
   page = 1;
   filtroVForm: FormGroup;
+  errors = null
 
   constructor(
     private http: HttpClient,
@@ -46,7 +48,30 @@ export class OfertasComponent implements OnInit {
   }
 
   onSubmit() {
-    
+    this.aplicarFiltro(this.filtroVForm.value).subscribe(
+      res => {
+        console.log(res)
+        //Encuentra ha funcionado el filtro
+      },
+      error => {
+        this.errors = error.error;
+        //Da error
+      }
+    )
   }
 
+  aplicarFiltro(fb: FiltroInmueble) {
+    console.log(fb.precio)
+    console.log(fb.habitaciones)
+    console.log(fb.metros)
+
+    return this.http.post('http://127.0.0.1:8000/api/filtro-oferta', fb);
+  }
+
+}
+
+export class FiltroInmueble {
+  precio: number;
+  habitaciones: number;
+  metros: number;
 }
