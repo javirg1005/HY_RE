@@ -14,7 +14,7 @@ def scraper(localidad):
         # Conseguimos la URL
         url_base = "https://www.fotocasa.es/es/comprar/viviendas/"
         url = url_base + localidad +"-provincia/todas-las-zonas/l/" + str(paginas)
-        print(url)
+        #print(url)
         
         # Hacemos la petición
         page = requests.get(url)
@@ -41,15 +41,15 @@ def scraper(localidad):
 
         for i in range (len(urls)):
             url_piso = url_fotocasa + urls[i]
-            print(url_piso)
+            #print(url_piso)
             viviendas.append(url_piso)
 
         # Una vez tenemos la URL de la vivienda en concreto, la scrapeamos
         for i in range(0, len(viviendas)):
             vivienda = requests.get(viviendas[i])
-            print("--------------------------")
-            print(viviendas[i])
-            print("--------------------------")
+            #print("--------------------------")
+            #print(viviendas[i])
+            #print("--------------------------")
             #print(vivienda.status_code)
 
             # Imprimimos el contenido de la página
@@ -81,7 +81,7 @@ def scraper(localidad):
                     titulo = "Título no disponible"    
             else:
                 titulo = "Título no disponible"
-            print(titulo)
+            #print(titulo)
 
             # Descripción
             regexDescripcion = 'class="fc-DetailDescription">(.*)<\/p><\/div><\/div><div class="sui'
@@ -94,7 +94,7 @@ def scraper(localidad):
                     print("descripcion no encontrada")
             else:
                 descripcion = "Descripción no disponible"
-            print(descripcion, end= "\n")
+            #print(descripcion, end= "\n")
 
             # Imagen de la vivienda
             regexImagen = '(https:\/\/static\.inmofactory\.com\/images\/inmofactory\/documents\/\d+\/\d+\/\d+\/\d+\.jpg)\?rule=\w+" type="image\/webp"'
@@ -106,7 +106,7 @@ def scraper(localidad):
                     print("Imagen no encontrada")
             else:
                 imagen = "Imagen no disponible"
-            print(imagen, end= " <-- es la URL de la imagen\n")
+            #print(imagen, end= " <-- es la URL de la imagen\n")
 
             # Número Metros Cuadrados
             regexMetros = '<span>(\d{1,7})<\/span> m²'
@@ -118,7 +118,7 @@ def scraper(localidad):
                     print("No se especifica el número de m² en la vivienda")
             else:
                 metros = "m² no disponible"
-            print(metros, end= " m²\n")
+            #print(metros, end= " m²\n")
 
             # Precio
             regexPrecio = '<span class="re-DetailHeader-price">(.*) €<\/span>'
@@ -139,19 +139,19 @@ def scraper(localidad):
                     print("No se especifica el número de baños en la vivienda")
             else:
                 habs = "Nº de habitaciones no disponible"
-            print(habs, end=" habitaciones\n")
+            #print(habs, end=" habitaciones\n")
 
             # Número Baños
-            regexBaños = '<span>(.)<\/span> baño'
+            regexBanos = '<span>(.)<\/span> baño'
             if str(soup_casa).find("baño"):
-                baños = re.search(regexBaños, str(soup_casa))
-                if baños != None:
-                    baños = baños.group(1)
+                banos = re.search(regexBaños, str(soup_casa))
+                if banos != None:
+                    banos = banos.group(1)
                 else:
                     print("No se especifica el número de baños en la vivienda")
             else:
-                baños = "No disponible"
-            print(baños, end=" baños\n")
+                banos = "No disponible"
+            #print(baños, end=" baños\n")
 
             # Teléfono
             regexTfno = 'href="tel:(\d{9})">'
@@ -163,12 +163,15 @@ def scraper(localidad):
                     tefefono = "Número no disponible"
             else:
                 tefefono = "Número no disponible"
-            print(tefefono)
+            #print(tefefono)
 
-            data = {'Localidad': localidad,'Titulo': titulo,'Metros': metros,'Precio': precio, 'Habitaciones': habs,'Baños': baños,'Telefono': tefefono,'Descripcion': descripcion,'Url': viviendas[i], 'Imagen': imagen}
+            data = {"Localidad": localidad,"Titulo": titulo,"Metros": metros,"Precio": precio, "Habitaciones": habs,"Baños": baños,"Telefono": tefefono,"Descripcion": descripcion,"Url": viviendas[i], "Imagen": imagen}
             json_string.append(data)
-            print(data)
-            print("\n")
+            con = mysql.connector.connect(host="localhost",user='root',passwd='',database='recomendador')
+            cur = con.cursor()
+            sql = 'insert into inmuebles(Localidad, Pago, Titulo, Metros, Precio, Habitaciones, Banos, Telefono, Descripcion, Url, Url_imagen) values (%s, compra, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
+            datos = localidad, titulo, metros, precio, habs, banos, tefefono, descripcion, viviendas[i], imagen]
+            cur.execute(sql, datos)
 
         return json_string
     
@@ -178,6 +181,7 @@ def scrapeo_init():
     provincias = ['araba-alava','albacete','alicante','almeria','asturias','avila','badajoz','barcelona','burgos','caceres','cadiz','cantabria','castellon','ciudad-real','cordoba','a-coruna','cuenca','girona','granada','guadalajara','gipuzkoa','huelva','huesca','illes-baleares','jaen','leon','lleida','lugo','madrid','malaga','murcia','navarra','ourense','palencia','las-palmas','pontevedra','la-rioja','salamanca','segovia','sevilla','soria','tarragona','santa-cruz-de-tenerife','teruel','toledo','valencia','valladolid','bizkaia','zamora','zaragoza']
     json_final = []
     for provincia in provincias:
+        print(provincia)
         json = scraper(provincia) #Tiene que ser en minuscula
         json_final.append(json)
     return json_final
