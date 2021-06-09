@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://kit.fontawesome.com/d2c91c8654.js" crossorigin="anonymous"></script>
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
+        <title> Perfil - Favoritos </title>
+      </head>
+    <body>
+        <!-- Contenedor con los campos de búsqueda -->
+        <div class="contenedor">
+            <div>
+              <h1> Mis favoritos </h1>
+            </div>
+            <div class='contenedorPrime'>
+                <div *ngFor="let x of data" class="subcontenedor"> 
+                    <!-- Foto -->
+                    <a href="Info">
+                        <div>
+                            <img src="{{ x.Url_imagen }}" class="imagen" alt="foto de casa">
+                        </div>
+                        <div>
+                            <p class="titulo">{{ x.Titulo }}</p>
+                            <p>Nº habitaciones: {{ x.Habitaciones }}</p>
+                            <p>Metros cuadrados: {{ x.Metros }}</p>
+                            <p>Precio: {{ x.Precio }}</p>
+                        </div>
+                        
+                    </a>
+                </div>
+                
+                
+                <!--    
+                <div class='subcontenedor'>  
+                    <div class='imagen'>
+                        
+                    </div>
+                    <div class='informacion'>
+                        Contenido
+                    </div>
+                </div>
+                <div class='subcontenedor'>
+                    <div class='imagen'>
+                        
+                    </div>
+                    <div class='informacion'>
+                        Contenido
+                    </div>
+                </div>
+                <div class='subcontenedor'>
+                    <div class='imagen'>
+                        
+                    </div>
+                    <div class='informacion'>
+                        Contenido
+                    </div>
+                </div>
+                <div class='subcontenedor'>
+                    <div class='imagen'>
+                        
+                    </div>
+                    <div class='informacion'>
+                        Contenido
+                    </div>
+                </div>
+                <div class='subcontenedor'>
+                    <div class='imagen'>
+                        
+                    </div>
+                    <div class='informacion'>
+                        Contenido
+                    </div>
+                </div>
+                <div class='subcontenedor'>
+                    <div class='imagen'>
+                        
+                    </div>
+                    <div class='informacion'>
+                        Contenido
+                    </div>
+                </div>
+                <div class='subcontenedor'>
+                    <div class='imagen'>
+                        
+                    </div>
+                    <div class='informacion'>
+                        Contenido
+                    </div>
+                </div>
+                <div class='subcontenedor'>
+                    <div class='imagen'>
+                        
+                    </div>
+                    <div class='informacion'>
+                        Contenido
+                    </div>
+                </div>
+                <div class='subcontenedor'>
+                    <div class='imagen'>
+                        
+                    </div>
+                    <div class='informacion'>
+                        Contenido
+                    </div>
+                </div>
+            -->
+            </div>
+        </div> 
+    </body> 
+</html>

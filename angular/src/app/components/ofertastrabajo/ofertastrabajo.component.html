@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> Buscador - Ofertas </title>
+        <!-- Stylesheet SOLO para pruebas, quitarla luego -->
+        <link rel="stylesheet" href="ofertastrabajo.component.css">
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="contenedor">
+            <form [formGroup]='filtroTForm' (ngSubmit)="onSubmit()" class="filtros"> 
+                <h3 class="sugerencia"> Filtro </h3>
+                
+                <h1> Salario </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="100" value="0" formControlName="salario" class="slider" id="salario">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
+
+                <h1> Habitaciones </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="10" value="0" class="slider" id="habitaciones">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
+
+                <h1> Metros cuadrados </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="10000" value="0" class="slider" id="metros">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
+                
+                <button type="submit" class='btn_filtro'> Aplicar </button>
+            </form>
+            
+            <div class="ofertas"> 
+                <h3 class="sugerencia"> Le sugerimos los siguientes trabajos: </h3>
+
+                <div class="subcontenedor"> 
+                    
+                        <div *ngFor="let x of data | paginate: { itemsPerPage: 16, currentPage: page}" class="elemento"> 
+                            <!-- Foto -->
+                            <a #job href="Infojob" [attr.data-job-id]="x.id" (click)="getIDComponent(job)">
+                                <p>Titulo: {{ x.Titulo }}</p>
+                                <p>Provincia: {{ x.Provincia }}</p>
+                                <p>Salario: {{ x.Salario }}</p>
+                            </a>    
+                        </div>
+                    
+                </div>
+                <pagination-controls class="pagination" (pageChange)="handlePageChange($event)"></pagination-controls>
+            </div>
+        
+        </div> 
+    </body>
+
+</html>

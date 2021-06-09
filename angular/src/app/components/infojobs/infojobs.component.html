@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://kit.fontawesome.com/d2c91c8654.js" crossorigin="anonymous"></script>
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
+        <title> PC2 y PC3 </title>
+      </head>
+    <body>
+        <!-- Contenedor con los campos de búsqueda -->
+        <div class="contenedor">
+            <div class="desc-container">
+                <div class="column">
+                    <img class="info-photo" src="../../../assets/tarjeta_trabajo.svg" alt="info-photo">
+                    <div class="column-left">
+                        <button class='btn_favs' (click)='rellenar()'><img src="../../../assets/heart-solid.png" alt="heart-solid" style="width: 30px"></button>
+                        <div class="row">
+                            <p><span class="bold">Precio: </span> {{data[0].Salario}} €</p>
+                            <p><span class="bold">Provincia: </span> {{data[0].Provincia}}</p>
+                            <p><span class="bold">Localidad: </span> {{data[0].Ciudad}}</p>
+                            <p><span class="bold">Tipo de Contrato: </span> {{data[0].TipoContrato}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-nav">
+                    <a class="tel" href="{{data[0].URL}}"><img class="nav-icon" src="../../../assets/phone-solid.png" alt="phone-solid">Visita la web</a>
+                    <a href=""><img class="nav-icon" src="../../../assets/Noticias.png">Noticias</a>
+                </div>
+            </div>
+            <div class="info-container">
+                 <h2>{{data[0].Titulo}}</h2>
+                 <div class="componente-txt">
+                     <h4>Descripción</h4>
+                     <p> {{ data[0].Descripcion }}</p>
+                 </div>
+            </div>
+        </div> 
+    </body> 
+</html>

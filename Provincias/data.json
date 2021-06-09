@@ -1,0 +1,41 @@
+[
+    {
+        "ID": 0,
+        "Localidad": "asturias",
+        "Titulo": "Piso en venta en Teodoro Cuesta, Ciudad Naranco - Prados de La Fuente",
+        "Metros": "67",
+        "Precio": "149000",
+        "Habitaciones": "2",
+        "Baños": "2",
+        "Telefono": "984985490",
+        "Descripcion": "Piso en venta en Ciudad Naranco, en Oviedo (Asturias, España). \r PRECIO: 149.000 €.\rSuperficie construida: 67 m².\r2 habitaciones y 2 baños.\r5ª planta exterior. \rPlaza de garaje y trastero incluidos.\r Piso en venta situado en Ciudad Naranco, Oviedo. Está ubicado a un paso de las estaciones de autobús y Renfe. La vivienda se encuentra en un edificio construido en 2000, sin barreras arquitectónicas y con ascensor.\rTiene una superficie construida de 67 m² distribuidos en hall de entrada, salón comedor, cocina amueblada, dos habitaciones (una de ellas con terraza) y dos baños. Plaza de garaje y trastero incluidos en el precio.\rDispone de suelos de parquet y gres, ventanas de doble acristalamiento, armarios empotrados, calefacción individual de gas ciudad, puerta de seguridad, etc. Orientación sur y norte.\rGastos de comunidad: € al mes.\r Sellmi | Inmobiliaria | Real Estate. \rEncuentra más en http://www.sellmi.es",
+        "Url": "https://www.fotocasa.es/es/comprar/vivienda/oviedo/calefaccion-parking-terraza-trastero-ascensor/160179742/d",
+        "Imagen": "https://static.inmofactory.com/images/inmofactory/documents/1/109932/28194666/401710405.jpg?rule=web_948x542_webp_50"
+    },
+    {
+        "ID": 1,
+        "Localidad": "asturias",
+        "Titulo": "Piso en venta en La Calzada",
+        "Metros": "78",
+        "Precio": "89000",
+        "Habitaciones": "3",
+        "Baños": "1",
+        "Telefono": "984985475",
+        "Descripcion": "Piso CALZADA con VISTAS al PARQUE, TODO EXTERIOR, tres dormitorios, baño amplio, ventanas pvc, parquet, DOS despensas, ALTURA, ascensor",
+        "Url": "https://www.fotocasa.es/es/comprar/vivienda/gijon/ascensor-amueblado/159861958/d",
+        "Imagen": "https://static.inmofactory.com/images/inmofactory/documents/1/108953/27969990/386550260.jpg?rule=web_948x542_webp_50"
+    },
+    {
+        "ID": 2,
+        "Localidad": "asturias",
+        "Titulo": "Piso en venta en La Calzada",
+        "Metros": "65",
+        "Precio": "79000",
+        "Habitaciones": "2",
+        "Baños": "2",
+        "Telefono": "984985475",
+        "Descripcion": "Piso frente al LAUREDAL  lado playa del ARBEYAL, CON VISTAS, dos dormitorios, baño, aseo,cocinasalon, GAS CIUDAD, EXTERIOR, ASCENSOR",
+        "Url": "https://www.fotocasa.es/es/comprar/vivienda/gijon/calefaccion-ascensor-amueblado-television/160075318/d",
+        "Imagen": "https://static.inmofactory.com/images/inmofactory/documents/1/108953/28161943/400610656.jpg?rule=web_948x542_webp_50"
+    }
+]
