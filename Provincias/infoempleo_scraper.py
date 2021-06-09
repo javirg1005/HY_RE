@@ -11,67 +11,69 @@ provincia = "Asturias/" ## Provincia a introducir por el usuario
 url = url_base + provincia
 print(url)
 
-# Hacemos la petición
-page = requests.get(url)
-print(page.status_code)
+for i in range (1, 20):
 
-# Imprimimos el contenido de la página
-soup = BeautifulSoup(page.content, 'html.parser')
-#print(soup)
+    url = url + str(i)
 
-# Se escribe en un archivo la salida del HTML para poder pasarlo a regex más fácilmente
-file = open("empleoInfo.txt", "w+", encoding="utf-8")
-file.write(str(soup))
+    # Hacemos la petición
+    page = requests.get(url)
+    #print(page.status_code)
 
-empleos = str(soup).split('li class="featured"')
-print("----------------------------")
+    # Imprimimos el contenido de la página
+    soup = BeautifulSoup(page.content, 'html.parser')
+    #print(soup)
 
-for i in range (1,3):
+    """# Se escribe en un archivo la salida del HTML para poder pasarlo a regex más fácilmente
+    file = open("empleoInfo.txt", "w+", encoding="utf-8")
+    file.write(str(soup))"""
 
-    # Título
-    regexTitulo = '<a href=.*\s*(.*)'
-    resultado_titulo = re.search(regexTitulo, empleos[i])
-    if resultado_titulo != None:
-        print(resultado_titulo.group(1))
-    
-    # Localidad
-    regexLocalidad = '<p class="block">\s+(.*)'
-    resultado_localidad = re.search(regexLocalidad, empleos[i])
-    if resultado_localidad != None:
-        print(resultado_localidad.group(1))
+    empleos = str(soup).split('li class="featured"')
+    print("----------------------------")
 
-    # Descripción
-    regexDescripcion = '<p class="small">(.*)<'
-    resultado_descripcion = re.search(regexDescripcion, empleos[i])
-    if resultado_descripcion != None:
-        print(resultado_descripcion.group(1))
+    for i in range (1,3):
+        # Título
+        regexTitulo = '<a href=.*\s*(.*)'
+        resultado_titulo = re.search(regexTitulo, empleos[i])
+        if resultado_titulo != None:
+            print(resultado_titulo.group(1))
+        
+        # Localidad
+        regexLocalidad = '<p class="block">\s+(.*)'
+        resultado_localidad = re.search(regexLocalidad, empleos[i])
+        if resultado_localidad != None:
+            print(resultado_localidad.group(1))
 
-
-    print(" ------------ fin oferta" + str(i) + "  ------------")
-
-
-empleos2 = str(soup).split('li class="offerblock"')
-print("----------------------------")
-
-for i in range (1,9):
-
-    # Título
-    regexTitulo = '<a href=.*">(.*)<'
-    resultado_titulo = re.search(regexTitulo, empleos2[i])
-    if resultado_titulo != None:
-        print(resultado_titulo.group(1))
-    
-    # Localidad
-    regexLocalidad = '<p class="block">\s+(.*)'
-    resultado_localidad = re.search(regexLocalidad, empleos2[i])
-    if resultado_localidad != None:
-        print(resultado_localidad.group(1))
-
-    # Descripción
-    regexDescripcion = '<p class="small">(.*)<'
-    resultado_descripcion = re.search(regexDescripcion, empleos2[i])
-    if resultado_descripcion != None:
-        print(resultado_descripcion.group(1))
+        # Descripción
+        regexDescripcion = '<p class="small">(.*)<'
+        resultado_descripcion = re.search(regexDescripcion, empleos[i])
+        if resultado_descripcion != None:
+            print(resultado_descripcion.group(1))
 
 
-    print(" ------------ fin oferta offerblock " + str(i) + "  ------------")
+        print(" ------------ fin oferta featured " + str(i) + "  ------------")
+
+
+    empleos2 = str(soup).split('li class="offerblock"')
+    print("----------------------------")
+
+    for i in range (1,9):
+        # Título
+        regexTitulo = '<a href=.*">(.*)<'
+        resultado_titulo = re.search(regexTitulo, empleos2[i])
+        if resultado_titulo != None:
+            print(resultado_titulo.group(1))
+        
+        # Localidad
+        regexLocalidad = '<p class="block">\s+(.*)'
+        resultado_localidad = re.search(regexLocalidad, empleos2[i])
+        if resultado_localidad != None:
+            print(resultado_localidad.group(1))
+
+        # Descripción
+        regexDescripcion = '<p class="small">(.*)<'
+        resultado_descripcion = re.search(regexDescripcion, empleos2[i])
+        if resultado_descripcion != None:
+            print(resultado_descripcion.group(1))
+
+
+        print(" ------------ fin oferta offerblock " + str(i) + "  ------------")
