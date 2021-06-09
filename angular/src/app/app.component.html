@@ -3,7 +3,7 @@
         <nav class="navbar sticky">
             <a class="logo" href="Mainpage">Absa</a>
             <ul class="nav-links">
-                <li class="nav-item"><a href="Ofertas"><img class="nav-icon" src="../assets/Casita.png">Todos los Inmuebles</a></li>
+                <li class="nav-item"><a href="Ofertas" (click)="setFullFilter()"><img class="nav-icon" src="../assets/Casita.png">Todos los Inmuebles</a></li>
                 <li class="nav-item"><a href="Ofertas_Trabajo"><img class="nav-icon" src="../assets/Empleos.png">Todos los Empleos</a></li>
                 <li class="nav-item" *ngIf="isLoggedin"><a href="Favoritos"><img class="nav-icon" src="../assets/favs.png">Favoritos</a></li>
             </ul>

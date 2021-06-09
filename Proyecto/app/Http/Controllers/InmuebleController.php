@@ -42,11 +42,16 @@ class InmuebleController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
-    public function getInmuebleFiltro(Request $request) {
-        $precio = $request->get('precio');
-        $pob = $request->get('poblacion');
-        $prov = $request->get('provincia');
-        $resp = Inmueble::where("Habitaciones", $hab)->get();
+    public function filtroMain(Request $filtro) {
+        print_r($filtro);
+        $precio = $filtro['precio'];
+        $hab = $filtro['habs'];
+        $prov = strtolower($filtro['prov']);
+        if ($prov == "Todas las provincias") {
+            $resp = Inmueble::where("Habitaciones", "<=", $hab)->where("precio", "<=" , $precio)->get();
+        } else {
+            $resp = Inmueble::where("Habitaciones", "<=", $hab)->where("precio", "<=" , $precio)->where("provincia", $prov)->get();
+        }
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 

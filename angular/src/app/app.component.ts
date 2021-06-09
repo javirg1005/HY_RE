@@ -34,6 +34,10 @@ export class AppComponent {
   });
   }
 
+  setFullFilter() {
+    localStorage.setItem('parche', '0');
+  }
+
   logOut() {
     this.authenticationStateService.setAuthState(false);
     this.tokenAuthService.destroyToken();

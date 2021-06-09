@@ -1,14 +1,8 @@
 <div class="combobox">
-    <input type="text" placeholder="Selecciona provincia" 
-    class="combobox-input" [(ngModel)]="inputItem"
-    (ngModelChange)="getFilteredList()" (keyup)="onKeyPress($event)"
-    (blur)="toggleListDisplay(0)" (focus)="toggleListDisplay(1)"
-    [ngClass]="{'error': showError}">
+    <input type="text" placeholder="Selecciona provincia" class="combobox-input" [(ngModel)]="inputItem" (ngModelChange)="getFilteredList()" (keyup)="onKeyPress($event)" (blur)="toggleListDisplay(0)" (focus)="toggleListDisplay(1)" [ngClass]="{'error': showError}">
     <i *ngIf="showError" class="error-text">Valor inválido.</i>
     <div class="combobox-options" *ngIf="!listHidden">
-        <list-item *ngFor="let item of filteredList;let i = index"
-            [ngClass]="{'selected': i===selectedIndex}"
-            (click)="selectItem(i)">
+        <list-item *ngFor="let item of filteredList;let i = index" [ngClass]="{'selected': i===selectedIndex}" (click)="selectItem(i)">
             {{item}}
         </list-item>
     </div>

@@ -20,20 +20,20 @@
                 <div class="subcontenedor"> 
                     <img class="icono" src="assets/Euro.png">
                     <h4> ¿Cuánto es lo máximo que <br> quieres pagar? </h4>
-                    <label id="priceTag" class="tag">100</label>
+                    <label id="priceTag" class="tag">{{max_precio}}</label>
                     <div class="slidecontainer">
-                        <span class="numero_fin">100</span> 
-                        <input type="range" min="100" max="{{max_precio}}" value="0" step="100" class="slider" name="precio" id="priceRange" (input)="valuePrice()">
+                        <span class="numero_fin">0</span> 
+                        <input type="range" min="100" max="{{max_precio}}" value="{{max_precio}}" step="100" class="slider" formControlName="precio" name="precio" id="priceRange" (input)="valuePrice()">
                         <span class="numero_fin"> {{max_precio}} </span>
                     </div>
                 </div>
                 <div class="subcontenedor"> 
                     <img class="icono" src="assets/Casa.png">
                     <h4> ¿Cuántas habitaciones le gustaría tener? </h4>
-                    <label id="habTag" class="tag">0</label>
+                    <label id="habTag" class="tag">{{max_hab}}</label>
                     <div class="slidecontainer">
                         <span class="numero_fin">0</span> 
-                        <input type="range" min="0" max="{{max_hab}}" value="0" class="slider" name="habitaciones" id="habRange" (input)="valueHab()">
+                        <input type="range" min="0" max="{{max_hab}}" value="{{max_hab}}" class="slider" formControlName="habitaciones" name="habitaciones" id="habRange" (input)="valueHab()">
                         <span class="numero_fin"> {{max_hab}} </span>
                     </div>
                 </div>

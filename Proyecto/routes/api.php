@@ -44,7 +44,7 @@ Route::get("/inmuebles", "App\Http\Controllers\InmuebleController@index");
 Route::get("/inmuebles/{id}", "App\Http\Controllers\InmuebleController@getInmueble");
 Route::get("/inmuebles-max-precio", "App\Http\Controllers\InmuebleController@max_precio");
 Route::get("/inmuebles-hab/{habitaciones}", "App\Http\Controllers\InmuebleController@getInmuebleProvincia");
-Route::get("/inmuebles-filtro-main", "App\Http\Controllers\InmuebleController@filtroMain");
+Route::post("/inmuebles-filtro-main", "App\Http\Controllers\InmuebleController@filtroMain");
 Route::get("/inmuebles-max-habitaciones", "App\Http\Controllers\InmuebleController@max_hab");
 Route::get("/inmuebles-max-metros", "App\Http\Controllers\InmuebleController@max_metros");
 

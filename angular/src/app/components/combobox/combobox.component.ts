@@ -5,7 +5,7 @@ templateUrl: './combobox.component.html',
 styleUrls: ['./combobox.component.css']
 })
 export class ComboboxComponent implements OnInit {
-    @Input() list: string[] = ["Albacete", "Alicante", "Almería", "Álava", "Asturias", "Ávila", "Badajoz", "Baleares (Islas)", 
+    @Input() list: string[] = ["Todas las provincias", "Albacete", "Alicante", "Almería", "Álava", "Asturias", "Ávila", "Badajoz", "Baleares (Islas)", 
     "Barcelona", "Vizcaya", "Burgos", "Cáceres", "Cádiz", "Cantabria", "Castellón", "Ceuta", "Ciudad Real", "Córdoba", "A Coruña",
     "Cuenca", "Gipuzkoa", "Girona", "Granada", "Guadalajara", "Huelva", "Huesca", "Jaén", "León", "Lleida", "Lugo", "Madrid", "Málaga",
     "Melilla", "Murcia", "Navarra", "Ourense", "Palencia", "Las Palmas", "Pontevedra", "La Rioja", "Salamanca", "Santa Cruz de Tenerife", 
@@ -21,6 +21,7 @@ export class ComboboxComponent implements OnInit {
     constructor() { }
     ngOnInit() {
         this.filteredList = this.list;
+        this.inputItem = this.filteredList[0];
     }
     // modifies the filtered list as per input
     getFilteredList() {
@@ -34,6 +35,7 @@ export class ComboboxComponent implements OnInit {
         this.inputItem = this.filteredList[ind];
         this.listHidden = true;
         this.selectedIndex = ind;
+        localStorage.setItem('provincia', this.inputItem);
     }
     // navigate through the list of items
     onKeyPress(event) {

@@ -20,32 +20,34 @@ export class MainpageComponent implements OnInit {
   max_met: any = [];
   errors = null;
 
+
   constructor(
     public fb: FormBuilder,
     public router: Router,
-    private http:HttpClient
+    private http:HttpClient,
   ) {
     this.searchForm = this.fb.group({
-      username: [],
-      password: []
+      precio: [],
+      habitaciones: []
     }) 
   }
 
   ngOnInit() {
     this.getData();
+    localStorage.setItem('provincia', 'Todas las provincias');
   }
 
   onSubmit() {
-    this.searchCoso(this.searchForm.value).subscribe(
-      res => {
-        console.log(res)
-        //Encuentra ha funcionado el filtro
-      },
-      error => {
-        this.errors = error.error;
-        //Da error
-      }
-    )
+    localStorage.setItem('parche', '1');
+    let zapatilla = this.searchForm.value;
+    console.log(zapatilla);
+    localStorage.setItem('habs', zapatilla.habitaciones);
+    localStorage.setItem('precio', zapatilla.precio);
+
+
+
+    console.log('lets goooo')
+    this.router.navigate(['Ofertas']);
   }
 
   valuePrice() {
@@ -79,10 +81,10 @@ export class MainpageComponent implements OnInit {
   }
 
   searchCoso(fb: FiltroMain): Observable<any> {
-    console.log(fb.poblacion)
     console.log(fb.precio)
+    console.log(fb.habitaciones)
     console.log(fb.provincia)
-    return this.http.post('http://127.0.0.1:8000/api/filtro-main', fb);
+    return this.http.post('http://127.0.0.1:8000/api/inmuebles-filtro-main', fb);
   }
 
 
@@ -90,6 +92,6 @@ export class MainpageComponent implements OnInit {
 
 export class FiltroMain {
   precio: number;
-  poblacion: number;
+  habitaciones: number;
   provincia: String;
 }

@@ -19,7 +19,7 @@ export class OfertasComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    public fb: FormBuilder,
+    public fb: FormBuilder
     ) {
     this.filtroVForm = this.fb.group({
       precio: [],
@@ -28,7 +28,11 @@ export class OfertasComponent implements OnInit {
     }) }
 
   ngOnInit(): void {
-    this.getData();
+    if(localStorage.getItem('parche') == '1'){
+      this.searchCoso(localStorage.getItem('provincia'), localStorage.getItem('habs'), localStorage.getItem('precio'))
+    }else{
+      this.getData();
+    }
   }
 
   handlePageChange(event) {
@@ -41,6 +45,17 @@ export class OfertasComponent implements OnInit {
       this.data = res
       console.log(this.data)
     })
+  }
+
+  searchCoso(provincia, habs, precio) {
+   
+
+    const url ='http://127.0.0.1:8000/api/inmuebles-filtro-main/' + {"precio": precio, "habs": habs, "provincia": provincia};
+    this.http.get(url).subscribe((res) =>{
+      this.data = res
+      console.log(this.data)
+    })
+    
   }
 
   getIDComponent(casa){

@@ -6,8 +6,11 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
+import mysql.connector
+
 def scraper(localidad):
     json_string = []
+    tipo = 'compra'
 
     for paginas in range(2,50):
             
@@ -15,6 +18,12 @@ def scraper(localidad):
         url_base = "https://www.fotocasa.es/es/comprar/viviendas/"
         url = url_base + localidad +"-provincia/todas-las-zonas/l/" + str(paginas)
         #print(url)
+
+
+
+       
+        con = mysql.connector.connect(host="localhost",user='root',passwd='',database='recomendador')
+        cur = con.cursor()
         
         # Hacemos la petición
         page = requests.get(url)
@@ -92,6 +101,7 @@ def scraper(localidad):
                     descripcion = re.sub(r'\<.*?\>', '', descripcion)
                 else:
                     print("descripcion no encontrada")
+                    descripcion = "Descripción no disponible"
             else:
                 descripcion = "Descripción no disponible"
             #print(descripcion, end= "\n")
@@ -104,6 +114,7 @@ def scraper(localidad):
                     imagen = imagen.group(1) + "?rule=web_948x542_webp_50"
                 else:
                     print("Imagen no encontrada")
+                    imagen = "Imagen no disponible"
             else:
                 imagen = "Imagen no disponible"
             #print(imagen, end= " <-- es la URL de la imagen\n")
@@ -116,8 +127,9 @@ def scraper(localidad):
                     metros = metros.group(1)
                 else:
                     print("No se especifica el número de m² en la vivienda")
+                    metros = -1
             else:
-                metros = "m² no disponible"
+                metros = -1
             #print(metros, end= " m²\n")
 
             # Precio
@@ -128,6 +140,7 @@ def scraper(localidad):
                 precio = precio.replace('.', '')
             else:
                 print("No se especifica precio")
+                precio = -1
 
             # Número Habitaciones
             regexHabs = '<span>(.)<\/span> habs'
@@ -136,21 +149,23 @@ def scraper(localidad):
                 if habs != None:
                     habs = habs.group(1)
                 else:
+                    habs = 0
                     print("No se especifica el número de baños en la vivienda")
             else:
-                habs = "Nº de habitaciones no disponible"
+                habs = 0
             #print(habs, end=" habitaciones\n")
 
             # Número Baños
             regexBanos = '<span>(.)<\/span> baño'
             if str(soup_casa).find("baño"):
-                banos = re.search(regexBaños, str(soup_casa))
+                banos = re.search(regexBanos, str(soup_casa))
                 if banos != None:
                     banos = banos.group(1)
                 else:
                     print("No se especifica el número de baños en la vivienda")
+                    banos = 0
             else:
-                banos = "No disponible"
+                banos = 0
             #print(baños, end=" baños\n")
 
             # Teléfono
@@ -160,18 +175,19 @@ def scraper(localidad):
                 if tefefono != None:
                     tefefono = tefefono.group(1)
                 else:
-                    tefefono = "Número no disponible"
+                    tefefono = -1
             else:
-                tefefono = "Número no disponible"
+                tefefono = -1
             #print(tefefono)
 
             data = {"Localidad": localidad,"Titulo": titulo,"Metros": metros,"Precio": precio, "Habitaciones": habs,"Baños": baños,"Telefono": tefefono,"Descripcion": descripcion,"Url": viviendas[i], "Imagen": imagen}
             json_string.append(data)
-            con = mysql.connector.connect(host="localhost",user='root',passwd='',database='recomendador')
-            cur = con.cursor()
-            sql = 'insert into inmuebles(Localidad, Pago, Titulo, Metros, Precio, Habitaciones, Banos, Telefono, Descripcion, Url, Url_imagen) values (%s, compra, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
-            datos = localidad, titulo, metros, precio, habs, banos, tefefono, descripcion, viviendas[i], imagen]
+
+
+            sql = 'insert into inmuebles(Localidad, Titulo, Metros, Precio, Habitaciones, Banos, Telefono, Descripcion, Url, Url_imagen) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
+            datos = [localidad, titulo, metros, precio, habs, banos, tefefono, descripcion, viviendas[i], imagen]
             cur.execute(sql, datos)
+            con.commit()
 
         return json_string
     
