@@ -27,13 +27,15 @@ export class InfoComponent implements OnInit {
       this.data = res
       console.log(this.data)
     });
-    const url2 = 'http://127.0.0.1:8000/api/favs-id/' + localStorage.getItem('id_usu') + '/' + localStorage.getItem('id_casa');
-    this.http.get(url2).subscribe(
-      res => {
-        this.id = res[0].id
-        console.log(this.id)
-      }
-    );
+    if (this.isFaved) {
+      const url2 = 'http://127.0.0.1:8000/api/favs-id/' + localStorage.getItem('id_usu') + '/' + localStorage.getItem('id_casa');
+      this.http.get(url2).subscribe(
+        res => {
+          this.id = res[0].id
+          console.log(this.id)
+        }
+      );
+    }
   }
 
   rellenar() {

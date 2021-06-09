@@ -45,11 +45,13 @@ h1 {
 .contenedorPrime {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     margin: 10px;
 }
 
 .subcontenedor {    
-    width: 500px;
+    width: 480px;
     height: 200px;
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -63,6 +65,7 @@ h1 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
     overflow: overlay;
 }
 
