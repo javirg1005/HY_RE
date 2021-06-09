@@ -15,7 +15,8 @@
                 <div class="column">
                     <img class="info-photo" src="{{ data[0].Url_imagen }}" alt="info-photo">
                     <div class="column-left">
-                        <button class='btn_favs' (click)='rellenar()'><img src="../../../assets/heart-solid.png" alt="heart-solid" style="width: 30px"></button>
+                        <button *ngIf="!isFaved" class='btn_favs' (click)='rellenar()'><img src="../../../assets/favs.png" alt="heart-solid" style="width: 30px"></button>
+                        <button *ngIf="isFaved" class='btn_favs' (click)='quitar()'><img src="../../../assets/heart-solid.png" alt="heart-solid" style="width: 30px"></button>
                         <div class="row">
                             <p><span class="bold">Precio: </span> {{data[0].Precio}} €</p>
                             <p><span class="bold">Localidad: </span> {{data[0].Localidad}}</p>

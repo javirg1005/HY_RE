@@ -34,7 +34,7 @@ export class MainpageComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
-    localStorage.setItem('provincia', 'Todas las provincias');
+    localStorage.setItem('provincia', 'Todas');
   }
 
   onSubmit() {

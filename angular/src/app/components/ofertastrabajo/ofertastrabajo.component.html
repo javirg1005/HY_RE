@@ -13,13 +13,13 @@
     
     <body>
         <div class="contenedor">
-            <div class="filtros"> 
+            <form [formGroup]='filtroTForm' (ngSubmit)="onSubmit()" class="filtros"> 
                 <h3 class="sugerencia"> Filtro </h3>
                 
                 <h1> Salario </h1>
                 <div class="slidecontainer">
                     <span class="numero_inicio"> 0</span> 
-                    <input type="range" min="0" max="100" value="0" class="slider" id="salario">
+                    <input type="range" min="0" max="100" value="0" formControlName="salario" class="slider" id="salario">
                     <span class="numero_fin"> ∞ </span>
                 </div>
 
@@ -38,7 +38,7 @@
                 </div>
                 
                 <button type="submit" class='btn_filtro'> Aplicar </button>
-            </div>
+            </form>
             
             <div class="ofertas"> 
                 <h3 class="sugerencia"> Le sugerimos los siguientes trabajos: </h3>

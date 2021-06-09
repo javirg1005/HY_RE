@@ -5,7 +5,7 @@ templateUrl: './combobox.component.html',
 styleUrls: ['./combobox.component.css']
 })
 export class ComboboxComponent implements OnInit {
-    @Input() list: string[] = ["Todas las provincias", "Albacete", "Alicante", "Almería", "Álava", "Asturias", "Ávila", "Badajoz", "Baleares (Islas)", 
+    @Input() list: string[] = ["Todas", "Albacete", "Alicante", "Almería", "Álava", "Asturias", "Ávila", "Badajoz", "Baleares (Islas)", 
     "Barcelona", "Vizcaya", "Burgos", "Cáceres", "Cádiz", "Cantabria", "Castellón", "Ceuta", "Ciudad Real", "Córdoba", "A Coruña",
     "Cuenca", "Gipuzkoa", "Girona", "Granada", "Guadalajara", "Huelva", "Huesca", "Jaén", "León", "Lleida", "Lugo", "Madrid", "Málaga",
     "Melilla", "Murcia", "Navarra", "Ourense", "Palencia", "Las Palmas", "Pontevedra", "La Rioja", "Salamanca", "Santa Cruz de Tenerife", 
