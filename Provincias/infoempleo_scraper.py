@@ -23,15 +23,55 @@ soup = BeautifulSoup(page.content, 'html.parser')
 file = open("empleoInfo.txt", "w+", encoding="utf-8")
 file.write(str(soup))
 
-empleos = soup.find('<ul class="mt15 positions') # No funciona porque lo de dentro de li lo considera al mismo nivel?
+empleos = str(soup).split('li class="featured"')
 print("----------------------------")
-print(empleos)
-for i in empleos:
-    print(empleos[i])
-    """
-    regexTitulo = '\s(.*)\n+.*<\/a>\W<\/h2>'
+
+for i in range (1,3):
+
+    # Título
+    regexTitulo = '<a href=.*\s*(.*)'
     resultado_titulo = re.search(regexTitulo, empleos[i])
     if resultado_titulo != None:
-        print(resultado_titulo)
-    """
+        print(resultado_titulo.group(1))
+    
+    # Localidad
+    regexLocalidad = '<p class="block">\s+(.*)'
+    resultado_localidad = re.search(regexLocalidad, empleos[i])
+    if resultado_localidad != None:
+        print(resultado_localidad.group(1))
 
+    # Descripción
+    regexDescripcion = '<p class="small">(.*)<'
+    resultado_descripcion = re.search(regexDescripcion, empleos[i])
+    if resultado_descripcion != None:
+        print(resultado_descripcion.group(1))
+
+
+    print(" ------------ fin oferta" + str(i) + "  ------------")
+
+
+empleos2 = str(soup).split('li class="offerblock"')
+print("----------------------------")
+
+for i in range (1,9):
+
+    # Título
+    regexTitulo = '<a href=.*">(.*)<'
+    resultado_titulo = re.search(regexTitulo, empleos2[i])
+    if resultado_titulo != None:
+        print(resultado_titulo.group(1))
+    
+    # Localidad
+    regexLocalidad = '<p class="block">\s+(.*)'
+    resultado_localidad = re.search(regexLocalidad, empleos2[i])
+    if resultado_localidad != None:
+        print(resultado_localidad.group(1))
+
+    # Descripción
+    regexDescripcion = '<p class="small">(.*)<'
+    resultado_descripcion = re.search(regexDescripcion, empleos2[i])
+    if resultado_descripcion != None:
+        print(resultado_descripcion.group(1))
+
+
+    print(" ------------ fin oferta offerblock " + str(i) + "  ------------")
