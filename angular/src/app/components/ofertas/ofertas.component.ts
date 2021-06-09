@@ -17,13 +17,14 @@ export class OfertasComponent implements OnInit {
   filtroVForm: FormGroup;
   errors = null
 
+
   constructor(
     private http: HttpClient,
     public fb: FormBuilder
     ) {
     this.filtroVForm = this.fb.group({
       precio: [],
-      habitaciones: [],
+      habs: [],
       metros: []
     }) }
 
@@ -48,9 +49,8 @@ export class OfertasComponent implements OnInit {
   }
 
   searchCoso(provincia, habs, precio) {
-   
-
-    const url ='http://127.0.0.1:8000/api/inmuebles-filtro-main/' + {"precio": precio, "habs": habs, "provincia": provincia};
+    const url ='http://127.0.0.1:8000/api/inmuebles-filtro-main/' + provincia + '/' + habs + '/' + precio;
+    console.log(url);
     this.http.get(url).subscribe((res) =>{
       this.data = res
       console.log(this.data)
@@ -63,30 +63,22 @@ export class OfertasComponent implements OnInit {
   }
 
   onSubmit() {
-    this.aplicarFiltro(this.filtroVForm.value).subscribe(
-      res => {
-        console.log(res)
-        //Encuentra ha funcionado el filtro
+    const url ='http://127.0.0.1:8000/api/inmuebles-filtro-main/' + this.filtroVForm.value.metros + '/' + this.filtroVForm.value.habs + '/' + this.filtroVForm.value.precio;
+    console.log(url);
+    this.http.get(url).subscribe((res) => {
+        this.data = res
+        console.log(this.data)
       },
       error => {
         this.errors = error.error;
-        //Da error
       }
     )
-  }
-
-  aplicarFiltro(fb: FiltroInmueble) {
-    console.log(fb.precio)
-    console.log(fb.habitaciones)
-    console.log(fb.metros)
-
-    return this.http.post('http://127.0.0.1:8000/api/filtro-oferta', fb);
   }
 
 }
 
 export class FiltroInmueble {
   precio: number;
-  habitaciones: number;
+  habs: number;
   metros: number;
 }

@@ -19,6 +19,11 @@ class EmpleoController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
+    public function filtrojob($salario = null) {
+        $resp = Empleo::where("Salario", ">=", $salario)->get();
+        return response()->json($resp,JsonResponse::HTTP_OK);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

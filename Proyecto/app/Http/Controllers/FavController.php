@@ -20,6 +20,11 @@ class FavController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
+    public function getFavId($id_usu, $id_inmueble) {
+        $resp = Fav::select('id')->where('Id_usu', $id_usu)->where('Id_inmueble', $id_inmueble)->get();
+        return response()->json($resp,JsonResponse::HTTP_OK);
+    }
+
     public function getFavsByUsuId($userId)
     {
         $resp = DB::table('favs')
@@ -32,8 +37,27 @@ class FavController extends Controller
 
 
     public function addFav(Request $request) {
-        $fav = Fav::create($request->all());
-        return response()->json($fav, 201);
+        $fav = new Fav;
+        $fav->Id_usu = $request->id_usu;
+        $fav->Id_inmueble = $request->id_inmueble;
+        $fav->save();
+
+        return response()->json([
+            "message" => "fav record created"
+        ], 201);
+    }
+
+    public function isFav($id_usu, $id_inmueble) {
+        $resp = Fav::where('Id_usu', $id_usu)->where('Id_inmueble', $id_inmueble)->get();
+        return response()->json($resp->isEmpty(), 201);
+    }
+
+    public function delete($id) {
+        $fav = Fav::FindOrFail($id);
+        $fav->delete();
+        return response()->json([
+            "message" => "fav record deleted"
+        ], 201);
     }
 
     //Añadir vivienda a la base de datos, tabla viviendas y a favoritos

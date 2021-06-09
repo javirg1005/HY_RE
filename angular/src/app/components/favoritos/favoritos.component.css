@@ -79,6 +79,42 @@ a {
 }
 
 .imagen {
-    height: 150px;
+    width: 45%;
+    height: 100%;
     float: left;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+    overflow: visible;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 0;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    border: 0;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    border: 0;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
 }
