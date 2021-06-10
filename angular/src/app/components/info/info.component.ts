@@ -19,6 +19,9 @@ export class InfoComponent implements OnInit {
   ngOnInit(): void {
     this.getData();
     this.checkFav();
+    if (this.isFaved) {
+      this.getId();
+    }
   }
 
   getData() {
@@ -27,6 +30,9 @@ export class InfoComponent implements OnInit {
       this.data = res
       console.log(this.data)
     });
+  }
+
+  getId() {
     const url2 = 'http://127.0.0.1:8000/api/favs-id/' + localStorage.getItem('id_usu') + '/' + localStorage.getItem('id_casa');
     this.http.get(url2).subscribe(
       res => {
@@ -47,7 +53,8 @@ export class InfoComponent implements OnInit {
       }
     );
     this.checkFav();
-    window.location.reload();
+    this.getId();
+    //window.location.reload();
   }
 
   quitar() {
