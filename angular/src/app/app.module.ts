@@ -17,11 +17,15 @@ import { ComboboxComponent } from './components/combobox/combobox.component';
 import { OfertastrabajoComponent } from './components/ofertastrabajo/ofertastrabajo.component';
 import { InfojobsComponent } from './components/infojobs/infojobs.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { OfertasCPComponent } from './components/ofertas-cp/ofertas-cp.component';
 
 
 const rutas: Routes = [
   {
     path: '', pathMatch:'full', redirectTo: 'Mainpage'
+  },
+  {
+    path: 'OfertasCP', component: OfertasCPComponent
   },
   {
     path: 'Mainpage', component: MainpageComponent
@@ -65,6 +69,7 @@ const rutas: Routes = [
     ComboboxComponent,
     OfertastrabajoComponent,
     InfojobsComponent,
+    OfertasCPComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> Buscador - Ofertas </title>
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
+        <!-- Stylesheet SOLO para pruebas, quitarla luego -->
+    </head>
+    
+    <body>
+        <div class="contenedor">
+            <form [formGroup]='filtroZForm' (ngSubmit)="onSubmit()" class="filtros"> 
+                <h3 class="sugerencia"> Filtro </h3>
+                
+                <h1> Precio </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="100000" value="100" formControlName="precio" class="slider" id="precio">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
+
+                <h1> Habitaciones </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="10" value="1" formControlName="habs" class="slider" id="">
+                    <span class="numero_fin"> 10 </span>
+                </div>
+
+                <h1> Metros cuadrados </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="10000" value="1" class="slider" formControlName="metros" id="">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
+                
+                <button type="submit" class='btn_filtro'> Aplicar </button>
+            </form>
+            
+            <div class="ofertas"> 
+               <div class="subcontenedor"> 
+                    <div *ngFor="let x of data | paginate: { itemsPerPage: 16, currentPage: page}" class="elemento"> 
+                        <!-- Foto -->
+                        <a #casa href="OfertasCP" [attr.data-casa-id]="x.id" (click)="getIDComponent(casa)">
+                            <div>
+                                <img class='imagen' src="{{ x.Url_imagen }}" alt="foto de casa">
+                            </div>
+                            <div class='datos'>
+                                <p class="Titulo"> {{ x.Titulo }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="subcontenedorColumn">
+                    <img class='imagen' src="{{ lombriz.Url_imagen }}" alt="foto de casa">
+                    <p>Titulo: {{ lombriz.Titulo }} </p>
+                    <p>Precio:{{ lombriz.Precio }} Habitaciones: {{ lombriz.Habitaciones }}Baños:{{ lombriz.Banos }}</p>
+                    <p>Localizacion: {{ lombriz.Localidad }}</p>
+                    <p>Descripcion:{{ lombriz.Descripcion }}</p>
+                    <button class='btn_filtro' href="Info"> Informacion </button>
+                </div> 
+            </div>
+        </div> 
+    </body>
+</html>

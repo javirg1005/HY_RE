@@ -1,0 +1,7 @@
+Por Javier Rodríguez González
+
+Se ha creado una nueva ventana llamada OfertasCP la cual muestra una ventana de ofertas para el checkpoint. Esta vista permite una previsualizacion del las viviendas y un boton el cual se te redirige a la informacion del inmueble.
+La imagen del fondo para cambiar el tema de la aplicacion a uno de los colores seleccionados esta en el app.component.css la cual es la ruta para el fondo de toda la aplicacion. A las letras del filtro de la ventana se les ha puesto 
+un text-shadown para su mejor entendimiento.
+
+Para hacer la carga de contenido tiene que ser de la siguiente manera. se selecciona un inmueble, carga la informacion del mismo en la previsualizacion y si se quiere ir al inmueble ha de redirigir a la pagina de informacion del inmueble.
