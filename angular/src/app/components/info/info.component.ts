@@ -27,15 +27,14 @@ export class InfoComponent implements OnInit {
       this.data = res
       console.log(this.data)
     });
-    if (this.isFaved) {
-      const url2 = 'http://127.0.0.1:8000/api/favs-id/' + localStorage.getItem('id_usu') + '/' + localStorage.getItem('id_casa');
-      this.http.get(url2).subscribe(
-        res => {
-          this.id = res[0].id
-          console.log(this.id)
-        }
-      );
-    }
+    const url2 = 'http://127.0.0.1:8000/api/favs-id/' + localStorage.getItem('id_usu') + '/' + localStorage.getItem('id_casa');
+    this.http.get(url2).subscribe(
+      res => {
+        this.id = res[0].id
+        localStorage.setItem("id_fav", res[0].id);
+        console.log(this.id)
+      }
+    );
   }
 
   rellenar() {
@@ -47,16 +46,18 @@ export class InfoComponent implements OnInit {
         console.log(res)
       }
     );
+    this.checkFav();
     window.location.reload();
   }
 
   quitar() {
-    this.http.delete('http://127.0.0.1:8000/api/favs/' + this.id).subscribe(
+    this.http.delete('http://127.0.0.1:8000/api/favs/' + localStorage.getItem("id_fav")).subscribe(
       res => {
         console.log(res)
       }
     );
-    window.location.reload();
+    localStorage.removeItem("id_fav");
+    this.checkFav();
   }
 
   checkFav() {
