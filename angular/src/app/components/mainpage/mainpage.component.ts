@@ -47,8 +47,13 @@ export class MainpageComponent implements OnInit {
 
 
     console.log('lets goooo')
-    this.router.navigate(['Ofertas']);
+    this.router.navigate(['Ofertas']); 
   }
+
+   /* Función para poner mi nueva ruta a 'checkpoint'*/
+  btnClick= function () {
+    this.router.navigate(['checkpoint']);
+};
 
   valuePrice() {
     var slider =<HTMLInputElement> document.getElementById('priceRange');

@@ -1,5 +1,6 @@
 body {
-    background: url('\src\media\Fondo_dibujo.png') no-repeat center fixed;
+    background-color: #38B7F5; /*: url('\src\media\Fondo_dibujo.png') no-repeat center fixed;*/
+    /* Se ha cambiado todo el fondo de la pantalla para ajustarse al checkpoint*/
     background-size: cover;
     height: 100vh;
 }
@@ -64,4 +65,9 @@ body {
     text-align: center;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
     font-size: calc(2em + 2vw) !important;
+}
+
+.btn btn-dark {
+    color: white;
+    border-color: blue;
 }

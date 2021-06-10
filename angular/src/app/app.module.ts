@@ -17,6 +17,7 @@ import { ComboboxComponent } from './components/combobox/combobox.component';
 import { OfertastrabajoComponent } from './components/ofertastrabajo/ofertastrabajo.component';
 import { InfojobsComponent } from './components/infojobs/infojobs.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CheckpointComponent } from './components/checkpoint/checkpoint.component';
 
 
 const rutas: Routes = [
@@ -49,6 +50,9 @@ const rutas: Routes = [
   },
   {
     path: 'combobox', component: ComboboxComponent
+  }, 
+  {
+    path: 'checkpoint', component: CheckpointComponent
   }
 ]
 
@@ -65,6 +69,7 @@ const rutas: Routes = [
     ComboboxComponent,
     OfertastrabajoComponent,
     InfojobsComponent,
+    CheckpointComponent,
   ],
   imports: [
     BrowserModule,

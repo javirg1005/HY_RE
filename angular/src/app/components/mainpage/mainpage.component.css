@@ -83,7 +83,7 @@ p {
 }
 
 button {    
-    background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);
+    background: radial-gradient(100% 1831.15% at 3.12% 0%, blue 0%, #422DFA 100%);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     border: 0;
@@ -91,7 +91,7 @@ button {
     display: block;
     width: 30vh;
     height: 5.5vh;
-    margin-top: 5vh;
+    margin-top: 2vh;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
@@ -214,3 +214,29 @@ button:active {
 }
 
 /* ------- fin de estilo de la barra de precio -------- */
+
+/* Estilo del nuevo botón del checkpoint */
+.checkpoint {    
+    background: radial-gradient(100% 1831.15% at 3.12% 0%, #422DFA 0%, blue 100%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 0;
+    position: relative;
+    display: block;
+    width: 30vh;
+    height: 5.5vh;
+    margin-top: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-family: Lato;
+    font-weight: 900;
+    font-size: calc(0.9em + 0.9vw);
+    line-height: 32px;
+    text-align: center;    
+    color: white;
+}
+
+button:active {
+  transform: translateY(4px);
+}
