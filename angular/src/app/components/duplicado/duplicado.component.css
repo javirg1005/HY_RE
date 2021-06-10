@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../../../assets/Fondo_dibujo.png");
+}
+
+p {
+    font-size: calc(0.2em + 0.2vw);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+}
+
+.componente-txt {
+    margin-bottom: 2vh;
+}
+
+a, .tel {
+    color: #FFF;
+    text-decoration: none;
+    font-size: calc(0.5em + 0.5vw);
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Montserrat';
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.Titulo {
+    font-weight: 700;
+    font-size: calc(0.4em + 0.25vw);
+}
+/* Panel central */
+.contenedor {    
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+
+    width: 170vh;
+    height: 75vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 60px;
+
+    margin-top: 10px;
+}
+
+/* Panel izquierdo, con los filtros de búsqueda*/
+.filtros {    
+    width: 23%;
+    
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 90px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
+    color: rgb(90, 23, 129);
+    font-family: "Montserrat";
+    font-size: calc(0.4em + 0.4vw);
+}
+
+.btn_filtro {
+    background: radial-gradient(100% 1831.15% at 3.12% 0%, #ac1f94 0%, #6213ac 100%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 0;
+    position: relative;
+    display: block;
+    width: 20vh;
+    height: 5.5vh;
+    margin-top: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-family: Lato;
+    font-weight: 900;
+    font-size: calc(0.75em + 0.5vw);
+    line-height: 32px;
+    text-align: center;    
+    color: white;
+
+    margin-top: 5vh;
+}
+
+.icono {
+    width:25px;
+    height:25px;
+    margin-top: 0px;  
+    color: white;  
+}
+
+.sugerencia {
+    margin-top: 2vh;
+    text-align: center;
+}
+
+/* Div y texto de ordenar por*/
+.order {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 5vh;
+}
+
+.ordenar {
+    align-self: right;
+    margin-left: 100px;
+    margin-top: -15px;
+}
+
+
+
+/* Panel derecho con las ofertas, títulos y demás */
+.ofertas{
+    color: black;
+    font-family: "Montserrat";
+
+    width: 73%;
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 90px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+     
+    margin-top: 10px;    
+    margin-bottom: 10px;
+}
+
+
+
+h1 {
+    font-size: 15px;
+    margin-top: 40px;
+    align-self: center;
+}
+
+h2 {
+    color: white;
+    font-size: 15px;
+    margin-top: 30px;
+    align-self: center;
+}
+
+h4 {
+    font-size: calc(0.3em + 0.2vw);
+    margin-top: 30px;
+    align-self: right;
+}
+
+.nav-icon {
+    width: calc(1.5vh + 1.5vw);
+    margin-right: 10px;
+}
+
+/* -------------- Barra del precio -------------- */
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+    margin-top: 2px;
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 50%; /* Full-width */
+    height: 3px; /* Specified height */
+    background: rgb(90, 23, 129); /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    margin-top: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 100px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: rgb(90, 23, 129); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 100px;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: rgb(90, 23, 129); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.numero_inicio {
+    margin-left: 50px;
+    color: rgb(90, 23, 129);
+}
+
+.numero_fin{
+    margin-right: 6px;
+    color: rgb(90, 23, 129);
+    font-size: 20px;
+}
+
+
+/* Recuadro con los cuadrados de las ofertas*/
+.subcontenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 72%;
+    margin: 5vh;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+/* Cada recuadro individual con las ofertas*/
+.elemento{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(30px);
+    border-radius: 20px;
+    font-size: calc(1em + 3vw);
+    overflow: overlay;
+    padding: 20px;
+}
+
+.img-container {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: first baseline;
+}
+
+.imagen {
+    width: 100%;
+    padding: 5px;
+}
+
+.datos {
+    margin-left: 10px;
+    width: 70%;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+    overflow: visible;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 0;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    border: 0;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    border: 0;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}

@@ -17,6 +17,7 @@ import { ComboboxComponent } from './components/combobox/combobox.component';
 import { OfertastrabajoComponent } from './components/ofertastrabajo/ofertastrabajo.component';
 import { InfojobsComponent } from './components/infojobs/infojobs.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { DuplicadoComponent } from './components/duplicado/duplicado.component';
 
 
 const rutas: Routes = [
@@ -48,6 +49,9 @@ const rutas: Routes = [
     path: 'Ofertas_Trabajo', component: OfertastrabajoComponent
   },
   {
+    path: 'Duplicado', component: DuplicadoComponent
+  },
+  {
     path: 'combobox', component: ComboboxComponent
   }
 ]
@@ -65,6 +69,7 @@ const rutas: Routes = [
     ComboboxComponent,
     OfertastrabajoComponent,
     InfojobsComponent,
+    DuplicadoComponent,
   ],
   imports: [
     BrowserModule,

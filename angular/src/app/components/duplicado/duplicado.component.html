@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> Buscador - Ofertas </title>
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
+        <!-- Stylesheet SOLO para pruebas, quitarla luego -->
+        <link rel="stylesheet" href="duplicado.component.css">
+    </head>
+    
+    <body>
+        <div class="contenedor">
+            <form [formGroup]='filtroVForm' (ngSubmit)="onSubmit()" class="filtros"> 
+                <h3 class="sugerencia"> Filtro </h3>
+                
+                <h1> Precio </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="100000" value="100" formControlName="precio" class="slider" id="precio">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
+
+                <h1> Habitaciones </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="10" value="1" formControlName="habs" class="slider" id="">
+                    <span class="numero_fin"> 10 </span>
+                </div>
+
+                <h1> Metros cuadrados </h1>
+                <div class="slidecontainer">
+                    <span class="numero_inicio"> 0</span> 
+                    <input type="range" min="0" max="10000" value="1" class="slider" formControlName="metros" id="">
+                    <span class="numero_fin"> ∞ </span>
+                </div>
+                
+                <button type="submit" class='btn_filtro'> Aplicar </button>
+            </form>
+            
+            <div class="ofertas"> 
+                <h3 class="sugerencia"> Le sugerimos los siguientes lugares: </h3>
+                <div class="subcontenedor"> 
+                    <div *ngFor="let x of data | paginate: { itemsPerPage: 1, currentPage: page}" class="elemento"> 
+                        <!-- Foto -->
+                        <div class="img-container">
+                            <img class='imagen' src="{{ x.Url_imagen }}" alt="foto de casa">
+                        </div>
+                        <div class='datos'>
+                            <p class="Titulo"> {{ x.Titulo }}</p>
+                            <p>Nº habitaciones: {{ x.Habitaciones }}</p>
+                            <p>Metros cuadrados: {{ x.Metros }}m²</p>
+                            <p>Precio: {{ x.Precio }} €</p>
+                            <p><img class="nav-icon" src="../../../assets/phone-solid.png" alt="phone-solid">Teléfono: {{ x.Telefono }}</p>
+                            <h4>Descripción:</h4>
+                            <p> {{ x.Descripcion }}</p>
+                            <div class="componente-txt">
+                                <h4>Características básicas</h4>
+                                <div class="row">
+                                    <div class="column-txt">
+                                        <p>{{ data[0].Metros }} m² construidos</p>
+                                        <p>{{ data[0].Habitaciones }} habitaciones</p>
+                                        <p>{{ data[0].Banos }} baños</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination"> 
+                    <pagination-controls (pageChange)="handlePageChange($event)"></pagination-controls>
+                </div>
+               
+            </div>
+        </div> 
+    </body>
+</html>
