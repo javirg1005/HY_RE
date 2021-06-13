@@ -20,21 +20,21 @@
                 <div class="slidecontainer">
                     <span class="numero_inicio"> 0</span> 
                     <input type="range" min="0" max="{{max_precio}}" value="100" formControlName="precio" class="slider" id="precio">
-                    <span class="numero_fin">{{max_precio}} </span>
+                    <span class="numero_inicio">{{max_precio}} </span>
                 </div>
 
                 <h1> Habitaciones </h1>
                 <div class="slidecontainer">
                     <span class="numero_inicio"> 0</span> 
-                    <input type="range" min="0" max="{{max_hab}}" value="1" formControlName="habs" class="slider" id="">
-                    <span class="numero_fin"> {{max_hab}} </span>
+                    <input type="range" min="0" max="{{max_hab}}" value="1" formControlName="habs" class="slider" id="habs">
+                    <span class="numero_inicio"> {{max_hab}} </span>
                 </div>
 
                 <h1> Metros cuadrados </h1>
                 <div class="slidecontainer">
                     <span class="numero_inicio"> 0</span> 
-                    <input type="range" min="0" max="{{max_met}}" value="1" class="slider" formControlName="metros" id="">
-                    <span class="numero_fin"> {{max_met}}</span>
+                    <input type="range" min="0" max="{{max_met}}" value="1" class="slider" formControlName="metros" id="metros">
+                    <span class="numero_inicio"> {{max_met}}</span>
                 </div>
                 
                 <button type="submit" class='btn_filtro'> Aplicar </button>
