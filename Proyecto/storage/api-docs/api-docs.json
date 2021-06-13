@@ -1,0 +1,655 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "ABSA - API",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000"
+        }
+    ],
+    "paths": {
+        "/api/inmuebles": {
+            "get": {
+                "tags": [
+                    "inmuebles"
+                ],
+                "summary": "Todos los inmuebles",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "responses": {
+                    "200": {
+                        "description": "Con esta llamada se obtienen todos los inmuebles."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/inmuebles/{id}": {
+            "get": {
+                "tags": [
+                    "inmuebles"
+                ],
+                "summary": "Inmueble con ese ID",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del inmueble",
+                        "required": true,
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada te permite obtener un inmueble en concreto."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/inmuebles-max-precio": {
+            "get": {
+                "tags": [
+                    "inmuebles"
+                ],
+                "summary": "Precio Máx.",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada consigue el valor de precio más alto de los inmuebles."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/inmuebles-max-habitaciones": {
+            "get": {
+                "tags": [
+                    "inmuebles"
+                ],
+                "summary": "Nº Habitaciones Máx.",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada consigue el número de habitaciones más alto de los inmuebles."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/inmuebles-max-metros": {
+            "get": {
+                "tags": [
+                    "inmuebles"
+                ],
+                "summary": "Metros cuadrados Máx.",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada consigue el valor de metros cuadrados más alto de los inmuebles."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/inmuebles-filtro-main/{prov}/{habs}/{precio}": {
+            "get": {
+                "tags": [
+                    "inmuebles"
+                ],
+                "summary": "Filtro por provincias, nº habitaciones y precio",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "prov",
+                        "in": "path",
+                        "description": "Provincia",
+                        "required": true,
+                        "example": "alicante"
+                    },
+                    {
+                        "name": "habs",
+                        "in": "path",
+                        "description": "Número de habitaciones",
+                        "required": true,
+                        "example": "3"
+                    },
+                    {
+                        "name": "precio",
+                        "in": "path",
+                        "description": "Precio",
+                        "required": true,
+                        "example": "1000000"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada ejecuta un filtro de inmuebles desde la ventana principal. Se introduce, la provincia, el número mínimo de habitaciones deseadas y el precio máximo a pagar."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/filtro-oferta/{metros}/{habs}/{precio}": {
+            "get": {
+                "tags": [
+                    "inmuebles"
+                ],
+                "summary": "Filtro por metros cuadrados, nº habitaciones y precio",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "metros",
+                        "in": "path",
+                        "description": "Metros cuadrados",
+                        "required": true,
+                        "example": "1000"
+                    },
+                    {
+                        "name": "habs",
+                        "in": "path",
+                        "description": "Número de habitaciones",
+                        "required": true,
+                        "example": "2"
+                    },
+                    {
+                        "name": "precio",
+                        "in": "path",
+                        "description": "Precio",
+                        "required": true,
+                        "example": "30000"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada ejecuta un filtro de inmuebles desde la ventana de ofertas. Se introduce, el número máximo de metros cuadrados, el número mínimo de habitaciones deseadas y el precio máximo que se desea pagar."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "usuarios"
+                ],
+                "summary": "Todos los usuarios",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "responses": {
+                    "200": {
+                        "description": "Con esta llamada se obtienen todos los usuarios."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/users/{id}": {
+            "get": {
+                "tags": [
+                    "usuarios"
+                ],
+                "summary": "Usuario con ese ID",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del usuario",
+                        "required": true,
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada te permite obtener un usuario en concreto."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/userId_toUsername/{username}": {
+            "get": {
+                "tags": [
+                    "usuarios"
+                ],
+                "summary": "ID de usuario desde Username",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "Username del usuario",
+                        "required": true,
+                        "example": "petersito"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada te permite obtener el ID de un usuario a partir de su nombre de usuario."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/userId_toName/{username}": {
+            "get": {
+                "tags": [
+                    "usuarios"
+                ],
+                "summary": "Nombre del usuario desde Username",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "Username del usuario",
+                        "required": true,
+                        "example": "petersito"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada te permite obtener el nombre de un usuario a partir de su nombre de usuario."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "usuarios"
+                ],
+                "summary": "Login de usuario",
+                "description": "Login mediante usuario y contraseña.",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "requestBody": {
+                    "description": "Introduce las credenciales de usuario",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "username",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "petersito"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "123456"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Token para usuario generado."
+                    },
+                    "422": {
+                        "description": "Credenciales incorrectas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Lo siento, usuario o contraseña incorrecta. Por favor, inténtelo de nuevo."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth/register": {
+            "post": {
+                "tags": [
+                    "usuarios"
+                ],
+                "summary": "Registro de usuario",
+                "description": "Registro mediante usuario, nombre del usuario, email y contraseña.",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "requestBody": {
+                    "description": "Introduce los datos del usuario",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "username",
+                                    "name",
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "petersito"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Pedro"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "peter@gmail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "123456"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuario registrado correctamente."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/empleos": {
+            "get": {
+                "tags": [
+                    "empleos"
+                ],
+                "summary": "Todos los empleos",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "responses": {
+                    "200": {
+                        "description": "Con esta llamada se obtienen todos los empleos."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/empleos/{id}": {
+            "get": {
+                "tags": [
+                    "empleos"
+                ],
+                "summary": "Empleo con ese ID",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del empleo",
+                        "required": true,
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada te permite obtener un empleo en concreto."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/empleos-filtro/{salario}": {
+            "get": {
+                "tags": [
+                    "empleos"
+                ],
+                "summary": "Empleos con igual o mayor salario",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "salario",
+                        "in": "path",
+                        "description": "Salario del empleo",
+                        "required": true,
+                        "example": "1000"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada te permite obtener los empleos con un salario igual o mayor a este."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/favs": {
+            "get": {
+                "tags": [
+                    "favoritos-inmuebles"
+                ],
+                "summary": "Todos los inmuebles favoritos",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "responses": {
+                    "200": {
+                        "description": "Con esta llamada se obtienen todos los inmuebles guardados en favoritos."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/favs/{user_id}": {
+            "get": {
+                "tags": [
+                    "favoritos-inmuebles"
+                ],
+                "summary": "Inmueble favorito del usuario con ese ID",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "ID del usuario",
+                        "required": true,
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada te permite obtener los inmuebles favoritos de un usuario en concreto."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/favs-isfav/{id_usu}/{id_inmueble}": {
+            "get": {
+                "tags": [
+                    "favoritos-inmuebles"
+                ],
+                "summary": "Comprueba si el inmueble es favorito",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "id_usu",
+                        "in": "path",
+                        "description": "ID del usuario",
+                        "required": true,
+                        "example": "1"
+                    },
+                    {
+                        "name": "id_inmueble",
+                        "in": "path",
+                        "description": "ID del inmueble",
+                        "required": true,
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Devuelve un boolean diciendo true si el inmueble no se encuentra en la lista de favoritos o false si lo está."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/favs-id/{id_usu}/{id_inmueble}": {
+            "get": {
+                "tags": [
+                    "favoritos-inmuebles"
+                ],
+                "summary": "Devuelve el ID del inmueble favorito",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "id_usu",
+                        "in": "path",
+                        "description": "ID del usuario",
+                        "required": true,
+                        "example": "1"
+                    },
+                    {
+                        "name": "id_inmueble",
+                        "in": "path",
+                        "description": "ID del inmueble",
+                        "required": true,
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Esta llamada te permite obtener un inmueble favorito en concreto."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/favs-addFav": {
+            "post": {
+                "tags": [
+                    "favoritos-inmuebles"
+                ],
+                "summary": "Añadir un inmueble favorito",
+                "description": "Inserta el inmueble favorito con el ID del usuario loggeado y el ID del inmueble que le gusta.",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "requestBody": {
+                    "description": "Introduce los IDs de usuario e inmueble",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id_usu",
+                                    "id_inmueble"
+                                ],
+                                "properties": {
+                                    "id_usu": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "1"
+                                    },
+                                    "id_inmueble": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "10"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Inmueble favorito registrado correctamente."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/favs/{id}": {
+            "delete": {
+                "tags": [
+                    "favoritos-inmuebles"
+                ],
+                "summary": "Elimina el inmueble favorito con ese ID",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del inmueble favorito",
+                        "required": true,
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Elimina de la lista de favoritos el inmueble favorito con el ID."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

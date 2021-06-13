@@ -23,7 +23,8 @@ use Illuminate\Support\Facades\Route;
 // Nuestro método para la API de usuarios
 
 /* Sacar JSON de usuarios */
-Route::resource("/users", "App\Http\Controllers\UserController");
+Route::get("/users", "App\Http\Controllers\UserController@index");
+Route::get("/users/{id}", "App\Http\Controllers\UserController@show");
 Route::get("/userId_toUsername/{username}", "App\Http\Controllers\UserController@getUserIdFromUsername");
 Route::get("/userId_toName/{username}", "App\Http\Controllers\UserController@getNameFromUsername");
 
@@ -41,14 +42,12 @@ Route::get("/empleos-filtro/{salario}", "App\Http\Controllers\EmpleoController@f
 
 /* Ruta para operaciones de Inmuebles */
 Route::get("/inmuebles", "App\Http\Controllers\InmuebleController@index");
-
 Route::get("/inmuebles/{id}", "App\Http\Controllers\InmuebleController@getInmueble");
 Route::get("/inmuebles-max-precio", "App\Http\Controllers\InmuebleController@max_precio");
-Route::get("/inmuebles-hab/{habitaciones}", "App\Http\Controllers\InmuebleController@getInmuebleProvincia");
-Route::get("/inmuebles-filtro-main/{prov}/{habs}/{precio}", "App\Http\Controllers\InmuebleController@filtroMain");
-Route::get("/filtro-oferta/{metros}/{habs}/{precio}", "App\Http\Controllers\InmuebleController@filtroOferta");
 Route::get("/inmuebles-max-habitaciones", "App\Http\Controllers\InmuebleController@max_hab");
 Route::get("/inmuebles-max-metros", "App\Http\Controllers\InmuebleController@max_metros");
+Route::get("/inmuebles-filtro-main/{prov}/{habs}/{precio}", "App\Http\Controllers\InmuebleController@filtroMain");
+Route::get("/filtro-oferta/{metros}/{habs}/{precio}", "App\Http\Controllers\InmuebleController@filtroOferta");
 
 /* Ruta para operaciones de Actividades */
 Route::get("/actividades", "App\Http\Controllers\ActividadController@index");
