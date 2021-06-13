@@ -16,6 +16,9 @@ export class OfertasComponent implements OnInit {
   page = 1;
   filtroVForm: FormGroup;
   errors = null
+  max_precio: any = [];
+  max_hab: any = [];
+  max_met: any = [];
 
 
   constructor(
@@ -39,12 +42,24 @@ export class OfertasComponent implements OnInit {
   handlePageChange(event) {
     this.page = event;
   }
+
+  
    
   getData() {
-    const url = 'http://127.0.0.1:8000/api/inmuebles';
-    this.http.get(url).subscribe((res) => {
-      this.data = res
-      console.log(this.data)
+    const url_precio = 'http://127.0.0.1:8000/api/inmuebles-max-precio';
+    const url_hab = 'http://127.0.0.1:8000/api/inmuebles-max-habitaciones';
+    const url_met = 'http://127.0.0.1:8000/api/inmuebles-max-metros';
+    this.http.get(url_precio).subscribe((res) => {
+      this.max_precio = res
+      console.log(this.max_precio);
+    })
+    this.http.get(url_hab).subscribe((res) => {
+      this.max_hab = res
+      console.log(this.max_hab);
+    })
+    this.http.get(url_met).subscribe((res) => {
+      this.max_met = res
+      console.log(this.max_met);
     })
   }
 
