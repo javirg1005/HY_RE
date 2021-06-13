@@ -647,6 +647,40 @@
                     }
                 ]
             }
+        },
+        "/api/scraper_inmuebles": {
+            "get": {
+                "tags": [
+                    "scrapers"
+                ],
+                "summary": "Activa scraper inmuebles",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "responses": {
+                    "200": {
+                        "description": "Con esta llamada se obtienen todos los inmuebles de la página web fotocasa."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
+        },
+        "/api/scraper_trabajos": {
+            "get": {
+                "tags": [
+                    "scrapers"
+                ],
+                "summary": "Activa scraper empleos",
+                "operationId": "App\\Http\\Controllers\\api\\ApiController::index",
+                "responses": {
+                    "200": {
+                        "description": "Con esta llamada se obtienen todos los empleos de la página web infoempleo."
+                    },
+                    "default": {
+                        "description": "Ha ocurrido un error."
+                    }
+                }
+            }
         }
     },
     "security": [

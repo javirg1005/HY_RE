@@ -25,7 +25,7 @@ class EmpleoController extends Controller
     }
 
     //Scrapper de Python para descargar los trabajos     
-    public function ScraperTrabajos(){         
+    public function scraperTrabajos(){         
         $python = "C:\Python39\python.exe";          
         $cmd = $python." \"".base_path('python\infoempleo_scraper.py')."\"";        
         //dd($cmd);         

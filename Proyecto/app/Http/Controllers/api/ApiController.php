@@ -461,6 +461,32 @@ class ApiController extends Controller
      *          description="Ha ocurrido un error."
      *      )
      * ),
+     * @OA\Get (
+     *      path="/api/scraper_inmuebles",
+     *      summary="Activa scraper inmuebles",
+     *      tags={"scrapers"},
+     *      @OA\Response(
+     *          response=200,
+     *          description="Con esta llamada se obtienen todos los inmuebles de la página web fotocasa."
+     *      ),
+     *      @OA\Response(
+     *          response="default",
+     *          description="Ha ocurrido un error."
+     *      )
+     * ),
+     * @OA\Get (
+     *      path="/api/scraper_trabajos",
+     *      summary="Activa scraper empleos",
+     *      tags={"scrapers"},
+     *      @OA\Response(
+     *          response=200,
+     *          description="Con esta llamada se obtienen todos los empleos de la página web infoempleo."
+     *      ),
+     *      @OA\Response(
+     *          response="default",
+     *          description="Ha ocurrido un error."
+     *      )
+     * ),
      */
     public function index() {
         return "¡Probando!";

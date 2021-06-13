@@ -39,6 +39,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 Route::get("/empleos", "App\Http\Controllers\EmpleoController@index");
 Route::get("/empleos/{id}", "App\Http\Controllers\EmpleoController@show");
 Route::get("/empleos-filtro/{salario}", "App\Http\Controllers\EmpleoController@filtrojob");
+Route::get("/scraper_trabajos", "App\Http\Controllers\EmpleoController@scraperTrabajos");
 
 /* Ruta para operaciones de Inmuebles */
 Route::get("/inmuebles", "App\Http\Controllers\InmuebleController@index");
@@ -48,6 +49,7 @@ Route::get("/inmuebles-max-habitaciones", "App\Http\Controllers\InmuebleControll
 Route::get("/inmuebles-max-metros", "App\Http\Controllers\InmuebleController@max_metros");
 Route::get("/inmuebles-filtro-main/{prov}/{habs}/{precio}", "App\Http\Controllers\InmuebleController@filtroMain");
 Route::get("/filtro-oferta/{metros}/{habs}/{precio}", "App\Http\Controllers\InmuebleController@filtroOferta");
+Route::get("/scraper_inmuebles", "App\Http\Controllers\EmpleoController@scraperInmuebles");
 
 /* Ruta para operaciones de Actividades */
 Route::get("/actividades", "App\Http\Controllers\ActividadController@index");
