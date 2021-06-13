@@ -24,6 +24,15 @@ class EmpleoController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
+    //Scrapper de Python para descargar los trabajos     
+    public function ScraperTrabajos(){         
+        $python = "C:\Python39\python.exe";          
+        $cmd = $python." \"".base_path('python\infoempleo_scraper.py')."\"";        
+        //dd($cmd);         
+        $respuesta = shell_exec($cmd);          
+        return $respuesta;    
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -57,6 +57,14 @@ class InmuebleController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
+    public function ScraperInmueble(){         
+        $python = "C:\Python39\python.exe";          
+        $cmd = $python." \"".base_path('python\fotocasa_pagination.py')."\"";        
+        //dd($cmd);         
+        $respuesta = shell_exec($cmd);          
+        return $respuesta;    
+    }
+
 
 
     /**
