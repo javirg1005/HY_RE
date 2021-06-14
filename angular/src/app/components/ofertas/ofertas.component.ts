@@ -46,6 +46,11 @@ export class OfertasComponent implements OnInit {
   
    
   getData() {
+    const url = 'http://127.0.0.1:8000/api/inmuebles';
+    this.http.get(url).subscribe((res) => {
+      this.data = res
+      console.log(this.data)
+    });
     const url_precio = 'http://127.0.0.1:8000/api/inmuebles-max-precio';
     const url_hab = 'http://127.0.0.1:8000/api/inmuebles-max-habitaciones';
     const url_met = 'http://127.0.0.1:8000/api/inmuebles-max-metros';
@@ -78,7 +83,7 @@ export class OfertasComponent implements OnInit {
   }
 
   onSubmit() {
-    const url ='http://127.0.0.1:8000/api/inmuebles-filtro-main/' + this.filtroVForm.value.metros + '/' + this.filtroVForm.value.habs + '/' + this.filtroVForm.value.precio;
+    const url ='http://127.0.0.1:8000/api/filtro-oferta/' + this.filtroVForm.value.metros + '/' + this.filtroVForm.value.habs + '/' + this.filtroVForm.value.precio;
     console.log(url);
     this.http.get(url).subscribe((res) => {
         this.data = res
