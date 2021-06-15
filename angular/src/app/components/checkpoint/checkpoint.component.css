@@ -27,7 +27,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     
-    background: radial-gradient(93.07% 93.07% at 4.84% 95.08%, rgba(255, 255, 255, 0.42) 10%, rgba(255, 255, 255, 0.5) 50%);
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
@@ -40,7 +40,7 @@ body {
 .filtros {    
     width: 23%;
     
-    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.6) 100%);
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
@@ -58,7 +58,7 @@ body {
 }
 
 .btn_filtro {
-    /*background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);*/
+    background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     border: 0;
@@ -76,9 +76,6 @@ body {
     line-height: 32px;
     text-align: center;    
     color: white;
-    background-color: #F27D72;
-    color: white;
-    border-color: 15px black;
 
     margin-top: 5vh;
 }
@@ -118,7 +115,7 @@ body {
     font-family: "Montserrat";
 
     width: 73%;
-    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.6) 100%);
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
@@ -239,7 +236,7 @@ a {
     height: 100px;
     margin-bottom: 20px;
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
-    border: 2px solid #F27D72; /* rgba(255, 255, 255, 0.3);*/
+    border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
     border-radius: 20px;

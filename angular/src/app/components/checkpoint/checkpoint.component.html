@@ -1,3 +1,4 @@
+<p>checkpoint works!</p>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
         <!-- Stylesheet SOLO para pruebas, quitarla luego -->
-        <link rel="stylesheet" href="ofertas.component.css">
+        <link rel="stylesheet" href="checkpoint.component.css"> 
     </head>
     
     <body>
@@ -50,9 +51,9 @@
                                 <img class='imagen' src="{{ x.Url_imagen }}" alt="foto de casa">
                             </div>
                             <div class='datos'>
-                                <p class="Titulo"> <b style="color: #F27D72;">{{ x.Titulo }}</b></p>
-                                <p>Nº baños: {{ x.Banos }} </p> <p> Teléfono: {{ x.Telefono }}</p>
-                                <p>Precio: <b style="color: #F27D72;">  {{ x.Precio }} € </b> </p>
+                                <p class="Titulo"> {{ x.Titulo }}</p>
+                                <p>Nº habitaciones: {{ x.Habitaciones }} Metros cuadrados: {{ x.Metros }}</p>
+                                <p>Precio: {{ x.Precio }}</p>
                             </div>
                         </a>
                     </div>

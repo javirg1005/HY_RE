@@ -45,7 +45,7 @@ h4 {
     top: 50%;
     transform: translate(-50%, -50%);
     
-    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.6) 90%);
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
@@ -80,31 +80,6 @@ h4 {
 
 p {
     padding: 5vh;
-}
-
-button {    
-    background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    border: 0;
-    position: relative;
-    display: block;
-    width: 30vh;
-    height: 5.5vh;
-    margin-top: 5vh;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    font-family: Lato;
-    font-weight: 900;
-    font-size: calc(0.9em + 0.9vw);
-    line-height: 32px;
-    text-align: center;    
-    color: white;
-}
-
-button:active {
-  transform: translateY(4px);
 }
 
 .icono {
@@ -214,3 +189,45 @@ button:active {
 }
 
 /* ------- fin de estilo de la barra de precio -------- */
+
+/* estilo de los botones */
+.boton1 {    
+    /*background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);*/
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    position: relative;
+    display: block;
+    width: 30vh;
+    height: 5.5vh;
+    margin-top: 5vh;
+    margin-left: 25vh;
+    cursor: pointer;
+    font-family: Lato;
+    font-weight: 900;
+    font-size: calc(0.9em + 0.9vw);
+    line-height: 32px;
+    text-align: center;    
+    background-color: #F27D72;
+    color: white;
+    border-color: 15px black; 
+}
+
+button:active {
+  transform: translateY(4px);
+}
+
+#miboton {    
+    position: relative;
+    display: block;
+    width: 30vh;
+    height: 5.5vh;
+    margin-top: -40px;
+    margin-left: 70vh;
+    margin-right: auto;
+    cursor: pointer;
+    font-family: Lato;
+    font-weight: 900;
+    font-size: calc(0.9em + 0.9vw);
+    line-height: 32px;
+    text-align: center;  
+}

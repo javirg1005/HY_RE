@@ -21,6 +21,7 @@
                     <img class="icono" src="assets/Euro.png">
                     <h4> ¿Cuánto es lo máximo que <br> quieres pagar? </h4>
                     <label id="priceTag" class="tag">{{max_precio}}</label>
+                    <br> 
                     <div class="slidecontainer">
                         <span class="numero_fin">0</span> 
                         <input type="range" min="100" max="{{max_precio}}" value="{{max_precio}}" step="100" class="slider" formControlName="precio" name="precio" id="priceRange" (input)="valuePrice()">
@@ -48,7 +49,8 @@
                     
                 </div>
             </div>
-            <button type="submit"> Buscar </button>
+            <button class="boton1" type="submit"> Buscar </button>
+            <button class="boton1" id="miboton" type="submit" (click)="btnClick();"> Original </button>
         </form>
     </div> 
 </body> 

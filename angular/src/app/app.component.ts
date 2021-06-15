@@ -47,7 +47,7 @@ export class AppComponent {
   }  
 
   getName() {
-    const url = 'http://127.0.0.1:8000/api/userId_toName/' + localStorage.getItem('username');
+    const url = 'http://127.0.0.1:8000/api/userId_toName/' + localStorage.getItem('id_usu');
     this.http.get(url,{responseType: 'text'}).subscribe((res) => {
       this.data = res
       console.log(this.data);

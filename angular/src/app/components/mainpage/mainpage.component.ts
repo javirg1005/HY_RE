@@ -37,6 +37,11 @@ export class MainpageComponent implements OnInit {
     localStorage.setItem('provincia', 'Todas');
   }
 
+  /* Función para poner mi nueva ruta a 'checkpoint'*/
+  btnClick= function () {
+    this.router.navigate(['Ofertas']);
+  };
+
   onSubmit() {
     localStorage.setItem('parche', '1');
     let zapatilla = this.searchForm.value;

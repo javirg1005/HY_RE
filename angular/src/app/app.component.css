@@ -1,5 +1,7 @@
 body {
-    background: url('\src\media\Fondo_dibujo.png') no-repeat center fixed;
+    /* Se cambia la imagen de fondo por un color de fondo uniforme para todo el proyecto */
+    /*background: url('\src\media\Fondo_dibujo.png') no-repeat center fixed; */
+    background-color: #28D1DE; /* Color de fondo en el examen */
     background-size: cover;
     height: 100vh;
 }
