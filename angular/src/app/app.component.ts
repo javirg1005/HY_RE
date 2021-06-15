@@ -14,7 +14,9 @@ export class AppComponent {
 
   isLoggedin: boolean;
   public data = '';
+  public username = '';
   errors = null
+
 
   constructor(
     public router: Router,
@@ -30,6 +32,7 @@ export class AppComponent {
       if (res == true) {
         this.getId();
         this.getName();
+        this.getUsername();
       }
   });
   }
@@ -54,6 +57,11 @@ export class AppComponent {
     })
   }
 
+  getUsername() {
+    this.username = localStorage.getItem('username')
+    console.log(this.username);
+  }
+
   getId() {
     const url = 'http://127.0.0.1:8000/api/userId_toUsername/' + localStorage.getItem('username');
     this.http.get(url,{responseType: 'text'}).subscribe((res) => {
@@ -63,5 +71,3 @@ export class AppComponent {
   }
 
 }
-
-

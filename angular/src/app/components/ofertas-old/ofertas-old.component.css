@@ -10,37 +10,8 @@ body {
     background-image: url("../../../assets/Fondo_dibujo.png");
 }
 
-p {
-    font-size: calc(0.2em + 0.2vw);
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    width: 100%;
-}
-
-.componente-txt {
-    margin-bottom: 2vh;
-}
-
-a, .tel {
-    color: #FFF;
-    text-decoration: none;
-    font-size: calc(0.5em + 0.5vw);
-    font-weight: 600;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-family: 'Montserrat';
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-}
-
 .Titulo {
     font-weight: 700;
-    font-size: calc(0.4em + 0.25vw);
 }
 /* Panel central */
 .contenedor {    
@@ -81,13 +52,13 @@ a, .tel {
     margin-bottom: 10px;
 
 
-    color: rgb(90, 23, 129);
+    color: #D43414;
     font-family: "Montserrat";
     font-size: calc(0.4em + 0.4vw);
 }
 
 .btn_filtro {
-    background: radial-gradient(100% 1831.15% at 4% 0%, #4d84cc 0%, #5AAA25 100%);
+    background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     border: 0;
@@ -101,7 +72,7 @@ a, .tel {
     cursor: pointer;
     font-family: Lato;
     font-weight: 900;
-    font-size: calc(0.75em + 0.5vw);
+    font-size: calc(0.9em + 0.9vw);
     line-height: 32px;
     text-align: center;    
     color: white;
@@ -174,15 +145,11 @@ h2 {
 }
 
 h4 {
-    font-size: calc(0.3em + 0.2vw);
+    font-size: 12px;
     margin-top: 30px;
     align-self: right;
 }
 
-.nav-icon {
-    width: calc(1.5vh + 1.5vw);
-    margin-right: 10px;
-}
 
 /* -------------- Barra del precio -------------- */
 .slidecontainer {
@@ -196,7 +163,7 @@ h4 {
     appearance: none;
     width: 50%; /* Full-width */
     height: 3px; /* Specified height */
-    background: #4d84cc; /* Grey background */
+    background: #D43414; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -218,7 +185,7 @@ h4 {
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #4d84cc; /* Green background */
+    background: #D43414; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 100px;
 }
@@ -226,18 +193,18 @@ h4 {
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #317302; /* Green background */
+    background: #D43414; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
 
 .numero_inicio {
     margin-left: 50px;
-    color: #317302;
+    color: #D63610;
 }
 
 .numero_fin{
     margin-right: 6px;
-    color: #317302;
+    color: #D63610;
     font-size: 20px;
 }
 
@@ -248,6 +215,7 @@ h4 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    overflow: overlay;
     height: 72%;
     margin: 5vh;
 }
@@ -263,33 +231,30 @@ a {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
+    justify-content: space-around;
+    width: 47%;
+    height: 100px;
     margin-bottom: 20px;
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
     border-radius: 20px;
-    font-size: calc(1em + 3vw);
-    overflow: overlay;
-    padding: 20px;
-}
-
-.img-container {
-    width: 30%;
     display: flex;
     flex-direction: column;
-    align-items: baseline;
-    justify-content: first baseline;
+    font-size: calc(1em + 3vw);
+    
+    padding: 10px;
 }
 
 .imagen {
-    width: 100%;
+    width: 25%;
+    float: left;
     padding: 5px;
 }
 
 .datos {
     margin-left: 10px;
-    width: 70%;
 }
 
 ::-webkit-scrollbar {

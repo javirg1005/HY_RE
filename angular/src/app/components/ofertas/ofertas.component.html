@@ -7,8 +7,7 @@
         <!-- Font -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
-        <!-- Stylesheet SOLO para pruebas, quitarla luego -->
-        <link rel="stylesheet" href="ofertas.component.css">
+        
     </head>
     
     <body>
@@ -19,22 +18,22 @@
                 <h1> Precio </h1>
                 <div class="slidecontainer">
                     <span class="numero_inicio"> 0</span> 
-                    <input type="range" min="0" max="{{max_precio}}" value="100" formControlName="precio" class="slider" id="precio">
-                    <span class="numero_inicio">{{max_precio}} </span>
+                    <input type="range" min="0" max="100000" value="100" formControlName="precio" class="slider" id="precio">
+                    <span class="numero_fin"> ∞ </span>
                 </div>
 
                 <h1> Habitaciones </h1>
                 <div class="slidecontainer">
                     <span class="numero_inicio"> 0</span> 
-                    <input type="range" min="0" max="{{max_hab}}" value="1" formControlName="habs" class="slider" id="habs">
-                    <span class="numero_inicio"> {{max_hab}} </span>
+                    <input type="range" min="0" max="10" value="1" formControlName="habs" class="slider" id="">
+                    <span class="numero_fin"> 10 </span>
                 </div>
 
                 <h1> Metros cuadrados </h1>
                 <div class="slidecontainer">
                     <span class="numero_inicio"> 0</span> 
-                    <input type="range" min="0" max="{{max_met}}" value="1" class="slider" formControlName="metros" id="metros">
-                    <span class="numero_inicio"> {{max_met}}</span>
+                    <input type="range" min="0" max="10000" value="1" class="slider" formControlName="metros" id="">
+                    <span class="numero_fin"> ∞ </span>
                 </div>
                 
                 <button type="submit" class='btn_filtro'> Aplicar </button>
@@ -43,18 +42,30 @@
             <div class="ofertas"> 
                 <h3 class="sugerencia"> Le sugerimos los siguientes lugares: </h3>
                 <div class="subcontenedor"> 
-                    <div *ngFor="let x of data | paginate: { itemsPerPage: 16, currentPage: page}" class="elemento"> 
+                    <div *ngFor="let x of data | paginate: { itemsPerPage: 1, currentPage: page}" class="elemento"> 
                         <!-- Foto -->
-                        <a #casa href="Info" [attr.data-casa-id]="x.id" (click)="getIDComponent(casa)">
-                            <div>
-                                <img class='imagen' src="{{ x.Url_imagen }}" alt="foto de casa">
+                        <div class="img-container">
+                            <img class='imagen' src="{{ x.Url_imagen }}" alt="foto de casa">
+                            <p>Nº habitaciones: {{ x.Habitaciones }}</p>
+                            <p>Metros cuadrados: {{ x.Metros }}m²</p>
+                            <p>Precio: {{ x.Precio }} €</p>
+                            <p><img class="nav-icon" src="../../../assets/phone-solid.png" alt="phone-solid">Teléfono: {{ x.Telefono }}</p>
+                        </div>
+                        <div class='datos'>
+                            <p class="Titulo"> {{ x.Titulo }}</p>
+                            <h4>Descripción:</h4>
+                            <p> {{ x.Descripcion }}</p>
+                            <div class="componente-txt">
+                                <h4>Características básicas</h4>
+                                <div class="row">
+                                    <div class="column-txt">
+                                        <p>{{ data[0].Metros }} m² construidos</p>
+                                        <p>{{ data[0].Habitaciones }} habitaciones</p>
+                                        <p>{{ data[0].Banos }} baños</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class='datos'>
-                                <p class="Titulo"> {{ x.Titulo }}</p>
-                                <p>Nº habitaciones: {{ x.Habitaciones }} Metros cuadrados: {{ x.Metros }}</p>
-                                <p>Precio: {{ x.Precio }}</p>
-                            </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
                 <div class="pagination"> 

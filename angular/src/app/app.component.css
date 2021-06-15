@@ -1,5 +1,5 @@
 body {
-    background: url('\src\media\Fondo_dibujo.png') no-repeat center fixed;
+    background: url('/../../assets/background_verde_cp.jpg') no-repeat center fixed;
     background-size: cover;
     height: 100vh;
 }

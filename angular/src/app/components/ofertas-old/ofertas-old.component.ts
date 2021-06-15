@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { FormBuilder, FormGroup } from "@angular/forms";
-
+import { FiltroMain } from '../mainpage/mainpage.component';
 
 @Component({
-  selector: 'app-ofertas',
-  templateUrl: './ofertas.component.html',
-  styleUrls: ['./ofertas.component.css']
+  selector: 'app-ofertas-old',
+  templateUrl: './ofertas-old.component.html',
+  styleUrls: ['./ofertas-old.component.css']
 })
-export class OfertasComponent implements OnInit {
+export class OfertasOldComponent implements OnInit {
 
   title = 'image-gallery';
   public data: any = []
@@ -94,4 +94,10 @@ export class OfertasComponent implements OnInit {
     )
   }
 
+}
+
+export class FiltroInmueble {
+  precio: number;
+  habs: number;
+  metros: number;
 }
