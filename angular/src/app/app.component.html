@@ -11,7 +11,7 @@
             <ul class="nav-forms">
                 <li class="nav-item" *ngIf="!isLoggedin"><a href="LoginForm">Login</a></li>
                 <li class="nav-item" *ngIf="!isLoggedin"><a href="SignupForm">Sign Up</a></li>
-                <li class="nav-item" *ngIf="isLoggedin"><h5>Bienvenido, Usuario: {{ username }}<br>Nombre: {{ name }}<br>Email: {{ email }}</h5></li>
+                <li class="nav-item" *ngIf="isLoggedin"><h5>Usuario: {{ username }}<br>Nombre: {{ name }}<br>Email: {{ email }}</h5></li>
                 <li class="nav-item" *ngIf="isLoggedin"><button class="btn btn-dark" (click)="logOut()">Sign-out</button></li>
             </ul>
         </nav>
