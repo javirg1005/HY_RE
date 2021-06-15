@@ -25,6 +25,10 @@ use Illuminate\Support\Facades\Route;
 /* Sacar JSON de usuarios */
 Route::get("/users", "App\Http\Controllers\UserController@index");
 Route::get("/users/{id}", "App\Http\Controllers\UserController@show");
+Route::get("/get-user-id/{username}", "App\Http\Controllers\UserController@getId");
+Route::get("/get-user-name/{username}", "App\Http\Controllers\UserController@getName");
+Route::get("/get-user-username/{username}", "App\Http\Controllers\UserController@getUsername");
+Route::get("/get-user-email/{username}", "App\Http\Controllers\UserController@getEmail");
 Route::get("/userId_toUsername/{username}", "App\Http\Controllers\UserController@getUserIdFromUsername");
 Route::get("/userId_toName/{username}", "App\Http\Controllers\UserController@getNameFromUsername");
 

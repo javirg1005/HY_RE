@@ -104,6 +104,27 @@ class UserController extends Controller
         return response()->json($resp,JsonResponse::HTTP_OK);
     }
 
+    public function getId($username)
+    {
+        $resp = User::where("username", $username)->get();
+        return $resp['0']['id'];
+    }
+    public function getName($username)
+    {
+        $resp = User::where("username", $username)->get();
+        return $resp['0']['name'];
+    }
+    public function getUsername($username)
+    {
+        $resp = User::where("username", $username)->get();
+        return $resp['0']['username'];
+    }
+    public function getEmail($username)
+    {
+        $resp = User::where("username", $username)->get();
+        return $resp['0']['email'];
+    }
+
     public function getUserIdFromUsername($username)
     {
         $resp = User::where("username", $username)->first()->id;

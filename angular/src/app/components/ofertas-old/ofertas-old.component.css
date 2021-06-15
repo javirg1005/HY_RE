@@ -7,37 +7,11 @@
 }
 
 body {
-    background-image: url("../../../assets/lavender-back.jpg");
-}
-
-p {
-    font-size: calc(0.2em + 0.2vw);
-}
-
-
-.row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    width: 100%;
-}
-
-.componente-txt {
-    margin-bottom: 2vh;
-}
-
-.tel {
-    font-size: calc(0.2em + 0.2vw);
-    font-weight: 600;
-    color:white;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    background-image: url("../../../assets/Fondo_dibujo.png");
 }
 
 .Titulo {
     font-weight: 700;
-    font-size: calc(0.4em + 0.25vw);
-    color:rgb(90, 23, 129);
 }
 /* Panel central */
 .contenedor {    
@@ -46,7 +20,7 @@ p {
     flex-direction: row;
     align-content: center;
     justify-content: space-around;
-    
+
     width: 170vh;
     height: 75vh;
     left: 50%;
@@ -58,7 +32,7 @@ p {
     box-sizing: border-box;
     backdrop-filter: blur(30px);
     border-radius: 60px;
-    
+
     margin-top: 10px;
 }
 
@@ -74,18 +48,17 @@ p {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    
-    
-    color: rgb(90, 23, 129);
+
+
+    color: #D43414;
     font-family: "Montserrat";
     font-size: calc(0.4em + 0.4vw);
 }
 
 .btn_filtro {
-    background: radial-gradient(100% 1831.15% at 3.12% 0%, #ac1f94 0%, #6213ac 100%);
+    background: radial-gradient(100% 1831.15% at 3.12% 0%, #76C7CA 0%, #94EEF1 100%);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     border: 0;
@@ -99,11 +72,11 @@ p {
     cursor: pointer;
     font-family: Lato;
     font-weight: 900;
-    font-size: calc(0.75em + 0.5vw);
+    font-size: calc(0.9em + 0.9vw);
     line-height: 32px;
     text-align: center;    
     color: white;
-    
+
     margin-top: 5vh;
 }
 
@@ -140,7 +113,7 @@ p {
 .ofertas{
     color: black;
     font-family: "Montserrat";
-    
+
     width: 73%;
     background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -151,7 +124,7 @@ p {
     display: flex;
     flex-direction: column;
     
-    
+     
     margin-top: 10px;    
     margin-bottom: 10px;
 }
@@ -171,30 +144,17 @@ h2 {
     align-self: center;
 }
 
-h3 {
-    color:rgb(90, 23, 129);
-}
-
 h4 {
-    font-size: calc(0.3em + 0.2vw);
+    font-size: 12px;
     margin-top: 30px;
     align-self: right;
-    color:rgb(90, 23, 129);
 }
 
-.nav-icon {
-    width: calc(1.5vh + 1.5vw);
-    margin-right: 10px;
-}
 
 /* -------------- Barra del precio -------------- */
 .slidecontainer {
     width: 100%; /* Width of the outside container */
     margin-top: 2px;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-evenly;
 }
 
 /* The slider itself */
@@ -203,7 +163,7 @@ h4 {
     appearance: none;
     width: 50%; /* Full-width */
     height: 3px; /* Specified height */
-    background: rgb(90, 23, 129); /* Grey background */
+    background: #D43414; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -225,7 +185,7 @@ h4 {
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: rgb(90, 23, 129); /* Green background */
+    background: #D43414; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 100px;
 }
@@ -233,17 +193,18 @@ h4 {
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: rgb(90, 23, 129); /* Green background */
+    background: #D43414; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
 
 .numero_inicio {
-    color: rgb(90, 23, 129);
+    margin-left: 50px;
+    color: #D63610;
 }
 
 .numero_fin{
     margin-right: 6px;
-    color: rgb(90, 23, 129);
+    color: #D63610;
     font-size: 20px;
 }
 
@@ -254,6 +215,7 @@ h4 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    overflow: overlay;
     height: 72%;
     margin: 5vh;
 }
@@ -269,98 +231,30 @@ a {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
+    justify-content: space-around;
+    width: 47%;
+    height: 100px;
     margin-bottom: 20px;
+    background: radial-gradient(93.07% 93.07% at 4.84% 5.08%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     backdrop-filter: blur(30px);
     border-radius: 20px;
-    font-size: calc(1em + 3vw);
-    overflow: overlay;
-    padding: 20px;
-}
-
-.img-container {
-    width: 30%;
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: first baseline;
+    flex-direction: column;
+    font-size: calc(1em + 3vw);
+    
+    padding: 10px;
 }
 
 .imagen {
-    width: 100%;
+    width: 25%;
+    float: left;
     padding: 5px;
 }
 
 .datos {
     margin-left: 10px;
-    width: 70%;
-}
-
-.desc-container {    
-    position: relative;
-    width: 29%;
-    height: 100%;
-    box-sizing: border-box;
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    padding: 25px;
-    font-size: calc(0.75em + 0.5vw);
-    overflow-y: scroll;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: space-between;
-}
-
-.column-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: space-between;
-    margin-top: 1vh;
-}
-
-.column-nav a {
-    margin-top: 1vh;
-}
-
-.column-left {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: left;
-    padding-top: 1.75vh;
-}
-
-.info-photo {
-    position: relative;
-    display: block;
-    margin-top: 2.25vh;
-    width: 105%;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    width: 100%;
-}
-
-.bold {
-    font-weight: 700;
-    color:rgb(90, 23, 129);
-}
-
-.nav-icon {
-    width: calc(1.5vh + 1.5vw);
-    margin-right: 10px;
 }
 
 ::-webkit-scrollbar {

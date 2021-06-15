@@ -8,9 +8,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
         <!-- Stylesheet SOLO para pruebas, quitarla luego -->
-        <link rel="stylesheet" href="ofertas.component.css">
+        <link rel="stylesheet" href="ofertas-old.component.css">
     </head>
-    
+
     <body>
         <div class="contenedor">
             <form [formGroup]='filtroVForm' (ngSubmit)="onSubmit()" class="filtros"> 
@@ -43,37 +43,18 @@
             <div class="ofertas"> 
                 <h3 class="sugerencia"> Le sugerimos los siguientes lugares: </h3>
                 <div class="subcontenedor"> 
-                    <div *ngFor="let x of data | paginate: { itemsPerPage: 1, currentPage: page}" class="elemento"> 
+                    <div *ngFor="let x of data | paginate: { itemsPerPage: 16, currentPage: page}" class="elemento"> 
                         <!-- Foto -->
-                        <div class="desc-container">
-                            <div class="column">
-                                <img class="info-photo" src="{{ x.Url_imagen }}" alt="info-photo">
-                                <div class="column-left">
-                                    <div class="row">
-                                        <p><span class="bold">Precio: </span> {{x.Precio}} €</p>
-                                        <p><span class="bold">Localidad: </span> {{x.Localidad}}</p>
-                                    </div>
-                                </div>
+                        <a #casa href="Info" [attr.data-casa-id]="x.id" (click)="getIDComponent(casa)">
+                            <div>
+                                <img class='imagen' src="{{ x.Url_imagen }}" alt="foto de casa">
                             </div>
-                            <div class="column-nav">
-                                <div class="tel"><img class="nav-icon" src="../../../assets/phone-solid.png" alt="phone-solid">{{x.Telefono}}</div>
+                            <div class='datos'>
+                                <p class="Titulo"> {{ x.Titulo }}</p>
+                                <p>Nº habitaciones: {{ x.Habitaciones }} Metros cuadrados: {{ x.Metros }}</p>
+                                <p>Precio: {{ x.Precio }}</p>
                             </div>
-                        </div>
-                        <div class='datos'>
-                            <p class="Titulo"> {{ x.Titulo }}</p>
-                            <h4>Descripción:</h4>
-                            <p> {{ x.Descripcion }}</p>
-                            <div class="componente-txt">
-                                <h4>Características básicas:</h4>
-                                <div class="row">
-                                    <div class="column-txt">
-                                        <p>{{ x.Metros }} m² construidos</p>
-                                        <p>{{ x.Habitaciones }} habitaciones</p>
-                                        <p>{{ x.Banos }} baños</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="pagination"> 
